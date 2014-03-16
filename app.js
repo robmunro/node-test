@@ -1,12 +1,12 @@
 // Some cool tests to set up
-// Set up connect
-// Set up express
-// Set up asset-rack
-// Set up connect-assets
-// Set up stylus
-// Set up browserify
+// Set up connect - DONE
+// Set up express - DONE
+// Set up asset-rack - DONE
+// Set up connect-assets - DONE
+// Set up stylus(connect assets and asset-rack) - DONE
+// Set up browserify(browserify-middleware)
 // Set up coffeescript
-// Set up stylus (done)
+// Set up snockets(asset-rack etc)
 // Set up styl
 // Set up rework
 // Set up libsass
@@ -15,6 +15,7 @@
 // Set up broccoli
 // Set up brunch
 // Set up gulp
+// Set up rebuilding (brocolli/supervisor/livereload etc)
 // Set up lodash/underscore
 // Set up nconf
 
@@ -30,18 +31,24 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-//assets = new rack.Rack([
-//    new rack.Asset({
-//        url: '/hello.txt',
-//        contents: 'hello world'
-//    }),
-//    new rack.StylusAsset({
-//        url: '/style.css',
-//        filename: __dirname + '/assets/css/style.styl'
-//    })
-//])
+assets = new rack.Rack([
+    new rack.Asset({
+        url: '/hello.txt',
+        contents: 'hello world'
+    }),
+    new rack.StylusAsset({
+        url: '/style.css',
+        filename: __dirname + '/assets/css/style.styl'
+    })
 
-app.use('/js', browserify('./public/javascripts'));
+//    new rack.DyanmicAssets({
+//        type: LessAsset,
+//        urlPrefix: '/style',
+//        dirname: './style'
+//    })
+])
+
+//app.use('/js', browserify('./public/javascripts'));
 
 //styleAsset = new rack.StylusAsset({
 //    url: '/style.css',
@@ -64,7 +71,13 @@ app.get('/test', function(req, res, next) {
     res.render('index')
 });
 //app.use(require('connect-assets')())
-app.use(assets)
+app.use(assets);
+app.use(new rack.DynamicAssets({
+    type: rack.BrowserifyAsset,
+    urlPrefix: '/js',
+    dirname: __dirname + '/public/javascripts'
+}));
+
 //app.use(styleAsset)
 //app.use(app.router)
 
