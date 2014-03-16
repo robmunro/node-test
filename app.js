@@ -30,16 +30,16 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-assets = new rack.Rack([
-    new rack.Asset({
-        url: '/hello.txt',
-        contents: 'hello world'
-    }),
-    new rack.StylusAsset({
-        url: '/style.css',
-        filename: __dirname + '/assets/css/style.styl'
-    })
-])
+//assets = new rack.Rack([
+//    new rack.Asset({
+//        url: '/hello.txt',
+//        contents: 'hello world'
+//    }),
+//    new rack.StylusAsset({
+//        url: '/style.css',
+//        filename: __dirname + '/assets/css/style.styl'
+//    })
+//])
 
 app.use('/js', browserify('./public/javascripts'));
 
