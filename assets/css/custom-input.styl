@@ -1,0 +1,114 @@
+.inline-action
+  display: inline-block
+
+  &:hover
+    cursor: pointer
+  
+
+//- Custom radio buttons and checkboxes
+
+.checkbox
+  .icon
+  .icon-to-fade
+    background-position: 0px -816px
+
+  &.checked
+    .icon
+      background-position: -16px -816px
+
+  &.disabled
+    .icon-to-fade
+      background-position: 0 -832px
+
+    &.checked
+      .icon
+        background-position: -16px -832px
+
+.radio
+  .icon
+  .icon-to-fade
+    background-position: 0px -848px
+
+  &.checked
+    .icon
+      background-position: -16px -848px
+
+  &.disabled
+    .icon-to-fade
+      background-position: 0 -864px
+
+    &.checked
+      .icon
+        background-position: -16px -864px
+
+.checkbox
+.radio
+  padding-left: 22px
+  vertical-align: middle
+  position: relative
+  transition(0.25s)
+  -webkit-backface-visibility: hidden
+
+  input
+    outline: none !important
+    opacity: 0
+    zoom: 1
+    clear: both
+
+  &.checked
+    .icon
+      opacity: 1
+      display: block
+
+    .icon-to-fade
+      opacity: 0
+      display: none
+
+  &.disabled
+    color: #d7dddd
+    cursor: default
+
+    .icon
+      opacity: 0
+      display: none
+
+    .icon-to-fade
+      opacity: 1
+      display: block
+
+    &.checked
+      .icon
+        opacity: 1
+        display: block
+
+      .icon-to-fade
+        opacity: 0
+        display: none
+
+  .icon
+  .icon-to-fade
+    display: block !important
+    background-repeat: no-repeat
+    left: 0
+    opacity: 1
+    position: absolute
+    top: 0
+    margin-top: 0
+    height: 16px
+    width: 16px
+    transition(opacity 0.1s linear)
+    -webkit-backface-visibility: hidden
+    background-image: url(/common/images/icons/icons-16px-20140203.png) !important
+
+  .icon
+    opacity: 0
+    top: 0
+    z-index: 2
+    display: none
+
+ // Bootstrap override
+.controls
+  > .radio:first-child
+  > .checkbox:first-child
+    padding-top: 0
+    margin-top: 5px

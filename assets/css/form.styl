@@ -1,0 +1,530 @@
+@import variable
+@import mixin
+
+select,
+input,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+input[type="checkbox"],
+input[type="radio"],
+.uneditable-input
+textarea
+  border-radius(0) !important
+  height: 20px
+  line-height: 20px
+  padding: 4px
+  border: 1px solid $gray-lighterer
+  box-shadow(none)
+  -webkit-font-smoothing: antialiased
+
+  &:focus
+    border: 1px solid $gray-lightish
+    box-shadow(none)
+
+input.loading
+  background-image: url(/common/images/select2/spinner.gif)
+  background-position: center right
+  background-repeat: no-repeat
+
+input[type="radio"]:focus
+input[type="checkbox"]:focus
+  border: none
+
+label
+  color: $gray-dark
+
+.input-block-level
+  min-height: 28px
+
+select
+  height: 28px
+
+fieldset
+  width: 680px
+  display: inline-block
+  background-color: #f1f1f1
+  padding: 14px 0
+  margin-bottom: 20px
+  font-size: 12px
+
+  label,
+  select,
+  input,
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="url"],
+  textarea
+    margin-bottom: 0
+    margin-right: 3px
+    margin-top: 0px
+    font-size: 11px
+
+  .datepicker
+    display: inline-block
+
+    input
+      cursor: pointer
+
+    .icon-calendar
+      pointer-events: none
+      margin-left: -22px
+
+  textarea
+    height: 55px
+    width: 415px
+    display: inline-block
+    margin-top: 6px
+
+  textarea.large
+    height: 200px
+    width: 415px
+
+  .input-xlarge
+    width: 415px
+
+  .description
+    margin-top: 9px
+    margin-bottom: 5px
+
+  .help
+    cursor: pointer
+    display: inline-block
+    vertical-align: middle
+
+  .row-fluid
+    margin: 11px 0
+
+  .label-container
+  .control-container
+    line-height: 32px
+
+  .label-container
+    label
+      vertical-align: middle
+      font-size: 12px
+      padding-left: 36px
+      display: inline-block
+      font-weight: bold
+      margin-bottom: 0px
+
+  input[type=number].percent
+    width: 38px
+
+  .control-container
+    vertical-align: middle
+
+    label
+      font-size: 12px
+      min-width: 24px
+      display: inline-block
+
+  legend
+    text-indent: -9999px
+    margin-bottom: 0
+    border-bottom: none
+    height: 0px
+
+  .pull-right
+    padding-right: 20px
+
+  hr
+    margin: 0 20px
+    border-top: 1px solid #ccc
+    border-bottom: none
+
+  .progress
+    background-image: none
+    background-color: #ccc
+
+  .progress-live .bar
+    background-color: #8cce2f
+    background-image: none
+
+  .progress-ended .bar
+    background-color: #909193
+    background-image: none
+
+  //- Inline form row
+
+  .inline-row
+    input
+    .radio
+      margin: 0 20px 0 30px
+
+    label
+      padding: 0
+
+    .label-description
+      font-weight: normal
+      vertical-align: middle
+      padding-left: 20px
+
+    .control-container
+      line-height: 90px
+      margin-right: 20px
+
+    img
+      display: inline-block
+
+  //- Centered form row
+
+  .center-row
+    line-height: 100px
+    text-align: center
+
+    button
+      vertical-align: middle
+      margin: 0 5px
+
+//- full width fieldset
+fieldset.full-width
+  margin-left: 20px
+  width: 900px
+
+fieldset.two-thirds
+  width: 620px
+
+  .input-full-width
+    width: 377px
+
+  select
+  .select2-container
+    &.input-full-width
+      width: 387px
+
+//- input addons
+
+.input-append
+.input-prepend
+  display: inline-block
+  margin-bottom: 0
+  line-height: 20px
+
+  .add-on
+    vertical-align: middle
+    font-size: 11px
+    min-width: 8px
+    border-right: 0
+    border-radius(0)
+    padding: 5px 4px 3px 5px
+
+    &.transparent
+      padding: 6px 4px 4px 1px
+      border: none
+      background-color: transparent
+
+  input
+  select
+  .uneditable-input
+    border-radius(0)
+
+//- Help and validation messages
+
+.help-block
+.help-block-inline
+.error-message
+.success-message
+.parsley-error-list li
+  font-size: 11px
+  color: #bcbcbc
+  line-height: 15px
+  max-width: 425px
+  font-weight: normal
+
+.error-message
+.parsley-error-list li
+  color: $errorText
+
+.success-message
+  color: #468847
+
+input:focus:invalid:focus
+textarea:focus:invalid:focus
+select:focus:invalid:focus
+  box-shadow: none
+  border-color: $btnBorder
+  color: $textColor
+
+.parsley-error
+.validation-error
+.chzn-container.validation-error
+input.invalid.ng-dirty // Natural validation errors during input
+input.ng-invalid.ng-dirty
+  border: 1px solid $errorBorder
+
+  &:focus
+    border-color: $errorBorder
+    box-shadow(0 0 6px #f8b9b7)
+
+//- Forced validation errors on activation
+form.show-validation-errors
+  .ng-invalid.ng-dirty
+    border: 1px solid $errorBorder
+
+    &:focus
+      border-color: $errorBorder
+      box-shadow(0 0 6px #f8b9b7)
+
+.parsley-error-list
+  margin-left: 0
+  margin-bottom: 0
+
+.control-group.error
+  > label
+  .help-block
+  .help-inline
+  input
+  select
+  textarea
+  .select2-container
+    border: 1px solid $errorBorder
+    color: inherit
+
+  > label,
+  input[type="checkbox"],
+  input[type="radio"]
+    border: none
+
+  .select2-container
+    a
+      border: 1px transparent solid
+
+.help-block
+.error-message
+.success-message
+.parsley-error-list
+  margin-bottom: 0px
+  margin-top: 5px
+
+.parsley-error-list
+  li
+    display: block
+    clear: both
+    list-style-type: none
+
+.help-block-inline
+  display: inline-block
+  padding-right: 5px
+  min-width: 60px
+  text-align: right
+
+
+//- Ad server logos
+
+.label-img
+  padding: 0
+  margin: 0
+  cursor: pointer
+  display: inline-block
+
+//- Used for turning button into file input
+.fileupload
+  display: inline-block
+  margin-left: 20px
+
+  .file-input-overlay
+    position: relative
+
+    input[type=file]
+      width: 100%
+      opacity: 0
+      filter: unquote('alpha(opacity=0)')
+      position: absolute
+      left: 0
+      top: 0
+
+  .close
+    float: left
+    margin-right: 2px
+
+.uploaded-file-name
+  display: inline-block
+  vertical-align: middle
+  margin-left: -14px
+
+.progress-info
+  height: 12px
+  border-radius: 0
+  margin-right: 40px
+  margin-top: 10px
+
+.progress-info .bar
+.progress-info.progress-striped .bar
+  background-image: none
+  -webkit-animation: none
+  -moz-animation: none
+  animation: none
+  border-radius(0)
+
+.progress-wrapper
+  display: inline-block
+  width: 120px
+
+//- select size overrides
+.select2-container
+  margin-bottom: 0
+  border-radius(0) !important
+  margin-right: 3px
+  margin-top: 0px
+  font-size: 11px
+
+//- Color blocks
+
+.color-block
+  width: 16px
+  height: 16px
+  margin-right: 16px
+
+  &.blue
+    background-color: $advertise-btn-blue
+
+  &.green
+    background-color: $advertise-btn-green
+
+  &.black
+    background-color: $advertise-btn-black
+
+  &.white
+    background-color: $advertise-btn-white
+
+  &.light-blue
+    background-color: $advertise-btn-light-blue
+
+  &.light-green
+    background-color: $advertise-btn-light-green
+
+//- Help popups
+
+.popover
+  z-index: 9999 !important
+
+  .popover-title
+    display: none
+
+  .popover-content
+    background-color: #fff
+
+  .popover-inner
+    border: none
+    border-radius(0)
+    box-shadow-none()
+    background-color: #fff
+
+//- jQuery widget overrides
+
+.ui-slider
+  box-shadow(none)
+  background: #d0d0d0
+  padding-right: 5px
+
+.ui-corner-all
+  border-radius(0)
+
+.ui-widget-content
+  border: none
+
+//- Error, Warning, Success and Info Messages - overrides from bootstrap v2.3.1
+
+.alert
+  text-shadow: none
+  text-align: center
+  margin-bottom: 20px
+  padding: 8px 1px 8px 14px
+
+  .close
+    margin-top: -5px
+    position: relative
+    top: 0
+    right: 0
+    line-height: normal
+
+  .alert-confirmation
+    background-color: $confirmationBackground
+    border-color: $confirmationBorder
+
+button.close
+  padding: 0
+  cursor: pointer
+  background: transparent
+  border: 0
+  -webkit-appearance: none
+  padding: 0
+
+.close
+  float: right
+  font-size: 20px
+  font-weight: bold
+  line-height: normal
+  color: #000
+  text-shadow: 0 1px 0 #fff
+  opacity: 1
+  margin-right: 5px
+
+.form-container
+  background-color: #fff
+  padding-top: 20px
+
+//- Remove spinner for number type inputs in webkit browsers
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+.input-percentage
+  font-size: 11px
+
+.group-total
+  font-size: 11px
+  display: inline-block
+  min-width: 60px
+  padding-right: 5px
+  text-align: right
+
+  &.number
+    font-size: 12px
+    min-width: 65px
+
+  &.percentage
+    font-size: 12px
+    min-width: 0
+    padding-left: 7px
+
+.form-vertical
+  margin: 0
+
+  label
+    line-height: 25px
+    margin: 0
+    color: $gray-lightishish
+
+  .detail
+  input
+    height: 30px
+    display: block
+    margin: 0
+
+  .detail
+    line-height: 30px // Line up with input elements on swapout
+    color: $textColor
+
+.error-message-block
+  min-height: 25px
+
+  .error-message
+    margin-top: 0
+    line-height: @min-height

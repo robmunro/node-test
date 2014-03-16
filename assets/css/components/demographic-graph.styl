@@ -1,0 +1,62 @@
+@import "../variable.styl"
+@import "../mixin.styl"
+
+.demographics-graph
+  ul.nav
+    margin-bottom: 0
+
+   .tab-content
+    overflow: hidden
+
+  .item-label
+    color: #808080
+
+    .icon-help
+      margin-left: 5px
+
+  .item-value
+    font-size: 14px
+    color: $gray
+    margin-left: 30px
+
+    &.item-large
+      font-size: 30px
+      font-weight: 200
+      line-height: 36px
+
+    &.item-highlight
+      color: #4fc7e7
+
+  .item-margin
+    margin-bottom: 8px
+
+  .item-right
+    text-align: right
+
+  .chart-container:last-child
+    border-right: none
+
+  .chart-container
+    position: relative
+    vertical-align: top
+    display: inline-block
+    width: 292px
+    margin-left: 20px
+    border-right: 1px solid $gray-lightish
+    height: 152px
+
+    .item-label
+      width: 85px
+      text-align: center
+      transform-origin(56px 58px)
+      transform(unquote("rotate(-90deg)"))
+
+  .item-label
+    font-size: 14px
+    margin-bottom: 10px
+
+  .chart-container-wide
+    width: 440px
+
+    .chart-inactive-text
+      width: 340px

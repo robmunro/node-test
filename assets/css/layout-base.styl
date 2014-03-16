@@ -1,0 +1,376 @@
+@import variable
+
+body
+  font-family: 'Neue Helvetica W01', Helvetica, sans-serif
+  -webkit-font-smoothing: antialiased
+  font-smooth: always
+
+/* -------------- Body -------------- */
+
+.background
+  background: $footer-background-color
+  min-height: 100%
+  width: 100%
+
+.background-network
+  background-color: white
+
+/* -------------- Header -------------- */
+
+.header
+  background: $white
+  border-bottom: 1px solid #eee
+  line-height: $header-height
+  z-index: $zindexHeader
+
+  .btn
+    line-height: 20px
+
+  .btn-mini
+    padding: 3px 6px
+
+  .checkout
+    vertical-align: middle
+
+  .btn-group
+    .btn:not(.btn-success):not(.btn-primary)
+      border: 1px solid #d2d3d3
+      color: #808285
+      background-color: $white
+
+    .btn:not(.btn-success):not(.btn-primary):hover
+      background-color: #f1f1f1
+
+  .dropdown
+    border: 1px solid #d2d3d3
+    vertical-align: middle
+    display: inline-block
+
+    .button-label
+      color: #000
+
+  .dropdown:hover
+    background: transparent
+
+.log-in
+  display: inline-block
+  margin-bottom: 0
+
+  input
+    margin-bottom: 10px
+
+  .dropdown
+    margin-right: 0
+
+  .dropdown-menu
+    padding: 15px !important
+
+    .btn
+      margin-top: 10px
+      float: right
+      margin-right: 0px
+
+
+.header-logo
+  height: $header-height
+  display: block
+
+  a
+    display: block
+
+    .logo
+      height: 60px
+      width: 225px
+      background-position: left center
+      line-height: 60px
+
+/* -------------- Navigation -------------- */
+
+.nav-bar-wrapper
+  background-color: $gray
+
+.navbar
+.subnav
+  margin-bottom: 0
+  height: $nav-bar-height
+
+  .nav
+    margin-right: 0
+
+    > li:first-child
+      border-left: 1px $white solid
+
+    > li
+      width: 160px
+      margin-left: 0
+      border-right: 1px $white solid
+
+      .dropdown-menu
+        padding: 5px 0
+        right: 0
+        margin-top: 0
+
+        li
+          border-left: none
+
+      .item
+        font-style: normal
+        line-height: $nav-bar-height
+        display: block
+        width: 160px
+        box-sizing: border-box
+        margin-left: 0
+        font-size: 14px
+        color: $nav-font-color
+        text-align: left
+        padding: 0 0 0 20px
+        text-shadow: none
+
+        &.selected
+        &:hover
+          color: $nav-font-color
+          text-decoration: none
+
+    .dropdown
+      border-top: none
+      border-left: none
+      border-bottom: none
+
+      &.open
+      &.active
+      &.open.active
+        .item.dropdown-toggle
+          color: $white
+
+    .icon
+      margin: 2px 4px
+
+
+// Get rid of the small triangle on dropdown menu
+.navbar .nav > li > .dropdown-menu:before
+.navbar .nav > li > .dropdown-menu:after
+  border: none
+
+/* -------------- Footer -------------- */
+
+footer
+  font-size: 11px
+
+.brand
+  line-height: 23px
+
+  .logo-small
+    height: 23px
+    width: 113px
+    background-image: url("/images/adslot-logos-small.png")
+    margin-top: 21px
+    display: inline-block
+
+  .heading
+    margin-top: 19px
+
+  .product-title
+    color: #D1D3D4
+    margin-top: 15px
+    margin-bottom: 2px
+
+  ul
+    margin-left: 0
+    margin-top: 13px
+    text-align: left
+
+    li
+      list-style: none
+      line-height: 16px
+
+  .line-item
+    color: #808285
+
+.adslot-publisher .logo-small
+  background-position: 0px 0px
+
+.adslot-media .logo-small
+  background-position: 0px -23px
+
+.adslot-create .logo-small
+  background-position: 0px -46px
+
+.adslot-core .logo-small
+  background-position: 0px -69px
+
+.webfirm .logo-small
+  background-position: 0px -92px
+
+.adslot-publisher .heading
+  color: $publisher-light-green
+
+.adslot-media .heading
+  color: $media-light-blue
+
+.adslot-create .heading
+  color: $create-light-pink
+
+.adslot-core .heading
+.webfirm .heading
+  color: $adslot-light-grey
+
+.subscribe
+  font-size: 12px
+  position: absolute
+  right: 9px
+  top: 12px
+  border-radius(0)
+  box-shadow(-3px 2px 0 #000000)
+  background-color: #4F4C4D
+  background-image: none
+  border: none
+  color: #BDBBBC
+  filter: none
+
+.footer-logo-bar
+  border-bottom: 1px solid $gray
+  padding: 15px 0
+
+.footer-bar
+  text-align: center
+  color: $gray-light
+  font-size: 11px
+
+  > div
+    display: inline-block
+
+  .privacy-policy
+  .adslot-tm
+  .spacer
+    display: inline-block
+    padding: 12px 5px 10px 5px
+    color: $gray-light
+
+.span-row-fifth
+  width: 172px
+
+.side-nav-fixed
+  .content
+  .key-details.fixed
+    width: 690px
+
+.page-title
+  padding: 20px 20px 0
+  height: 25px
+  line-height: 25px
+  font-size: 20px
+  
+  &.border-bottom
+    padding: 20px
+    border-bottom: 1px solid $grayLighter
+    
+  .page-title-content
+    height: 25px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    
+
+// Used to prevent click actions on page
+.shim
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 10005
+
+.content.content-full
+  width: 940px
+  .key-details.fixed
+    width: 640px
+
+.side-nav
+  width: 218px
+  z-index: 100
+  display: none
+
+.active
+  display: inline-block
+
+.flat-well.side-nav
+  width: 190px
+
+  li
+    line-height: 16px
+
+    label.checkbox
+      font-size: 12px
+      line-height: 16px
+      vertical-align: middle
+      min-height: 16px
+
+      input
+        line-height: 16px
+        margin-top: 1px
+
+      &.all
+        font-style: italic
+
+.side-nav
+.side-nav-fixed
+  .content
+    vertical-align: top
+    display: inline-block
+
+
+
+// metrics
+.metrics-container
+  text-align: right
+  margin-bottom: 20px
+
+  .metric-detail
+    display: inline-block
+    color: $gray-lightishish
+    padding: 10px
+    min-width: 85px
+    margin-left: 10px
+    vertical-align: top
+
+    &.left
+      text-align: left
+
+    .metric-label
+      font-size: 13px
+      margin-bottom: 8px
+
+    .metric-value
+      font-size: 25px
+      font-weight: 200
+      color: $gray
+
+.details-summary-container
+  padding: 20px
+  margin-top: 60px
+  font-size: 14px
+  background-color: #f9f9f9
+
+  .detail-container
+    margin-bottom: 20px
+
+    .detail-label
+      color: $gray-lightishish
+
+.triangle-top
+  width: 0px
+  height: 0px
+  border-style: solid
+  border-width: 0 10px 10px 10px
+  border-color: transparent transparent $gray transparent
+  
+  &.danger
+    border-color: transparent transparent btn-danger-color transparent
+
+  &.warning
+    border-color: transparent transparent btn-warning-color transparent
+
+  &.success
+    border-color: transparent transparent btn-success-color transparent
+   
+

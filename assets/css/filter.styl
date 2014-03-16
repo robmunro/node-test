@@ -1,0 +1,66 @@
+@import variable
+
+.list-filter
+  .search-input input
+    width: 170px
+
+#filters
+  padding: 20px
+
+.filter-section
+  margin-bottom: 20px
+
+  // this is not required if bootstrap is upgraded
+  .btn-block
+    width: 140px
+
+  .input-block
+    width: 168px
+
+  .icon-input
+    pointer-events: none
+    position: absolute
+    margin-top: 7px
+    margin-left: -20px
+
+  .section-title
+    padding-bottom: 10px
+    color: #aaa
+
+  .filter-divider
+    border-bottom: 1px solid #e8e8e8
+    margin: 3px 0 3px 0
+
+  .filter-item
+    padding: 3px 0 3px 2px
+
+    label.checkbox
+      margin-bottom:0
+      font-size:12px
+
+    label.checkbox.all
+      font-style: italic
+
+    .status-label
+      font-weight: normal
+
+    .status-label.live
+      color: campaign-stats-live-color
+
+    .status-label.pending
+      color: campaign-stats-pending-color
+
+    .status-label.scheduled
+      color: campaign-stats-scheduled-color
+
+    .status-label.attention
+      color: campaign-stats-attention-color
+
+  .filter-item:hover
+    background-color: #f5f5f5
+
+.ui-datepicker
+  // Stops checkboxes bleeding though, must be important to override inline style from plugin
+  // 1055 is a rather arbitrary number, with the only requirementof being larger than the
+  // Change Request modal (currently 1050).
+  z-index: 1055 !important

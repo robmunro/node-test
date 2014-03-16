@@ -1,0 +1,45 @@
+// Usage:
+
+// @import spriteMap
+
+// icons16 = makeSpriteMap('/common/images/icons/icons-16px-20140203.png', 32, 2, 16, 16)
+
+// .icon-whatever
+//   makeIcon(icons16, 10)
+
+get(hash, key)
+  for pair, index in hash
+    if pair[0] == key
+      return pair[1]
+
+makeSpriteMap(url, width, nx, wx, wy, offx = 0, offy = 0)
+  data = ('url' url) ('width' width) ('nx' nx) ('wx' wx) ('wy' wy) ('offx' offx) ('offy' offy)
+  return data
+
+findIcon(i, spriteMap)
+  width = get(spriteMap, 'width')
+  nx = get(spriteMap, 'nx')
+  wx = get(spriteMap, 'wx')
+  wy = get(spriteMap, 'wy')
+  //url = get(spriteMap, 'url')
+
+  offx = get(spriteMap, 'offx')
+  offy = get(spriteMap, 'offy')
+
+  xx = -(i % nx) * wx - offx
+  yy = -(i / nx) * wy - offy
+
+  return ('url' url) ('x' unit(xx, px)) ('y' unit(yy, px)) ('wx' unit(wx, px)) ('wy' unit(wy, px))
+
+makeIcon(spriteMap, i)
+  theIcon = findIcon(i, spriteMap)
+
+  x = get(theIcon, 'x') 
+  y = get(theIcon, 'y')
+  w = get(theIcon, 'wx')
+  h = get(theIcon, 'wy')
+
+  background-position: x y
+  width: w
+  height: h
+

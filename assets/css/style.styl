@@ -1,0 +1,2756 @@
+//- Shared stylesheets
+@import "variable.styl"
+@import "mixin.styl"
+@import "decoration-style.styl" // Aim is to get rid of these and turn ones we want to keep into mixins
+@import "form.styl"
+@import "button.styl"
+@import "icon.styl"
+@import "select2.styl"
+@import "zendesk.styl"
+@import "custom-input.styl"
+@import "alert.styl"
+@import "filter.styl"
+@import "menu.styl"
+@import "components/spectrum.styl"
+@import "datepicker.styl"
+@import "lists.styl"
+@import "components/spectrum.styl"
+@import "components/filter-group.styl"
+@import "components/checkboxes.styl"
+@import "components/charts.styl"
+@import "components/dialogs.styl"
+@import "components/status.styl"
+@import "components/checkboxes.styl"
+@import "components/grid.styl"
+@import "components/slider.styl"
+@import "custom-input.styl"
+@import "preview.styl"
+@import "animations.styl"
+@import "adslot-selector.styl"
+@import "tab.styl"
+@import "components/charts.styl"
+@import "components/demographic-graph.styl"
+@import "components/creative-grid.styl"
+@import "components/file-upload.styl"
+@import "components/slider.styl"
+
+
+//- Shared page stylesheets
+@import "pages/login.styl"
+@import "pages/proposal-builder.styl"
+
+@import "components/pickers.styl"
+// Add components stylesheet
+
+//- Generic/component stylesheets
+@import layout
+@import menu
+@import modal
+@import calendar
+
+//- Page specific stylesheets
+@import "pages/adslot-preview.styl"
+@import "pages/adslot-backup-tag.styl"
+@import "pages/adslot-edit.styl"
+@import "pages/site-edit.styl"
+@import "pages/network-edit.styl"
+@import "pages/signup.styl"
+@import "pages/accounts.styl"
+@import "pages/terms.styl"
+
+
+body
+  font-family: 'Neue Helvetica W01', Helvetica, sans-serif
+  -webkit-font-smoothing: antialiased
+  padding-top: $header-height
+  overflow-y: scroll
+  background: #fff url("/images/grid_noise.png") repeat
+
+body > .container
+  padding-left: 20px
+  padding-right: 20px
+  border-bottom-rounded()
+  padding-top: 25px
+  background: #ffffff
+
+// 10 columns container
+.container10
+  fluidGridSystem-generate(10, 90.4 / 940 * 100, 4 / 940 * 100)
+
+.col-padding
+  padding: 20px
+
+.well
+  padding: 10px
+  background-color: line-item-background-color
+  border-top: 1px solid line-item-border-top-color !important
+  border-left: 1px solid line-item-border-side-color !important
+  border-right: 1px solid line-item-border-side-color !important
+  border-bottom: 1px solid line-item-border-bottom-color !important
+  margin-bottom: 0
+  box-shadow-none()
+  border-radius(0)
+
+.flat-well
+  padding: 10px
+  background-color: line-item-background-color
+  border: 0
+  margin-bottom: 0
+  box-shadow-none()
+
+.row-fluid.row-margin
+.row.row-margin
+  margin-bottom: 20px
+
+.thumbnail
+  box-shadow-none()
+
+.popover-title
+  font-size: 12px
+  color: #000
+
+.popover-inner
+  padding: 2px
+  background: #555
+
+.popover-content
+  font-size: 11px
+
+/* Override IE bootstrap progress bar */
+@css {
+  .progress {
+    filter: progid:dximageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#f9f9f9', GradientType=0)
+  }
+}
+
+/* ------------- Help Popover ------------------------ */
+.help-popover
+  color: help-popover-color
+  background-color: help-popover-background-color
+  border-top-radius(4px)
+  border-bottom-radius(4px)
+  box-shadow(3px 3px 2px #CCC)
+
+.chart-container
+  height: 304px
+
+.blank-chart
+  position: relative
+  width: 940px
+  height: 304px
+
+  .chart-overlay
+    position: absolute
+    top: 80px
+    left: 300px
+    padding: 15px
+
+.logged-in
+
+  &.dropdown-menu
+    > li
+      padding: 2px
+
+      &:hover
+        background-color: #f7f7f7
+
+  .nav-label
+    margin-left: 20px
+    float: left
+    width: 110px
+
+    > a
+      text-decoration: none
+
+  .nav-icon
+    width: 20px
+    float: right
+    margin-top: 3px
+
+#cart-item-count
+#cart-total-price
+  font-size:12px
+  font-weight:bold
+  text-align:right
+  margin-left:3px
+  padding-right:10px
+  margin-bottom: 0
+  -webkit-border-radius: 14px
+  -moz-border-radius: 14px
+  border-radius: 14px
+
+.navbar .dropdown-menu:before
+  border: 0
+
+.navbar .dropdown-menu:after
+  border: 0
+
+/* --------------------------- Campaign Details ------------------------------ */
+
+.collapsible-row-content
+  background-color: #FAFAFA
+
+.booking-status
+  display: inline-block
+  margin: 0
+  padding: 9px 9px 6px 10px
+  line-height: 18px
+  color: #555555
+  font-weight: bold
+  font-size: 10px
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  border: 0
+  background-color: line-item-details-background-color
+  height:53px
+  width:30px
+  margin-top: -1px
+  margin-left: 1px
+
+a.booking-status
+a.booking-status:hover
+  text-decoration: none
+  color: #FFFFFF
+
+.button-corner-bottom-right
+  display: inline-block
+  margin: 0
+  padding: 9px 8px 6px 5px
+  line-height: 18px
+  color: #555555
+  font-weight: bold
+  font-size: 10px
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  border: 0
+  background-color: #FFFFFF
+  height:53px
+  width:36px
+  margin-left: 1px
+
+a.button-corner-bottom-right.button-details-open
+a.button-corner-bottom-right.button-details-open:hover
+  text-decoration: none
+  color: #FFFFFF
+
+a.button-corner-bottom-right.button-details-close
+a.button-corner-bottom-right.button-details-close:hover
+  text-decoration: none
+  color: #555555
+
+.button-details-open
+  color: #FFFFFF
+  background-color: line-item-details-background-color
+
+.button-details-open.dark
+  color: #FFFFFF
+  background-color: #666666
+
+.button-details-open:hover
+.button-details-open.hover
+  color: #FFFFFF
+  background-color: #4e4d50
+
+.button-details-close
+  color: #555555
+  background-color: #FAFAFA
+
+.accordion-item-row
+  padding:0 !important
+  margin-bottom: 3px
+  margin-top: 3px
+
+#adSlotsAccordion
+  margin-top: 4px
+  margin-bottom: 0px
+
+  .accordion-heading:hover
+    border-top-radius(5px)
+    border-bottom-radius(5px)
+    background-color: $line-item-hover-color
+
+  .collapsible-row-content
+    background-color: cart-line-item-background-color
+
+  .accordion-heading.accordion-expanded
+    background-color: cart-line-item-background-color
+
+.accordion-heading:hover
+  border-radius(5px)
+  background-color: $line-item-hover-color
+
+
+.clickable-accordion-item:hover
+  cursor: pointer
+
+.ui-slider .ui-slider-handle
+  cursor: pointer
+
+/* ------------------------ Creative Review (Approve/Reject) ------------------------------ */
+.creative-approve-btn
+.creative-reject-btn
+.creative-preview-btn
+  cursor:pointer
+
+creative-approve-icon()
+  background-color: transparent
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-repeat: no-repeat
+  width:60px
+  height:40px
+  margin:0
+  padding:0
+  margin-left:auto
+  margin-right:auto
+  margin-top:10px
+
+.creative-approve-icon
+  creative-approve-icon()
+  background-position: -131px -276px !important
+
+.creative-reject-icon
+  creative-approve-icon()
+  background-position: -73px -276px !important
+
+.creative-approve-icon.disabled
+  creative-approve-icon()
+  background-position: -263px -276px !important
+
+.creative-reject-icon.disabled
+  creative-approve-icon()
+  background-position: -205px -276px !important
+
+.creative-preview-icon
+  background-color: transparent
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-repeat: no-repeat
+  background-position: -211px -14px !important
+  width:40px
+  height:50px
+  margin:0
+  padding:0
+  display:inline-block
+
+.creative-approve-btn
+  background-color: upload-panel-background-light
+  margin-left:0
+  width:200px
+  position:relative
+
+  .btn-label
+    color: campaign-stats-live-color
+
+  .btn-label.disabled
+    color: upload-panel-background-dark
+
+.creative-reject-btn
+  background-color: upload-panel-background-light
+  margin-left:0
+  border-left: 1px solid upload-panel-divider-background
+  width:199px
+  position:relative
+
+  .btn-label
+    color: campaign-stats-attention-color
+
+  .btn-label.disabled
+    color: upload-panel-background-dark
+
+.creative-preview-btn
+.creative-landing-url-panel
+  background-color: upload-panel-background-light
+  margin:0
+  padding:0
+  width:400px
+  height:80px
+  border-top: 1px solid upload-panel-divider-background
+  position:relative
+
+.creative-landing-url
+  background-color: upload-panel-background-light
+  margin-left:0
+  width:220px
+  min-height:40px
+  border-top:1px solid upload-panel-divider-background
+
+.datepicker input
+.booking-start[readonly]
+.booking-end[readonly]
+  background-color: #fff
+  cursor: pointer
+
+.booking-start[disabled]
+.booking-end[disabled]
+  background-color: #eee
+  cursor: not-allowed
+
+.change-navigation
+  ul
+    margin: 0
+  li
+    background-color: #ccc
+    list-style-type: none
+    padding: 10px 20px
+    width: 240px
+    display: inline-block
+    text-align: center
+  li.active
+    background-color: #fff
+
+.change-request-container
+  margin-bottom: 10px
+
+  dd
+    margin-left: 0
+  button
+    margin-right: 8px
+  select
+    width: 290px
+  select
+  input
+    margin-left: 5px
+    position: relative
+    top: 5px
+  dl
+    margin-bottom: 10px
+    padding: 10px
+    background-color: #eee
+
+
+  .validation-error
+    border: solid 1px #f00
+
+.box-sizing-border
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.validation-tooltip
+  position: absolute
+  left: 21px
+  width: 140px
+  text-align: center
+
+  .arrow-up
+    width: 0
+    height: 0
+    position: relative
+    left: 57px
+
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid #fff7c2
+
+  .inner
+    padding: 3px 10px
+    background-color: #fff7c2
+    border: solid 1px #fff8b2
+    color: #f00
+    text-align: center
+
+/* ------------------------ Creative Upload/Edit  - Upload / Create ------------------------------ */
+creative-panel-background(color1, color2)
+  background: color1
+  background: -moz-linear-gradient(left, color1 0%, color1 9%, color2 80%, color2 100%)
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,color1), color-stop(9%,color1), color-stop(80%,color2), color-stop(100%,color2))
+  background: -webkit-linear-gradient(left, color1 0%,color1 9%,color2 80%,color2 100%)
+  background: -o-linear-gradient(left, color1 0%,color1 9%,color2 80%,color2 100%)
+  background: -ms-linear-gradient(left, color1 0%,color1 9%,color2 80%,color2 100%)
+  background: linear-gradient(to right, color1 0%,color1 9%,color2 80%,color2 100%)
+
+/* --  Creative Upload Control (Browsing) --- */
+.adslot-creative-upload-control
+  margin-top: -40px
+
+  .creative-upload-section-icon
+    background: #017fc4
+    height:60px
+
+  .creative-upload-section-details
+    creative-panel-background(#017fc4, #24bee5)
+    width:250px
+    height:60px
+    margin-left: 0px
+    color: #FFFFFF
+
+  .creative-upload-section-label
+    margin-left: 20px
+    margin-top: 10px
+
+  .creative-upload-section-button
+    background: #017fc4
+    margin-left: 0px
+    height: 60px
+    width: 159px
+
+    .btn
+      background-color: #ffffff
+      color: #017fc4
+      margin-top: 16px
+      margin-left: 12px
+      font-weight: bold
+      width: 58px
+
+    .btn:hover
+      background-color: #017fc4
+      color: #FFFFFF
+      background-position: 0 -30px
+      text-shadow: none
+      -webkit-transition: none
+      -moz-transition: none
+      -ms-transition: none
+      -o-transition: none
+      transition: none
+      cursor: pointer
+
+  .creative-upload-icon
+    background-color: transparent
+    background-image: url(/images/icons/Upload_icon.png) !important
+    background-repeat: no-repeat
+    background-position: 0px 0px !important
+    width:50px
+    height:50px
+    margin: 3px 0px 0px 10px
+    padding:0
+
+  .creative-upload-icon-small
+    background-color: transparent
+    background-image: url(/images/icons/Universal_Media_Icons_Dark_Coloured.png) !important
+    background-repeat: no-repeat
+    background-position: -81px -24px !important
+    width:33px
+    height:23px
+    margin:0
+    padding:0
+    margin-left:auto
+    margin-right:auto
+    margin-top:9px
+    display:inline-block
+    cursor:pointer
+
+  .creative-upload-icon > input
+    cursor:pointer
+
+  .creative-upload-icon-small.pull-right > input
+    cursor:pointer
+    width: 100%
+    height: 100%
+    margin-bottom: 0px
+    opacity: 0
+    // filter:alpha(opacity: 0)
+    position: relative
+    left: 0px
+    top: 0px
+
+  .creative-create-section-icon
+    background: #6c217f
+    height:60px
+
+  .creative-create-section-details
+    creative-panel-background(#6c217f, #ea029b)
+    width:250px
+    height:60px
+    margin-left: 0px
+    color: #FFFFFF
+
+  .creative-create-section-label
+    margin-left: 20px
+    margin-top: 10px
+
+  .creative-create-section-button
+    background: #6c217f
+    margin-left: 0px
+    height: 60px
+    width: 144px
+
+    .btn
+      background-color: #FFFFFF
+      background-image: none
+      color: #6c217f
+      margin-top: 16px
+      margin-left: 12px
+      font-weight: bold
+      width: 58px
+
+    .btn:hover
+      background-color: #6c217f
+      color: #FFFFFF
+      background-position: 0 -30px
+      text-shadow: none
+      -webkit-transition: none
+      -moz-transition: none
+      -ms-transition: none
+      -o-transition: none
+      transition: none
+
+
+  .creative-create-icon
+    background-color: transparent
+    background-image: url(/images/icons/Create_icon.png) !important
+    background-repeat: no-repeat
+    background-position: 0px 0px !important
+    width:50px
+    height:50px
+    margin: 3px 0px 0px 10px
+    padding:0
+
+  .creative-remove-btn
+  .creative-backup-remove-btn
+    background-color: transparent
+    background-image: url(/images/icons/Universal_Media_Icons_Dark_Coloured.png) !important
+    background-repeat: no-repeat
+    background-position: -272px -14px !important
+    width: 40px
+    height: 40px
+    margin: 0
+    padding: 0
+    display: none
+    cursor: pointer
+
+  .creative-upload-btn
+    position:relative
+    background-image: none
+    color: #017FC4
+
+    input
+      width: 75px
+      height: 25px
+      opacity: 0
+      position: absolute
+      left: 0px
+      top: 0px
+
+  .uploaded-creative
+    margin-left: 20px
+    border: 0
+    width: 455px
+    background-color: #FFFFFF
+    display: none
+
+    .creativePath
+      margin-top: 12px
+      margin-left:30px
+
+    .progress
+      display: none
+      width: 202px
+      margin-top: 13px
+      margin-bottom: 0
+
+    .bar
+      display: inline-block
+
+    .add-click-through
+      margin-left: 10px
+
+    .creative-backup-image-row
+      display: none
+      height: 40px
+
+      .creative-backup-filename-label
+        margin-top: 10px
+        margin-left: 30px
+
+  .control-link
+    margin: 10px 0 30px 0
+
+    .button-adtag
+      margin: 0
+
+  .control-link-adtag
+    display: inline-block
+    margin-right: 10px
+    position: relative
+    top:-9px
+
+  .control-link-upload
+    margin-top: 15px
+    margin-right:9px
+
+  .creative-filename
+  .creative-backup-filename
+    background-color: transparent
+    margin-left:0
+    width:220px
+    min-height:40px
+
+  .creative.progress
+    display: none
+    width: 202px
+    margin-top: 14px
+    margin-bottom: 0
+
+  .creative-status
+    background-color: transparent
+    margin-left:0
+    width:253px
+    min-height:30px
+    border-top:1px solid upload-panel-divider-background
+
+  .creative-backup-image
+    background-color: transparent
+    margin-left:0
+    width:200px
+    min-height:30px
+    border-top:1px solid upload-panel-divider-background
+
+  .creative-upload-section-button
+    width: 144px
+
+  .creative-upload-section-button > div
+    margin-left: 13px !important
+
+  .creative-create-section-button
+    width: 144px
+
+  .creative-create-section-button > a
+    margin-left: 13px !important
+
+  .creative-status
+  .creative-backup-filename
+  .creative-filename
+    width: 225px !important
+
+  .creative-landing-url-panel
+    width: 455px
+    margin-left: 20px
+
+  .creative-landing-url-input
+    width: 400px !important
+    margin-left: 10px !important
+
+.adslot-creative-adtag-control
+  margin-left: 20px
+  margin-bottom: 20px
+  display: none
+
+  textarea
+    height: 100px
+    width: 100%
+    box-sizing: border-box
+
+.creative-submission-row
+  margin-left: 20px
+  -webkit-transform: scale3d(1,1,1)
+
+  .change-ad-panel
+    margin-left: 0px
+
+/* ----------- Campaign Stats ------------ */
+campaign-stats-box()
+  font-weight: bold
+  color: #666666
+  margin: 0
+  padding: 10px 0 18px 0
+  background-color: #ffffff
+  position: relative
+
+.campaign-stats-box
+  campaign-stats-box()
+  cursor: pointer
+
+.campaign-stats-value
+  float: right
+  font-size: 30px
+  display: inline-block
+  margin-top:10px
+  margin-right: 20px
+
+.campaign-stats-box i
+  margin-left: 10px
+
+.campaign-stats-heading
+  display: inline-block
+  position: absolute
+  top: 20px
+  left: 20px
+
+.campaign-stats-container
+  width: 940px
+  margin-left: 0
+
+  #liveFilterButton
+    border-left: none
+
+  #liveFilterButton
+  .status-live
+    color: campaign-stats-live-color
+
+  #pendingFilterButton
+  .status-pending
+    color: campaign-stats-pending-color
+
+  #scheduledFilterButton
+  .status-scheduled
+    color: campaign-stats-scheduled-color
+
+  #attentionFilterButton
+  .status-attention
+    color: campaign-stats-attention-color
+
+  #endedFilterButton
+  .status-ended
+    color: campaign-stats-ended-color
+
+
+  #liveFilterButton:hover
+  #liveFilterButton.active
+    background-color: campaign-stats-live-color
+    color: #ffffff !important
+
+  #pendingFilterButton:hover
+  #pendingFilterButton.active
+    background-color: campaign-stats-pending-color
+    color: #ffffff !important
+
+  #scheduledFilterButton:hover
+  #scheduledFilterButton.active
+    background-color: campaign-stats-scheduled-color
+    color: #ffffff !important
+
+  #attentionFilterButton:hover
+  #attentionFilterButton.active
+    background-color: campaign-stats-attention-color
+    color: #ffffff !important
+
+  #endedFilterButton:hover
+  #endedFilterButton.active
+    background-color: campaign-stats-ended-color
+    color: #ffffff !important
+
+  .status-label
+    font-weight: bold
+
+/* ----------- Payment Page Icons ------------ */
+
+.custom-icon-creditcard
+  display: inline-block
+  width: 24px
+  height: 16px
+  vertical-align: text-top
+  background-image: url(/images/creditcard.png)
+  background-repeat: no-repeat
+
+.custom-icon-paypal
+  display: inline-block
+  width: 20px
+  height: 16px
+  vertical-align: text-top
+  background-image: url(/images/paypal.png)
+  background-repeat: no-repeat
+
+/* ----------- Campaigns Page Icons ------------ */
+
+.custom-icon-adslot
+  display: inline-block
+  width: 24px
+  height: 16px
+  vertical-align: text-top
+  background-image: url(/images/iconAdslotNormal.png)
+  background-repeat: no-repeat
+
+.active .custom-icon-adslot
+  background-image: url(/images/iconAdslotSelected.png)
+
+.custom-icon-details
+  display: inline-block
+  width: 20px
+  height: 16px
+  vertical-align: text-top
+  background-image: url(/images/iconDetailsNormal.png)
+  background-repeat: no-repeat
+
+.active .custom-icon-details
+  background-image: url(/images/iconDetailsSelected.png)
+
+/* ----------- Campaigns List ------------ */
+
+.campaign-group-row
+  margin-bottom: 5px
+
+.campaign-group-row:hover
+  cursor: pointer
+
+  .booking-item
+  .campaign-group-row-heading
+    background-color: #eee !important
+
+.campaign-group-row-heading
+  border-bottom: 1px solid #ccc
+  padding: 10px 20px
+  line-height: 30px
+  background-color: #fff
+
+  span
+    vertical-align: middle
+
+  h4.description
+    color: #006fdd
+    vertical-align: middle
+    line-height: 30px
+
+  .campaign-sales-user
+    text-align: right
+
+.nav-pills .active > a
+.nav-pills .active > a:hover
+  color: white
+  background-color: #555
+
+.nav-pills a .nav-pills a:hover
+  color: #333
+  text-decoration: none
+  border-radius(0px)
+
+.booking-item-list
+  background-color: #fff
+
+  .booking-item
+    padding: 10px 20px
+
+  .column
+    line-height: 60px
+
+    .booking-item-info
+      display: inline-block
+      vertical-align: middle
+      width: 100%
+
+      .date-label
+        font-weight: bold
+        width: 45px
+        display: inline-block
+
+      div
+        margin-bottom: 5px
+
+      .status-label
+        text-align: right
+
+      .progress
+        height: 10px
+        margin-bottom: 0
+
+      .text-grey
+        text-align: right
+        color: #808080
+
+    div
+      line-height: 18px
+
+.booking-item-list div:nth-child(odd) .booking-item
+  background-color: #f7f7f7
+
+
+
+#campaignsAccordion .progress
+#adSlotsAccordion .progress
+  height: 13px
+
+.bigModal
+  width: 800px
+  margin-left: -400px
+
+.bookingStatus
+  .progress
+    background-image: none
+    background-color: #ccc
+
+  .progress-live .bar
+    background-color: campaign-stats-live-color
+    background-image: none
+
+  .progress-ended .bar
+    background-color: campaign-stats-ended-color
+    background-image: none
+
+#campaign-progress
+
+  .progress
+    background-image: none
+    background-color: #ccc
+
+  #campaignDaysProgress .bar
+    background-color: #1ecedb
+    background-image: none
+
+  .progress-ahead .bar
+    background-color: campaign-stats-live-color
+    background-image: none
+
+  .progress-behind .bar
+    background-color: #ffa500
+    background-image: none
+
+  .progress-ended .bar
+    background-color: campaign-stats-ended-color
+    background-image: none
+
+/* ----------- Site Stats ------------ */
+
+site-stats-box()
+  list-style: none
+  font-size: 11px
+  color: #666666
+  margin: 0
+
+.site-stats-box
+  site-stats-box()
+
+.site-stats-box > li
+  padding: 5px 0 5px 15px
+  color: #999
+  list-style-type: none
+
+.site-stats-box .site-stats-value
+  padding: 0 20px 20px 0
+  font-size: 33px
+  font-weight: bold
+  color: #555
+  margin-left: 13px
+  margin-top: 10px
+
+site-stats-icon-layout()
+  display: inline-block
+  width: 40px
+  height: 40px
+  line-height: 40px
+  vertical-align: text-top
+  background-repeat: no-repeat
+  margin: 0
+  padding: 0
+  opacity: 0.6
+  background-color: transparent
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-repeat: no-repeat
+
+.site-stats-icon-impressions
+  site-stats-icon-layout()
+  background-position: -211px -141px !important
+
+.site-stats-icon-pageviews
+  site-stats-icon-layout()
+  background-position: -279px -141px !important
+
+/* ----------- Campaign Details ------------ */
+
+.campaign-title
+  margin-bottom: 20px
+
+.campaign-stats
+  padding: 20px
+  height: 284px
+  line-height: 284px
+
+  > div
+    line-height: 284px
+    display: inline-block
+    vertical-align: bottom
+    width: 100%
+
+  table
+    width: 100%
+
+    td
+    th
+      padding-top: 20px
+      line-height: 18px
+
+    th
+      text-align: left
+
+    td
+      text-align: right
+      color: #00adef
+      font-weight: bold
+
+.campaign-info
+  padding: 20px
+
+  .campaign-info-label
+    color: #aaa
+    margin-bottom: 10px
+
+  .campaign-info-value
+    height: 50px
+
+    .progress-marker-container
+      position: relative
+
+    .progress
+      height: 10px
+      margin-top: 10px
+
+    .progress-marker
+      height: 16px
+      width: 1px
+      border-left: 2px solid #000
+      position: absolute
+      left: 0%
+      top -3px
+
+.campaign-invoice-status
+  margin-top: -4px
+  width: 200px
+
+.booking-status-live
+  background-color: campaign-stats-live-color
+
+.booking-status-pending
+  background-color: campaign-stats-pending-color
+
+.booking-status-scheduled
+  background-color: campaign-stats-scheduled-color
+
+.booking-status-ended
+  background-color: campaign-stats-ended-color
+
+.booking-status-attention
+  background-color: campaign-stats-attention-color
+
+.preview-flash-creative-content
+.preview-image-creative-content
+.preview-adtag-creative-content
+.preview-approved-flash-creative-content
+.preview-approved-image-creative-content
+.preview-approved-adtag-creative-content
+  padding: 10px 10px 10px 10px
+
+.preview-adtag-creative-content .adtag-preview-label
+.preview-approved-adtag-creative-content .adtag-preview-label
+  color: #fff
+  display: table-cell
+  vertical-align: middle
+  text-align: center
+  font-weight: bold
+
+.preview-adtag-creative-content:hover
+.preview-approved-adtag-creative-content:hover
+  cursor: pointer
+
+
+/* ------- Leaderboard -------- */
+.preview-size-1-single
+  left: 0px
+  top: 90px
+
+.preview-size-1-first
+  left: 0px
+  top: 35px
+
+.preview-size-1-second
+  left: 0px
+  top: 155px
+
+/* ------- Skyscraper -------- */
+.preview-size-2-single
+  left: 100px
+  top: 0px
+
+.preview-size-2-first
+  left: 90px
+  top: 0px
+
+.preview-size-2-second
+  left: 260px
+  top: 0px
+
+/* ------- MREC -------- */
+.preview-size-3-single
+  left: 100px
+  top: 35px
+
+.preview-size-3-first
+  left: 5px
+  top: 35px
+
+.preview-size-3-second
+  left: 240px
+  top: 35px
+
+.preview-status-label
+  color: #ffffff
+  font-size: 9px
+  font-weight: bold
+  margin-bottom: 5px
+  line-height: 10px
+
+.preview-date-label
+  color: #ffffff
+  font-size: 9px
+  font-weight: bold
+  text-align: right
+
+.preview-status-label > i.icon-search
+  cursor: pointer
+
+
+
+/* ----------- Dashboard ------------ */
+
+.notification-panel
+  background-color: #fff
+
+  .notification-row
+    height: 30px
+    padding: 20px
+
+  .notification-row:nth-child(even)
+    background-color: #f7f7f7
+
+/*----------- Account Balance ----------------------- */
+
+.account-balance-content
+  font-size:12px
+
+  .search-panel-container
+    padding-left:20px
+    margin-top:20px
+
+    .search-panel
+      font-weight:bold
+      background-color:#f5f5f5
+      margin-left:0px
+      height: 55px
+      .from-field
+        margin-top: 10px
+        width:170px
+      .to-field
+        margin-top: 10px
+        width:160px
+
+.search-panel
+  i.icon-calendar
+    margin-left:5px
+
+  .from-field
+    margin-top: 10px
+    width:170px
+  .to-field
+    margin-top: 10px
+    width:160px
+
+  #startDateFilter
+  #endDateFilter
+    padding-left:10px
+    margin-top:6px
+    margin-left:5px
+    width: 80px
+    display:inline-block
+
+.account-transactions-list-section
+  padding-left:20px
+
+  .col-campaign
+    width:240px
+    margin-left:35px
+
+  .col-status
+    width:90px
+
+  .col-billed
+    width:100px
+    margin-left:0
+
+  .col-adslot-fee
+    width:100px
+    margin-left:0
+
+  .col-demand-fee
+    width:100px
+    margin-left:0
+
+  .col-total
+    width:100px
+    margin-left:0
+
+  #account-transaction-list-view
+    margin-top:10px
+    border: 1px solid #aaaaaa
+
+.balance-stats-box
+  font-weight: bold
+  color: #666666
+  margin: 0
+  padding: 10px 0 10px 20px
+  width: 187px
+  position:relative
+  list-style: none
+  background-color: #f5f5f5
+
+.stats-box-spacing
+  margin-left:120px
+
+.balance-stats-amount
+  .amount
+    margin-left:5px
+    font-size:13px
+    font-weight:normal
+
+.balance-total
+  width:215px
+  .balance-stats-amount
+    color:#00aeef
+
+.balance-pending
+  width:215px
+  .balance-stats-amount
+    color:#fa9500
+
+.balance-available
+  width:240px
+  .balance-stats-amount
+    color: $checkout-green-color
+
+.balance-stats-amount
+  font-size: 20px
+  margin-top: 20px
+
+.balance-stats-heading
+  font-size: 20px
+  font-weight: normal
+  display: inline-block
+  top:20px
+  left:50px
+
+.payment-status-available
+  color: $checkout-green-color
+
+.payment-status-pending
+  color: #fa9500
+
+.payment-status-dispute
+  color: #ff0000
+
+.payment-status-cancelled
+  color: #000000
+
+.payment-status-withdrawn
+  color: #00aeef
+
+
+.control-group
+  margin:0
+
+.form-horizontal .control-group
+  margin-bottom:5px
+
+#credit-card-form label
+  margin-bottom: 2px
+
+#credit-card-form
+  input
+  select
+    margin-bottom: 5px
+
+.transaction-group-section
+  margin-top:10px
+  margin-bottom:10px
+  color:#2273b3
+
+.transaction-group-heading
+  margin-left:35px
+
+.transaction-group-content
+  background-color:#f5f5f5
+  width:778px
+
+  .transaction-item
+    margin-top:10px
+    margin-bottom:10px
+    margin-left:-5px
+
+    .col-details
+      width:255px
+
+    .col-status
+      font-weight:bold
+      margin-left:0px
+      width:90px
+      text-transform: capitalize
+
+    .col-gross
+      width:100px
+      margin-left:0
+
+    .col-adslot-fee
+      width:100px
+      margin-left:0
+
+    .col-demand-fee
+      width:100px
+      margin-left:0
+
+    .col-net
+      width:100px
+      margin-left:0
+
+/* ----------- In Place Edit ------------ */
+
+.in-place-detail
+  margin-bottom: 0px
+
+.in-place-edit
+  display: none
+
+/* ---------- Footer ------------------------*/
+#footer
+  margin-top: 20px
+  height:170px
+
+.footer-line
+  border-top: 1px solid #aaa
+
+
+/* -------------- Custom Icons ------------------ */
+
+[class^="adslot-icon-"]
+[class*=" adslot-icon-"]
+  display: inline-block
+  width: 27px
+  height: 30px
+  line-height: 30px
+  vertical-align: text-top
+  background-repeat: no-repeat
+
+.adslot-icon-tooltip
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -278px -24px !important
+  width:27px
+  height:20px
+
+
+.adslot-icon-cart
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+  background-position: -84px -83px !important
+
+.adslot-icon-cart-widget
+  width: 24px
+  height: 19px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+  background-position: -84px -89px !important
+
+.adslot-icon-pointer-down
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+  background-position: -213px -83px !important
+
+adslot-icon-pointer-down-dark()
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -213px -83px !important
+
+.adslot-icon-pointer-down-dark
+  adslot-icon-pointer-down-dark()
+
+.adslot-icon-head
+  width: 29px
+  height: 29px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -280px -148px !important
+
+.adslot-icon-invoice
+  width: 29px
+  height: 29px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -86px -213px !important
+
+.adslot-icon-pointer-right-dark
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -83px -413px !important
+
+adslot-icon-pointer-up-dark()
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -150px -88px !important
+
+.adslot-icon-pointer-up-dark
+  adslot-icon-pointer-up-dark()
+
+.adslot-icon-pointer-up
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -149px -83px !important
+
+.adslot-icon-remove-white
+  width: 27px
+  height: 20px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+  background-position: -279px -25px !important
+
+.adslot-icon-remove-dark
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -278px -24px !important
+  width:27px
+  height:20px
+
+.adslot-icon-kiosk
+  width: 27px
+  height: 20px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -23px -219px !important
+
+.adslot-icon-frame
+  width: 27px
+  height: 20px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -21px -286px !important
+
+.adslot-icon-document
+  width: 27px
+  height: 22px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -87px -219px !important
+
+.adslot-icon-stacked-documents
+  width: 27px
+  height: 22px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -281px -219px !important
+
+.adslot-icon-card
+  width: 27px
+  height: 22px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -153px -219px !important
+
+.adslot-icon-chart
+  width: 27px
+  height: 22px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png") !important
+  background-position: -218px -219px !important
+
+.adslot-icon-campaign-attention
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -538px -147px !important
+
+.adslot-icon-campaign-ended
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -601px -147px !important
+
+.adslot-icon-campaign-live
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -341px -147px !important
+
+.adslot-icon-campaign-scheduled
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -471px -147px !important
+
+.adslot-icon-campaign-pending
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -407px -147px !important
+
+.adslot-icon-campaign-attention.active
+#attentionFilterButton:hover > .adslot-icon-campaign-attention
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+
+.adslot-icon-campaign-ended.active
+#endedFilterButton:hover > .adslot-icon-campaign-ended
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+
+.adslot-icon-campaign-live.active
+#liveFilterButton:hover > .adslot-icon-campaign-live
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+
+.adslot-icon-campaign-scheduled.active
+#scheduledFilterButton:hover > .adslot-icon-campaign-scheduled
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+
+.adslot-icon-campaign-pending.active
+#pendingFilterButton:hover > .adslot-icon-campaign-pending
+  background-image: url("/images/icons/Universal_Publisher_Icons.png") !important
+
+.adslot-icon-campaign-attention-small
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png")
+  background-position: -340px -213px !important
+
+.adslot-icon-campaign-ended-small
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png")
+  background-position: -601px -214px !important
+
+.adslot-icon-campaign-live-small
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png")
+  background-position: -406px -215px !important
+
+.adslot-icon-campaign-scheduled-small
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png")
+  background-position: -473px -215px !important
+
+.adslot-icon-campaign-pending-small
+  width: 35px
+  height: 35px
+  background-image: url("/images/icons/Universal_Publisher_Icons.png")
+  background-position: -536px -215px !important
+
+.adslot-icon-sites-add
+  width: 18px
+  height: 18px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -610px -25px !important
+
+.adslot-icon-sites-pencil
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -18px -413px !important
+
+.adslot-icon-sites-pageview
+  width: 32px
+  height: 32px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -279px -146px !important
+
+.adslot-icon-sites-impressions
+  width: 32px
+  height: 32px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -214px -145px !important
+
+.adslot-icon-pencil-border
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -149px -412px !important
+
+
+.adslot-icon-pencil-border-medium
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -279px -346px !important
+
+.adslot-icon-pencil-border-medium-green
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -16px -346px !important
+
+.adslot-icon-preview
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -472px -412px !important
+
+.adslot-icon-preview-green
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -19px -283px !important
+
+.adslot-icon-preview-large
+  width: 45px
+  height: 41px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -76px -468px !important
+
+.adslot-icon-network
+  width: 26px
+  height: 28px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -347px -345px !important
+
+.adslot-icon-network-green
+  width: 26px
+  height: 28px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -84px -345px !important
+
+.adslot-icon-cart-med
+  width: 28px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -410px -348px !important
+
+.adslot-icon-cart-med-green
+  width: 28px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -147px -348px !important
+
+.adslot-icon-image
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -541px -413px !important
+
+.adslot-icon-image-green
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -605px -413px !important
+
+.adslot-upload-small
+  width: 24px
+  height: 24px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -411px -21px !important
+
+.adslot-script-small
+  width: 28px
+  height: 18px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -473px -349px !important
+
+.adslot-script-small-green
+  width: 28px
+  height: 18px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -211px -349px !important
+
+.adslot-left-arrow-small
+  width: 16px
+  height: 16px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -217px -417px !important
+
+.adslot-icon-camera-pics
+  width: 60px
+  height: 50px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: 4px -464px !important
+
+.adslot-icon-browser-window
+  width: 60px
+  height: 50px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -66px -464px !important
+
+.adslot-icon-advertise-with-us
+  width: 62px
+  height: 50px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -133px -468px !important
+  vertical-align: middle
+
+.adslot-icon-media-app
+  width: 50px
+  height: 40px
+  background-image: url("/images/AdslotMedia_App_Icon.png")
+  background-position: 10px 0px !important
+  vertical-align: middle
+
+.adslot-icon-adslot-available
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -412px -285px !important
+
+.adslot-icon-adslot-unavailable
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -283px -480px !important
+
+.adslot-icon-adslot-active
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -412px -284px !important
+
+.adslot-icon-adslot-inactive
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -543px -349px !important
+
+.adslot-icon-adslot-incomplete
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -543px -349px !important
+
+.adslot-icon-adslot-delete
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -282px -480px !important
+
+.adslot-icon-dropdown
+  width: 21px
+  height: 21px
+  background-image: url("/images/icons/Universal_Publisher_Icons_Dark_Coloured.png")
+  background-position: -414px -416px !important
+
+.adslot-icon-social-twitter
+  width: 46px
+  height: 41px
+  background-image: url("/images/icons/social.png")
+  background-position: 0px 0px !important
+
+.adslot-icon-social-facebook
+  width: 46px
+  height: 41px
+  background-image: url("/images/icons/social.png")
+  background-position: -69px 0px !important
+
+
+/* -------------- Site List ------------------ */
+
+.publisher-sites
+.publisher-adslot
+  dl
+    margin-top: 0
+  dt
+    color: #ccc
+    margin-bottom: 5px
+  dd
+    margin-left: 0
+    min-height: 60px
+
+  .sponsorship-pricing
+    dl
+      height: 10px
+      margin-bottom: 19px
+
+    dt
+    dd
+      display: block
+      width: 30px
+      margin-bottom: 0
+    dt
+      font-weight: normal
+      color: #000
+    dd
+      position: relative
+      left: 80px
+      top: -18px
+      width: 110px
+
+  .sites-toolbar
+    .btn-toolbar
+      text-align: right
+      margin-right: 6px
+
+      a
+        margin-left: 18px
+        color: #555
+
+  .close-ad-tag-grey
+    background-color: #eee
+
+  .sites-expand-button.collapsed
+    border-left solid 1px #bbb
+    .img
+      adslot-icon-pointer-down-dark()
+
+  .sites-expand-button.expanded
+    border-left none
+    .img
+      adslot-icon-pointer-up-dark()
+
+  .site-row:hover .sites-expand-button.collapsed
+    background-color: #f5f5f5
+    height: 49%
+    border-bottom-right-radius(4px)
+
+  .adslot-row
+    cursor: pointer
+
+    a
+    a:hover
+      color: #333
+
+  .adslot-row:hover
+    background-color: #F5F5F5
+
+  .adslot-progress
+    .progress
+      width: 210px
+      background-image: none
+      background-color: #ccc
+
+      .bar
+        background-image: none
+        background-color: #eeb156
+
+  .adslot-name
+    color: #11AADE
+    font-size: 1.2em
+    font-weight: bold
+    margin-bottom 5px
+
+
+/* -------------- AdSlot Details ------------------ */
+
+.adslot-details-content
+  padding-bottom: 10px
+
+  .mini-preview
+  dl
+    padding-left: 10px
+
+.adslot-details-hr
+  padding-bottom: 10px
+  border-bottom: solid 1px #bbb
+  margin-left: 0px
+  margin-bottom: 20px
+
+.adslot-details-container
+  background-color: #ffffff
+  margin-top: 20px
+
+.adslot-details-container
+  h4
+    padding: 10px 0 0 10px
+
+//TODO: RM this needs to be cleaned up when we refactor the campaign-stats-container
+.adslot-details-row
+  margin-left: 40px
+
+.dark-dropdown
+  border-top-radius(4px)
+  border-bottom-radius(4px)
+  background-color: #57585c
+  opacity: 0.9
+  padding: 15px 0
+  font-size: 1.1em
+  font-weight: bold
+
+  li
+    padding: 5px 15px
+
+  li:hover
+    background-color: #686868
+
+.adslot-status-active
+  color: #93bc5e
+
+.adslot-status-inactive
+  color: #eeb156
+
+.adslot-status-deleted
+  color: #df6466
+
+.adslot-status-incomplete
+  color: #eeb156
+
+#adslot-status
+  float: left
+  cursor: pointer
+
+  #status-dropdown
+    border: 1px solid #555
+    border-radius(6px)
+
+  #status-label
+    font-weight: bold
+    text-transform: capitalize
+
+    i.icon-chevron-down
+      border: 1px solid #555
+      margin-top: 2px
+      margin-left: 2px
+
+  .adslot-status-text
+    margin-left: 10px
+    display:inline-block
+    vertical-align:middle
+
+#welcome-banner
+  color: #fff
+  font-weight: bold
+  font-size: 14px
+  background: #1b9639
+  background: -moz-linear-gradient(45deg,  #1b9639 0%, #9fda4e 100%)
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1b9639), color-stop(100%,#9fda4e))
+  background: -webkit-linear-gradient(45deg,  #1b9639 0%,#9fda4e 100%)
+  background: -ms-linear-gradient(45deg,  #1b9639 0%,#9fda4e 100%)
+  background: linear-gradient(45deg,  #1b9639 0%,#9fda4e 100%)
+  border-width: 10px
+  border-color: #bbb
+  width: 560px
+  position: fixed
+  top: 50%
+  left: 50%
+  z-index: 1050
+  overflow: auto
+  width: 560px
+  margin: -250px 0 0 -280px
+
+  .modal-body
+    margin-top: 0
+    min-height: none
+    overflow-y: auto
+    max-height: 400px
+    padding: 15px
+    min-height: 0
+
+.inline-help-section
+  background-color: #f1f1f1
+  padding: 5px 10px 10px 10px
+  margin-bottom: 10px
+
+.get-started-panel
+  color: #777
+  background-color: #fff
+  margin-top: 10px
+  height: 72px
+  line-height: 72px
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 5px 5px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 5px 5px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 5px 5px rgba(0, 0, 0, 0.05)
+
+  .panel-icon
+  .panel-action-text
+  .panel-description-text
+  .panel-button
+    vertical-align: middle
+    display: inline-block
+
+  .panel-icon
+    width: 78px
+    margin-left: 22px
+
+  .panel-action-text
+    font-size: 17px
+    line-height: 20px
+    width: 193px
+
+  .panel-description-text
+    line-height: 16px
+    width: 456px
+
+  .panel-button
+    width: 155px
+    text-align: right
+
+/* -------------- AdSlot edit details ------------------ */
+
+dl.inline
+  dt
+  dd
+    display: inline-block
+    vertical-align: top
+
+.adslot-edit-details
+.site-edit-details
+  padding-top: 20px
+
+#keyword-item-list-view
+  .status
+    text-transform: capitalize
+    text-align: center
+
+  .error
+    td
+      background-color: #F5D7D7 !important
+      color: #DD0F30 !important
+
+  .active
+    display: table-row
+
+    .status
+      color: #1FA01F
+
+  .pending
+    .status
+      color: #F17E00
+
+.tooltip-inner
+  max-width: 300px
+
+.targeting-geo-container
+  .geo-item-active
+    background-color: #468847
+
+  .geo-item-error
+    background-color: #b94a48
+
+  .geo-targeting-item
+    margin-right: 15px
+    padding-left: 10px
+
+    .description
+      padding-top: 7px
+      padding-bottom: 5px
+
+    .control-container
+      padding-bottom: 5px
+
+    .geo-target-msg
+      display: none
+
+  .geo-targeting-item.active
+    .geo-target-msg
+      display: block
+
+
+/* -------------- Adslot/site edit sidebar ------------------ */
+
+.adslot-sidebar
+.site-sidebar
+  li
+    list-style: none
+    padding: 5px 25px
+    height: 35px
+    a
+    a:hover
+      text-decoration: none
+      color: #999
+      cursor: default
+
+  .step-description
+    float:left
+    position:relative
+    top: 8px
+
+  .step-icon
+    position:relative
+    top: 5px
+
+  li.step3 .step-icon
+    top: 2px
+
+  li.step6 .step-icon
+    top: 7px
+
+  .completed
+    a
+    a:hover
+      color: #8cce2f
+
+  .current
+    background-color: #eee
+
+  .enabled
+    a
+    a:hover
+      cursor: pointer
+
+  .back
+    a
+    a:hover
+      color: #777
+      font-weight: bold
+      padding-left: 16px
+
+.subtext
+  color: #ccc
+
+
+/* -------------- Site edit details ------------------ */
+
+.all-round
+  border-radius(0)
+
+.no-adslot-container
+  background-color:#ccc
+  padding: 15px
+
+  .no-adslot-content
+    background-color:#fff
+    padding:20px
+    box-shadow(3px 3px 2px #ccc)
+
+  a.add-adslot
+  a.add-adslot:hover
+    position:relative
+    top: 3px
+    background-color: $checkout-green-color
+    padding: 8px 15px
+    color: #fff
+    text-decoration:none
+    font-weight: bold
+
+.site-details h4
+  color: #1B75BB
+
+.site-description
+  height: 90px
+
+/* -------------- Placeholders ------------------ */
+input::-webkit-input-placeholder
+::-webkit-input-placeholder
+  color: #ccc
+input:-moz-placeholder
+:-moz-placeholder
+  color: #ccc
+input:-ms-input-placeholder
+:-ms-input-placeholder
+  color: #ccc
+
+/* --------------- Custom targeting ------------------- */
+
+.custom-targeting-content
+  height: 400px
+
+  .set-content:last-child
+    border-bottom: none
+
+.set-content
+  padding: 15px 0
+  border-bottom: solid 1px #ccc
+  width: 750px
+  display: inline-block
+
+  .disabled
+    background-color: #ccc !important
+
+.pricing-targeting-keywords-section
+  width: 640px
+  padding: 0 20px
+
+  .formattedPrice
+    text-align: right
+  .formattedMinOrderPrice
+    text-align: right
+
+/* -------------- Jquery Data Tables ------------------ */
+
+div.dataTables_length label
+	float: left
+	text-align: left
+
+div.dataTables_length select
+	width: 75px
+
+div.dataTables_filter label
+	float: right
+
+div.dataTables_info
+	padding-top: 8px
+
+div.dataTables_paginate
+	float: right
+	margin: 0
+
+table.table
+	clear: both
+	margin-bottom: 6px !important
+
+table.table thead .sorting
+table.table thead .sorting_asc
+table.table thead .sorting_desc
+table.table thead .sorting_asc_disabled
+table.table thead .sorting_desc_disabled
+	cursor: pointer
+	*cursor: hand
+
+table.table thead .sorting
+  background: url('/images/datatable/sort_both.png') no-repeat center right
+
+table.table thead .sorting_asc
+  background: url('/images/datatable/sort_asc.png') no-repeat center right
+
+table.table thead .sorting_desc
+  background: url('/images/datatable/sort_desc.png') no-repeat center right
+
+table.table thead .sorting_asc_disabled
+  background: url('/images/datatable/sort_asc_disabled.png') no-repeat center right
+
+table.table thead .sorting_desc_disabled
+  background: url('/images/datatable/sort_desc_disabled.png') no-repeat center right
+
+table.dataTable th:active
+	outline: none
+
+/* ----------------- discounts ------------- */
+.discount-header
+  margin-top: 20px
+  margin-bottom: 20px
+
+/* edit */
+#discount-form,
+#edit-inventory-discount
+
+  .error-message
+    color: #B94A48
+
+  .datepicker
+    width: 128px
+    cursor: pointer
+
+  .icon-calendar
+    pointer-events: none
+    margin-left: -22px
+
+
+/* list */
+.discount-list .row
+  color: #606060
+
+  &:nth-of-type(odd) .span12
+    background-color: #f7f7f7
+
+  &:nth-of-type(even) .span12
+    background-color: #ffffff
+
+  .header
+    margin-bottom: 4px
+    select#filter
+      float: right
+      margin: 30px
+
+  .item
+    margin-bottom: 3px
+
+  .list-is-empty
+    text-align: center
+    height: 100px
+    line-height: 100px
+
+
+.discount-row
+  font-size: 13px
+  cursor: pointer
+
+  > div
+    vertical-align: middle
+    padding: 23px 0
+
+    > div
+      padding: 3px 0
+
+  .span3 .pad
+    padding-left: 20px
+
+  .highlight
+  .total-cost
+    font-weight: bold
+    padding: 3px 0
+
+  .total-cost
+    font-size: 16px
+
+  .details-arrow
+    margin: auto
+
+  .date
+  .date-label
+    display: inline-block
+
+  .date-label
+    min-width: 50px
+
+  .total
+    text-align: right
+
+    > div
+    .details-arrow
+      vertical-align: middle
+      display: inline-block
+      padding-right: 40px
+
+    .total-cost
+      text-align: left
+
+
+/* details and settings */
+.discount-details
+
+  .discount-status-active
+  .discount-status-inactive
+    display: inline-block
+    margin-right: 15px
+    label
+      font-weight: bold
+      font-size: 18px
+
+  .discount-status-active label
+    color: success-color
+
+  .discount-status-pending
+  .discount-status-inactive label
+    color: warning-color
+
+  .discount-stats-container
+    text-align: center
+    line-height: 250px
+    height: 250px
+
+  .discount-settings
+  .discount-stats-container
+    background-color: #f9f9f9
+
+  .discount-stats
+    width: 256px
+    display: inline-block
+    vertical-align: bottom
+    padding: 20px
+    .stat
+      text-align: left
+      line-height: 40px
+      height: 40px
+
+  .discount-stats
+    .stat-label
+    .stat-value
+      display: inline-block
+
+    .stat-label
+      font-size: 15px
+
+    .stat-value
+      color: #0f9fff
+      font-weight: bold
+      font-size: 19px
+
+    .stat-value
+      float: right
+
+  .detail-label
+    margin-top: 20px
+    margin-left: 20px
+    color: #ccc
+
+  .detail-value
+    margin-left: 20px
+    height: 50px
+    color: #555
+
+#currency-messages-row
+  height: 55px
+  margin-top: 25px
+
+#currency-messages
+  p
+    width: 90%
+
+#currency-well
+  width: 150px
+  float: left
+  margin-right: 15px
+  margin-bottom: 15px
+
+  p
+    text-align: left
+    width: 135px
+
+  input
+    width: 40px
+    text-align: right
+
+  span.help-inline
+    padding-bottom: 7px
+
+/* -------------- proposal list ------------------ */
+
+.container-padding
+  margin-top -20px
+  padding 20px
+  background-color #fff
+  .row-margin
+    margin-bottom 20px
+
+.proposal-title
+  span.date
+    font-weight normal
+  .status-container.sent
+    color #ffac20
+  .status-container.draft
+    color #019dfc
+
+.proposal-info
+  padding 20px
+  background-color #f7f7f7
+  .proposal-info-label
+    height 50px
+    font-weight bold
+
+  .proposal-info-value
+    word-wrap: break-word
+
+
+.proposal-label h4
+  text-align right
+  margin-top 0
+
+.proposal-message
+  padding 20px
+  color #ff8509
+  text-align center
+  background-color #fff7c2
+  h4
+  p
+    margin 0
+
+#proposal-tab-content
+  .cancel-action
+    color: red
+  .edit-action
+    margin-left:15px
+    width:80px
+
+.proposal-expiry
+  color #ff8509
+  text-align right
+
+.proposal-divider
+  border-bottom 1px solid #e8e8e8
+
+.proposal-booking
+  background-color #f7f7f7
+  .booking-info
+  .booking-targeting
+    padding 20px 0 20px 20px
+    table
+      margin-top 20px
+      th
+      td
+        font-weight normal
+        text-align left
+        padding-right 20px
+      th
+        padding-bottom 10px
+        color #aaa
+    .booking-title
+      span span
+        font-weight bold
+    .booking-divider
+      margin-top 20px
+      border-bottom 1px solid #444
+  .booking-targeting
+    padding 0 0 20px 20px
+  .proposal-well-booking
+    line-height 129px
+    .column
+      line-height 129px
+      p
+      div
+        line-height 20px
+
+.proposal-booking-targeting
+  background-color #e8e8e8
+  table td
+    vertical-align top
+    .label
+      -webkit-border-radius 0
+      -moz-border-radius 0
+      border-radius 0
+
+.proposal-booking-cpm
+  .booking-info table
+    width 75%
+  .keyword-label
+  .geo-label
+    margin-left: 10px
+    display: inline-block
+    margin-bottom: 5px
+
+.proposal-booking-sponsorship
+  .booking-info
+    padding 20px 0 0 20px
+  .booking-info table
+    width 100%
+  .keyword-label
+  .geo-label
+    margin-left: 10px
+    display: inline-block
+    margin-bottom: 5px
+
+.proposal-well
+  background-color #e8e8e8
+  color #888
+  .column
+    width 50%
+    display inline-block
+    vertical-align bottom
+    table
+      width 100%
+      tr td:first-child
+        width 60%
+    p
+      margin 0
+  .total
+    color #444
+    text-align right
+    font-weight bold
+    .total-value .value
+      font-size 20px
+      line-height 28px
+
+.proposal-well-booking
+  background-color #dcf5fc
+  .total-label
+    font-weight normal
+
+.proposal-well-subtotal
+  background-color #fff
+
+#history-tab-content
+  table
+    width: 100%
+
+    th
+      text-align: left
+      padding: 10px 20px
+      color: #aaa
+
+    td
+      padding: 10px
+      background-color: #f7f7f7
+      cursor: pointer
+      text-align: center
+
+    .version
+      font-weight: bold
+
+    tr
+      border-bottom: solid 2px #fff
+
+    tr:nth-child(odd) td
+      background-color #fafafa
+
+    .count
+    .websites
+    .adSlots
+      text-align: center
+
+/* styles for creative ad/edit/adtag */
+.adtag-preview-click
+  cursor: pointer
+  color: #fff
+  background-color: #1b75bb
+
+.adtag-preview-icon
+  background-image: url("/images/icons/Preview_icon.png")
+  position: relative
+  margin: auto
+  width: 85px
+  height: 73px
+
+.button-adtag
+  display: inline-block
+  background-image: url("/images/icons/AdTag_icon.png")
+  background-position: 0px 0px
+  background-repeat: no-repeat
+  width:30px
+  height:28px
+  margin: 10px
+
+/* Normal flat button */
+.flat-button
+  border: none
+  padding: 5px 10px
+  border-top-radius(4px)
+  border-bottom-radius(4px)
+  font-size: 12px
+  cursor: pointer
+  text-decoration: none
+
+.flat-button:hover
+  opacity: 0.8
+
+/* Flat button colours */
+.flat-button-grey
+  background-color: #999
+  color: #fff
+
+.flat-button-blue
+  background-color: #007cc2
+  color: #fff
+
+.creative-submission-panel
+  width: 440px
+  background-color: #e5e5e5
+  margin-left: 0
+  display: none
+
+  .confirmation-text
+    display: none
+    width: 250px
+
+  .confirmation-button-panel
+    position: relative
+    top: 5px
+
+  .button-cancel-edit
+  .button-cancel-edit:hover
+    color: #ff0000
+    position: relative
+    top: 4px
+
+  .button-submit-edit
+  .button-submit-edit:hover
+    background-image: none
+    color: #ffffff
+    display: none
+    margin-right: 8px
+
+.button-add-macro
+  display: inline-block
+  margin: 1px
+  padding: 6px 11px
+  line-height: 18px
+  font-size: 13px
+  text-align: center
+  cursor: pointer
+  border: 0
+  color: #FFFFFF
+  background-color: #A7A9AC
+
+.button-add-macro:hover
+.button-add-macro.hover
+  background-color: #414042
+
+.creative-create-return-body
+  background-color: #1a1a1a
+  color: white
+
+  div
+    width: 200px
+    height: 400px
+    position: absolute
+    left: 50%
+    top:50%
+    margin: -150px 0 0 -100px
+
+.label-help-icon
+  position: absolute
+  margin-left: 5px
+
+@import demand-sources
+
+.accounts-page
+  .list-group, .list-header
+    font-size: 11px
+
+.publisher-details-checkbox-row
+  width: 205px
+
+.publisher-sites-details
+  display:inline-block
+  margin-right: 5px
+  margin-top: 10px
+
+.publisher-sales-report
+  .sales
+    overflow: auto
+
+.publisher-details
+.site-admin-demand-sources
+  .flash-messages
+    position: fixed
+    width: 940px
+    z-index: 99999
+
+    .alert
+      margin-bottom: 0px
+
+.siteadmin-reports-table
+  td
+    vertical-align: middle
+  input
+    margin-bottom: 0
+    margin-right: 10px
+
+
+

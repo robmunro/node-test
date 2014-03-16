@@ -1,0 +1,239 @@
+@import variable
+
+.tabset-container
+  display: block
+  
+  .tab-content .tab-pane
+    .sub-title
+      height: 20px
+      padding: 10px 20px
+      color: $gray-lightishish
+      font-size: 13px
+      border-bottom: 1px solid $grayLighter
+      
+      .action
+        color: btn-danger-color
+        font-weight: bold
+
+  .nav-tabs
+    li
+      width: 120px
+      text-align: center
+      font-size: 13px
+
+      a
+        border-radius: 0
+        border-left: 1px solid $btnBorder
+        border-top: 1px solid $btnBorder
+        border-bottom: 1px solid $btnBorder
+        border-right: none
+        margin: 0
+        background-color: #f8f8f8
+        color: #808080
+        min-height: 20px
+
+        .label
+          margin-left: 5px
+          font-size: 11px
+
+        .label-important
+          background-color: #ff4040
+
+      a:hover
+      a:focus
+        background-color: $grayLighter
+
+      &.wide
+        width: 150px
+        text-align: left
+
+        a
+          padding-left: 20px
+          padding-right: 20px
+
+    li:last-child
+      a
+        border-right: 1px solid #ccc
+
+      a:hover
+        border-right: 1px solid #ccc
+
+    .active
+      a
+        border-bottom: 1px solid #fff
+        background-color: #fff
+
+      a:hover
+        border-color: #ccc
+        border-bottom: 1px solid #fff
+        border-right: none
+        background-color: #fff
+
+.tabset-pills-container
+  .nav-pills
+    margin-bottom: 5px
+
+    > li
+      cursor: pointer
+      text-align: center
+      display: inline-block
+
+      > a
+        border-radius: 0
+        margin: 0
+        border-left: 1px solid #ccc
+        border-top: 1px solid #ccc
+        border-bottom: 1px solid #ccc
+        border-right: none
+
+    li:last-child
+      > a
+        border-right: 1px solid #ccc
+
+      > a:hover
+        border-right: 1px solid #ccc
+
+    > .active > a, >.active > a:hover, .active > a:focus
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)
+      
+  &.right
+    .nav-pills
+      text-align: right
+      
+      > li
+        float: none
+        width: 250px
+
+
+.nav-tabs-small
+  background: $white
+
+  &.fixed
+    position: fixed
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1)
+    width: 940px
+    // z-index lowered to allow elements with drop downs to display over .planner-stats-tabs
+    z-index: 2
+
+  &.collapsed
+    .tab-content
+      display: none
+
+    .tab-item.active
+      border-bottom: 1px solid $btnBorder
+
+  .tabbable
+    background-color: $white
+
+  .nav-tabs
+    margin-bottom: 0
+    border-top: 1px solid $btnBorder
+
+    li
+      width: 110px
+      box-sizing(border-box)
+      border-left: 1px solid $btnBorder
+      border-bottom: 1px solid $btnBorder
+      margin-right: 0px
+      text-align: center
+      margin-bottom: -1px
+
+      .active a
+        color: #808080
+
+    li:first-child
+      border-left: none
+
+    .tab-item-last
+      border-right: 1px solid $btnBorder
+
+    .tab-item
+      width: 125px
+      background-color: #f8f8f8
+      padding: none
+      font-size: 12px
+
+      a
+        padding: 0
+        width: 123px
+        padding: 4px 4px 4px 10px
+        box-sizing: border-box
+        border: none
+        color: #808080
+        text-align: left
+
+        .icon
+          float: right
+
+      > a
+      > a:hover
+      > a:focus
+        cursor: pointer
+
+    > .active
+      border-bottom: 1px solid $white
+
+      > a
+      > a:hover
+      > a:focus
+        background-color: $white
+        cursor: pointer
+
+      &.active
+        background-color: $white
+
+    ul
+      height: 40px
+      font-size: 12px
+
+  .tab-content
+    border-bottom: 1px solid $btnBorder
+    border-collapse: collapse
+
+  .nav-tabs > li > a
+    border-radius(0)
+    width: 130px
+    text-align: center
+    margin-right: 0
+
+  li.collapse-expand-controls
+    margin-left: 10px
+    display: inline-block
+    margin: 3px 1px
+    border-bottom: none
+    width: 39px
+
+  .charts-expanded
+    position: relative
+    height: 152px
+
+    .item-value
+      line-height: 130px
+      margin-left: 20px
+      margin-top: -10px
+
+  .single-stat
+    vertical-align: middle
+    display: inline-block
+    height: 60px
+
+  li.source-name
+    float: right
+    width: 300px
+    border-left: none
+    text-align: right
+    height: 27px
+    line-height: 25px
+    color: #d2d3d3
+
+    .select2-container
+      border: none
+      border-left: 1px solid $btnBorder
+      margin-left: 6px
+      font-size: 12px
+      vertical-align: top
+      min-width: 100px
+
+      .select2-choice
+        height: 25px
+        line-height: 25px

@@ -1,0 +1,181 @@
+@import variable
+@import mixin
+
+//- Step Menu
+
+.step-menu
+  font-size: 13px
+  margin: 0 0 9px 20px
+
+  .step-description
+    padding-left: 5px
+    float: none
+    position: static
+    top: 0px
+    display: inline-block
+    vertical-align: middle
+
+  .step
+    list-style: none
+    margin-bottom: 14px
+
+.step
+  color: #bbb
+
+  &.enabled
+    color: #585858
+
+  a
+    color: #bbb
+    height: 22px
+    line-height: 22px
+    padding: 7px 10px
+    display: block
+    cursor: default
+
+  &.enabled a
+    cursor: pointer
+    color: #585858
+
+  &.enabled .number-circle
+    border: 1px solid #585858
+
+  &.enabled a:hover
+  &.current
+    text-decoration: none
+    background-color: $content-background-color
+
+.number-circle
+  border-radius(500px)
+  width: 14px
+  height: 14px
+  padding: 3px
+  border: 1px solid #bbb
+  display: inline-block
+  line-height: 14px
+  text-align: center
+  vertical-align: middle
+
+.arrow-step-menu-3
+  arrow-step-menu(3)
+
+$arrow-step-menu-grey = #414141
+$arrow-step-menu-grey-hover = #5a5a5a
+$arrow-step-menu-blue = #3cf
+$arrow-step-menu-blue-hover = #00b4ff
+
+.arrow-step-menu
+  display: inline-block
+  vertical-align: middle
+
+  > div
+    line-height: 16px
+
+  ol
+    list-style: none
+    margin: 0
+    overflow: hidden
+
+  .arrow-step
+    background-color: #d2d3d3
+    color: #fff
+    float: left
+    height: 26px
+    min-width: 110px
+    box-sizing(border-box)
+
+    &:first-child
+      border-radius(2px 0 0 2px)
+
+      a
+        padding-left: 5px
+
+  .step-number
+    border-radius(15px)
+    padding: 0px 4px
+    border: 1px solid #fff
+    margin-right: 4px
+    background-color: #fff
+    color: #d2d3d3
+
+  a
+    font-size: 12px
+    padding: 0 0 0 18px
+    position: relative
+    text-align: left
+    color: #fff
+    box-sizing: border-box
+    display: inline-block
+    line-height: 26px
+    width: 100%
+    vertical-align: middle
+    text-decoration: none
+
+    &:hover
+    &:active
+    &:focus
+      text-decoration: none
+
+    &:focus
+      outline: none
+
+    &:before,
+    &:after
+      border-bottom: 21px solid transparent
+      border-top: 21px solid transparent
+      content: " "
+      display: block
+      height: 0
+      left: 100%
+      margin-top: -21px
+      position: absolute
+      top: 50%
+      width: 0
+
+    &:before
+      border-left: 11px solid #fff
+      margin-left: 2px
+
+    &:after
+      border-left: 11px solid #d2d3d3
+
+  .active
+    cursor: pointer
+
+.arrow-step-menu-grey
+  arrow-step-menu-color($arrow-step-menu-grey, $arrow-step-menu-grey-hover)
+
+.arrow-step-menu-blue
+  arrow-step-menu-color($arrow-step-menu-blue, $arrow-step-menu-blue-hover)
+
+.step-action-bar
+  background-color: $white
+  font-size: 16px
+  border-bottom: 1px solid $btnBorder
+
+  span
+    display: inline-block
+
+  .bar-content
+    width: 100%
+    display: inline-block
+    padding-right: 280px
+    box-sizing(border-box)
+
+    .highlight
+      background-color: rgb(51, 51, 51)
+      color: rgb(255, 255, 255)
+      font-weight: bold
+      padding: 3px 8px
+      width: 52px
+
+    .title
+      padding: 0 7px
+
+  .btn-bar
+    line-height: 25px
+    padding: 12px 0 12px 16px
+    vertical-align: middle
+    width: 350px
+    margin-left: -366px
+    text-align: right

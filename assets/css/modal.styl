@@ -1,0 +1,158 @@
+//- Modals
+
+.modal
+  //- Large modals used in adslot edit
+  &.large
+    border: solid 10px #cfcfcf
+    border-radius(0)
+    width: 800px
+    margin: 0 0 0 -400px
+    overflow-y: auto
+
+    h4
+      display: inline-block
+      vertical-align: middle
+
+    .modal-container
+      margin: 16px
+
+    .modal-header
+      padding: 0
+      border-bottom: none
+      line-height: 40px
+
+      .flash-messages
+        width: auto
+        position: static
+        line-height: 18px
+        padding: 4px
+
+    .modal-body
+      margin-top: 20px
+      overflow-y: visible
+      padding: 0
+      max-height: none
+      min-height: 400px
+      position: relative
+
+    .alert
+      margin-top: 6px
+      margin-bottom: 15px
+
+    .description
+      padding: 20px 0 30px 0
+
+    span.title
+    span.value
+      width: 220px
+      display: inline-block
+
+    .title
+    .title-input
+      font-weight: bold
+      font-size: 12px
+
+    .title
+      padding: 32px 0 5px 0
+
+    .title-input
+      padding: 0 0 5px 0
+
+    .value
+      font-size: 12px
+
+    .total
+      color: #44aacc
+      font-size: 20px
+
+    .video
+      float: left
+
+    .steps
+      float: right
+      width: 358px
+
+      ol
+        margin-left: 20px
+
+    .help-block
+      font-size: 11px
+      color: #999
+
+    .nav-buttons
+      margin-right: 0
+      margin-bottom: 0
+      position: absolute
+      right: 0
+      bottom: 0
+
+  //- confirm dialogs
+
+  &.confirm
+    border-radius(0)
+    width: 500px
+    height: 200px
+
+    .modal-body
+      min-height: 100px
+
+.loading
+  top: 90px
+  left: 240px
+  width: 300px
+  min-height: 115px
+  position: absolute
+  border-color: #44aacc
+  background-color: #44aacc
+  text-align: center
+  z-index: 10 //- should float above other items
+  border-radius(2px)
+
+  .loading-spinner
+    height: 36px
+    border: none
+    display: inline-block
+    margin-top: 23px
+
+  .loading-message-container
+    padding: 15px
+
+  .loading-message
+    padding: 5px
+    color: #ffffff
+    line-height: 16px
+    vertical-align: middle
+    display: inline-block
+
+.error-dialog
+  top: 150px
+  left: 170px
+  width: 350px
+  position: absolute
+  border-color: #f00
+  border-style: solid
+  border-width: 2px
+  background-color: #f66
+  padding: 15px
+  font-weight: bold
+  text-align: center
+  z-index: 10
+
+.modal.hide.fade.ok-cancel-modal
+  top: 25%
+  border-radius(2px)
+
+  width: 420px
+
+  .modal-body
+    padding: 20px
+    padding-bottom: 0
+    p
+      padding-bottom: 10px
+    p:last-child
+      padding-bottom: 0px
+
+  .modal-footer
+    padding-top: 10px
+    background-color: inherit
+    border-top: none

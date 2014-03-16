@@ -1,0 +1,37 @@
+@import "variable.styl"
+@import "layout-base.styl"
+
+/* -------------- Header -------------- */
+
+.header-logo
+  .logo
+    background: url("/common/images/publisher-logo.png") no-repeat
+
+/* -------------- Navigation -------------- */
+
+.navbar
+  .nav
+    > li
+      .item
+        &.selected,
+        &:hover
+          background-color: #0c0
+
+    .dropdown
+      &.open
+      &.active
+      &.open.active
+        .item.dropdown-toggle
+          background-color: #0c0
+
+/* -------------- Content -------------- */
+
+.content-wrapper
+.content-wrapper-nav
+  min-height: 400px
+  padding: 20px 0
+  background-color: #fff
+
+.content-wrapper-nav
+  margin-top: $nav-bar-height
+  background-color: $content-background-color

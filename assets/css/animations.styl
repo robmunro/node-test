@@ -1,0 +1,95 @@
+.animation-fade-in-setup
+.animation-fade-out-setup
+  transition-ease(400ms)
+
+.animation-fade-in-setup.animation-fade-in-start
+.animation-fade-out-setup
+  opacity: 1
+  
+.animation-fade-out-setup.animation-fade-out-start
+.animation-fade-in-setup
+  opacity: 0
+
+.animation-slide-down-setup
+.animation-slide-up-setup
+.animation-slide-left-setup
+.animation-slide-right-setup
+  transition-linear(400ms)
+
+.animation-slide-down-setup.animation-slide-down-start
+.animation-slide-up-setup
+  opacity: 1
+
+.animation-slide-up-setup.animation-slide-up-start
+.animation-slide-down-setup
+  opacity: 0
+  height: 0
+
+.box-show-setup
+  opacity: 0
+  height: 0
+
+.box-show-setup.box-show-start
+  opacity:1
+  height: 100px
+
+.box-hide-setup
+  opacity:1
+  height: 0
+
+.box-hide-setup.box-hide-start
+  opacity:0
+  height: 100px
+
+.animation-slide-left-setup
+  width: 220px
+
+.animation-slide-left-start
+  width: 0
+
+.animation-slide-right-setup
+  width: 0
+
+.animation-slide-right-start
+  width: 220px
+
+.animation-grow-setup
+  width: 368px
+
+.animation-grow-start
+  width: 588px
+
+.animation-shrink-setup
+  width: 588px
+
+.animation-shrink-setup
+  width: 368px
+
+.load-fade-in
+  load-fade-in(1.5s)
+
+.load-delay-first
+  load-delay(0.7s)
+
+.load-delay-second
+  load-delay(1.2s)
+
+// Gotcha for Angular animations - put transition on '-active' class not base class
+.fade-hide.fade-hide-active
+.fade-show.fade-show-active
+  -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+  -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+  -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+  -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+  transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+
+.fade-show
+.fade-hide.fade-hide-active
+    opacity: 0
+    height: 0px
+
+.fade-hide
+.fade-show.fade-show-active
+    opacity: 1
+    height: 68px
+

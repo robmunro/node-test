@@ -1,0 +1,58 @@
+/*
+ * Customize bootstrap for adslot:
+ */
+
+// Core variables and mixins
+@import "variable" // Use customized variables
+@import "../../../common/public/bootstrap/stylus/mixins"
+
+// CSS Reset
+@import "../../../common/public/bootstrap/stylus/reset"
+
+// Grid system and page structure
+@import "../../../common/public/bootstrap/stylus/scaffolding"
+@import "../../../common/public/bootstrap/stylus/grid"
+@import "../../../common/public/bootstrap/stylus/layouts"
+
+// Base CSS
+@import "../../../common/public/bootstrap/stylus/type"
+@import "../../../common/public/bootstrap/stylus/code"
+@import "../../../common/public/bootstrap/stylus/forms"
+@import "../../../common/public/bootstrap/stylus/tables"
+
+// Components: common
+@import "../../../common/public/bootstrap/stylus/sprites"
+@import "../../../common/public/bootstrap/stylus/dropdowns"
+@import "../../../common/public/bootstrap/stylus/wells"
+@import "../../../common/public/bootstrap/stylus/component-animations"
+@import "../../../common/public/bootstrap/stylus/close"
+
+// Components: Buttons & Alerts
+@import "../../../common/public/bootstrap/stylus/buttons"
+@import "../../../common/public/bootstrap/stylus/button-groups"
+@import "../../../common/public/bootstrap/stylus/alerts" // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "../../../common/public/bootstrap/stylus/navs"
+@import "../../../common/public/bootstrap/stylus/navbar"
+@import "../../../common/public/bootstrap/stylus/breadcrumbs"
+@import "../../../common/public/bootstrap/stylus/pagination"
+@import "../../../common/public/bootstrap/stylus/pager"
+
+// Components: Popovers
+@import "../../../common/public/bootstrap/stylus/modals"
+@import "../../../common/public/bootstrap/stylus/tooltip"
+@import "../../../common/public/bootstrap/stylus/popovers"
+
+// Components: Misc
+@import "../../../common/public/bootstrap/stylus/thumbnails"
+@import "../../../common/public/bootstrap/stylus/media"
+@import "../../../common/public/bootstrap/stylus/labels-badges"
+@import "../../../common/public/bootstrap/stylus/progress-bars"
+@import "../../../common/public/bootstrap/stylus/accordion"
+@import "../../../common/public/bootstrap/stylus/carousel"
+@import "../../../common/public/bootstrap/stylus/hero-unit"
+
+// Utility classes
+@import "../../../common/public/bootstrap/stylus/utilities" // Has to be last to override when necessary
+

@@ -1,0 +1,33 @@
+//- variables are injected by whitelabel middleware
+.{$namespace}
+  background-color: white
+
+  .header
+    background-color: $headerBgColor !important
+
+  .header-logo
+    a
+      .logo
+        max-width: 225px
+        max-height: 60px
+        background-image: url($headerLogoUrl)
+
+  .nav-bar-wrapper
+    background-color: $navBgColor !important
+
+    .navbar li
+      border-color: $navBgHoverColor !important
+
+  .footer
+    .logo-container
+      text-align: center
+      padding-top: 10px
+
+      .logo
+        background: url($footerLogoUrl) no-repeat center center !important
+        min-height: 50px
+        width: 100
+
+    .quick-links
+      text-align: center
+

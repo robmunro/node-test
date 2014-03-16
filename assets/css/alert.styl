@@ -1,0 +1,56 @@
+@import 'variable.styl'
+
+.alert
+  text-align: center
+  text-shadow: none
+  color: $white
+  border-radius(3px)
+  font-size: 14px
+
+  .close
+    text-shadow: none
+    top: 0
+    color: $white
+    opacity: 0.75
+
+  a
+    text-decoration: underline
+    color: $white
+
+  &.alert-confirmation
+    background-color: $confirmationBackground
+    border-color: $confirmationBorder
+
+  h4
+  &.alert-info
+  &.alert-error
+  &.alert-success
+  &.alert-warning
+  &.alert-danger
+    text-shadow: none
+
+.flash-messages
+  position: fixed
+  width: 940px
+  z-index: 10000
+  top: 15px
+  line-height: 18px
+
+  //- Error, Warning, Success and Info Messages - overrides from bootstrap v2.3.1
+  .alert
+    text-shadow: none
+    text-align: center
+    padding: 4px 1px 4px 14px
+    color: #fff
+    margin-bottom: 0
+
+    hr
+      margin-right: 24px
+      border-top: 0
+
+    .close
+      position: relative
+      top: 7px
+      right: -2px
+      line-height: normal
+

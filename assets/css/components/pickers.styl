@@ -1,0 +1,283 @@
+@import "../variable"
+
+// TODO factor all these out to have type .component-picker as
+// there seems to be a lot of common style.
+.component-date-range-picker
+.component-impression-picker
+.component-sov-picker
+.component-targeting-picker
+  width: 192px
+  font-size: 12px
+
+  .spinner
+    display: inline-block
+    height: 26px
+    width: 26px
+    vertical-align: middle
+
+  .dropdown
+    display: inline-block
+    vertical-align: middle
+
+    .error-container
+      display: none
+
+  .dropdown.open
+    background-color: #f8f8f8
+
+    .popover
+      opacity: 0
+
+  .dropdown.disabled
+    opacity: 0.5
+
+  .dropdown.checking
+    background-color: #feedd5
+
+    .popover
+      opacity: 0
+
+  .dropdown.open.checking
+  .dropdown.open.disabled
+    .dropdown-menu
+      display: none
+
+  .dropdown.error
+    background-color: #fff
+    border: 1px solid $danger-color
+
+    .error-container
+      display: block
+
+    .popover
+      border-color: $danger-color
+      color: $danger-color
+      min-width: 300px
+      max-width: 350px
+
+      .arrow
+        border-bottom-color: $danger-color
+
+  .dropdown-toggle
+    display: inline-block
+    cursor: pointer
+    padding: 3px 7px
+    background-color: #fff
+
+    span
+      display: inline-block
+      vertical-align: top
+
+    .text
+      width: 128px
+
+  .dropdown-menu
+    padding: 7px 10px 7px 10px
+
+    .error-msg
+      background-color: $danger-color
+      color: #fff
+      text-align: left
+      padding: 3px 7px
+      margin-bottom: 10px
+
+    .actions
+      padding: 10px
+      background-color: #ebebeb
+      height: 24px
+      margin: 0 -10px -7px -10px
+
+      .btn
+        margin-right: 5px
+
+      .btn:last-child
+        margin-right: 0
+
+      a.reset-price
+        color: $danger-color
+        text-decoration: underline
+        cursor: pointer
+
+    input
+      height: 14px
+      border: 1px solid $grayLighter
+
+
+
+.component-date-range-picker
+.component-impression-picker
+.component-sov-picker
+.component-targeting-picker
+  .dropdown
+    background-color: #f8f8f8
+
+  .alert
+    text-align: left
+    margin-bottom: 10px
+
+    .alert-message
+      display: inline-block
+
+    .close
+      margin-top: 3px
+      padding: 0
+
+.component-impression-picker
+.component-sov-picker
+  width: 190px
+  display: inline-block
+  text-align: left
+
+  .dropdown
+    vertical-align: top
+
+  .dropdown-toggle .text
+    width: 95px
+
+.component-date-range-picker
+  width: 186px
+
+  .error-container
+    margin-left: 10px
+
+  .dropdown-menu
+    padding: 7px 10px 7px 0
+    width: 388px
+
+    .alert-message
+      width: 340px
+
+    .date-range-picker-container
+      width: 184px
+      display: inline-block
+      margin-left: 10px
+      margin-bottom: 10px
+      vertical-align: top
+
+    .date-title
+      width: 164px
+      color: $gray
+      padding-bottom: 5px
+
+    .dr-sov
+      background-color: #f8f8f8
+      min-height: 138px
+      padding: 20px
+      width: 140px
+      border: 1px solid #ddd
+
+      select
+      .select2-container
+        font-size: 12px
+        width: 100%
+
+      label
+        font-size: 12px
+        margin-top: 5px
+
+    .dr-start-date, .dr-end-date
+      width: 180px
+      border: 1px solid #ddd
+      height: 178px
+
+    .actions
+      margin-left: 0
+
+.component-impression-picker
+  .dropdown-menu
+    width: 330px
+
+    .alert-message
+      width: 292px
+
+    input
+      font-size: 12px
+
+    .title
+      color: #ccc
+
+    .value
+      line-height: 23px
+
+    .min-label, .max-label
+      color: $gray-lightishish
+
+    .max-label
+      text-align: right
+
+.component-sov-picker
+  .dropdown-menu
+    width: 300px
+
+    .alert-message
+      width: 262px
+
+  label
+  .discount
+    font-size: 12px
+    display: inline-block
+
+  label
+    width: 120px
+
+  .price
+    width: 109px
+    display: inline-block
+    text-align: right
+    padding-right: 5px
+    font-size: 12px
+    font-weight: normal
+
+  .discount
+    color: #f05d5d
+    display: inline-block
+
+  .price
+  .discount
+    vertical-align: top
+
+.component-targeting-picker
+  width: 110px
+
+  .dropdown-toggle
+    .text
+      width: 42px
+
+  .dropdown-menu
+    width: 400px
+
+    .row-targeting
+      margin-bottom: 10px
+
+    .alert-message
+      width: 350px
+
+    .select2-choices
+      max-height: 100px
+      overflow-y: auto
+
+    .select2-search-choice
+      border-radius(0)
+      border: none
+      background-color: #808285
+
+      .select2-search-choice-close
+        padding: 0
+        left: auto
+        background-position: 0px -336px
+
+      .select2-search-choice-close:hover
+        background-color: transparent
+        color: #fff
+        background-position: -16px -336px
+
+  .help-block
+    margin-bottom: 5px;
+    margin-top: -5px;
+
+  .dropdown-menu li:hover > .select2-search-choice-close
+    background-color: transparent
+    color: #fff
+
+.select2-results .select2-result-label .kw-price
+  float: right

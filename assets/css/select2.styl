@@ -1,0 +1,166 @@
+@import "variable.styl"
+@import "mixin.styl"
+
+/* Adslot select2 overrides */
+
+select
+.select2-container
+  vertical-align: middle
+
+  &.input-mini
+    width: 74px
+
+  &.input-small
+    width: 104px
+
+  &.input-medium
+    width: 164px
+
+  &.input-large
+    width: 224px
+
+  &.input-xlarge
+    width: 429px
+
+  &.input-xxlarge
+    width: 544px
+
+.select2-container
+.select2-drop
+.select2-search
+.select2-search input
+  box-sizing(border-box)
+  font-size: 11px
+
+.select2-container
+  background-color: #fff
+  margin-bottom: 0
+  border-radius(0) !important
+  margin-right: 3px
+  margin-top: 0px
+  border: 1px solid $gray-lightish
+
+.select2-container
+  .select2-choice
+    background-image: none
+    border-radius(0)
+    border: none
+    background: none
+    height: 28px
+    line-height: 28px
+
+    > div
+      background: none
+
+.select2-container.select2-container-disabled
+  .select2-choice
+    border: none
+
+
+.select2-container.select2-drop-above .select2-choice
+  border-radius(0)
+  background-image: none
+
+.select2-container .select2-choice abbr
+  background: url(/common/images/select2/select2.png) right top no-repeat
+
+.select2-drop
+.select2-drop.select2-drop-above
+.select2-dropdown-open .select2-choice
+  border-radius(0)
+  box-shadow(0)
+
+.select2-drop
+  border: none
+  margin-top: 4px
+
+.select2-container .select2-choice .select2-arrow
+  background: none
+  border-radius(0)
+  border-left: none
+
+.select2-container .select2-choice div b
+  background: url(/common/images/select2/select2.png) no-repeat 0 1px
+
+.select2-search
+  padding-top: 4px
+
+.select2-search input
+  background: #fff url(/common/images/select2/select2.png) no-repeat 100% -22px
+  border: 1px solid #ccc
+
+.select2-search input.select2-active
+  background: #fff url(/common/images/select2/spinner.gif) no-repeat 100%
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee))
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%)
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%)
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, -o-linear-gradient(bottom, white 85%, #eeeeee 99%)
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, -ms-linear-gradient(top, #ffffff 85%, #eeeeee 99%)
+  background: url(/common/images/select2/spinner.gif) no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%)
+
+.select2-container-active .select2-choice
+.select2-container-active .select2-choices
+  box-shadow(0)
+
+.select2-dropdown-open
+  border: 1px solid #aaa
+
+.select2-dropdown-open .select2-choice
+  box-shadow(0)
+  background-color: none
+  background-image: none
+
+.select2-results .select2-highlighted
+  background: #f7f7f7
+  color: inherit
+
+.select2-more-results.select2-active
+  background: #f4f4f4 url(/common/images/select2/spinner.gif) no-repeat 100%
+
+/* multiselect */
+
+.select2-container-multi .select2-choices
+.select2-container-multi.select2-container-active .select2-choices
+  background-image: none
+  box-shadow(0)
+  border: none
+
+.select2-container-multi .select2-choices
+  min-height: 28px
+
+  .select2-search-field input.select2-active
+    background: #fff url(/common/images/select2/spinner.gif) no-repeat 100% !important
+
+  .select2-search-choice
+    background-clip(none)
+    background-color: #4ac
+    background-image: none
+    color: #fff
+    border: 1px solid #4ac
+    line-height: 20px
+    padding: 0 22px 0 3px
+    margin: 3px 0 3px 3px
+
+  .select2-search-choice-focus
+    background: #4499cc
+
+  .select2-search-choice .select2-search-choice-close:hover
+  .select2-search-choice-focus .select2-search-choice-close
+    background-position: -16px -112px
+
+.select2-container-multi .select2-search-choice-close
+.select2-search-choice-close
+  top: 2px
+  right: 1px
+  left: auto
+  width: 16px
+  height: 16px
+  background: url(/common/images/icons/icons-16px-20140203.png)
+  background-position: 0px -112px
+
+.select2-search-choice > div
+  display: inline-block !important
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5)
+  .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice div b
+    background-image: url(/common/images/select2/select2x2.png) !important

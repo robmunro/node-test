@@ -1,0 +1,67 @@
+@import "variable.styl"
+
+/* This file contains styles for date range picker and month picker */
+.calendar-picker
+  .dropdown
+    display: inline-block
+    vertical-align: middle
+    padding: 0 5px
+
+    &.open
+      .dropdown-toggle
+        background-color: #ccc
+
+    &.checking
+      background-color: #feedd5
+
+  .dropdown-toggle
+    display: inline-block
+    text-align: center
+    padding: 4px 5px
+    border: 1px solid $dropdownBorder
+
+    i.icon-calendar
+      width: 14px
+      height: 14px
+
+  .dropdown-menu
+    padding: 15px
+    width: 395px
+
+  .actions
+    margin-top: 10px
+
+
+div.mtz-monthpicker
+  margin-bottom: 5px
+
+.mtz-monthpicker
+  text-align: center
+
+  .ui-state-default
+    border: 1px solid $grayLight
+    color: $grayDark
+
+  td
+    cursor: pointer
+    background: none
+    box-shadow: none
+    text-align: center
+    height: 40px
+    width: 113px
+
+    &:hover
+      background-color: $dropdownBorder
+
+  .ui-state-disabled
+    background-color: #bcbcbc
+    cursor: not-allowed
+    color: $grayDark
+
+
+.mtz-monthpicker-year
+  width: 100px
+
+  .select2-choice
+    text-align: center
+

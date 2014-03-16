@@ -1,0 +1,140 @@
+@import "variable.styl"
+
+.ui-datepicker
+  // Stops checkboxes bleeding though, must be important to override inline style from plugin
+  // 1055 is a rather arbitrary number, with the only requirement of being larger than the
+  // Change Request modal (currently 1050).
+  z-index: 1055 !important
+  background-color: $white
+  display: none
+  border: 1px solid $grayLighter
+  padding: 10px
+
+  table
+    width: 100%
+    border-collapse: collapse
+
+  &.ui-datepicker-inline
+    padding: 3px 8px
+    border: none
+    display: none
+
+  .ui-datepicker-calendar
+    width: 100%
+
+  .ui-datepicker-header
+    display: table
+    clear: both
+
+  .ui-datepicker-prev
+  .ui-datepicker-next
+    color: $btnPrimaryBackground
+    margin: 5px 0px
+    padding: 0
+    background-image: url(/common/images/icons/icons-16px-20140203.png)
+    height: 16px
+    width: 16px
+    background-color: transparent
+    border: none
+
+    .ui-icon
+      display: none
+
+    &.ui-state-disabled
+      background-image: none
+      cursor: default
+
+  .ui-datepicker-prev
+  .ui-datepicker-title
+    float: left
+
+  .ui-datepicker-next
+    float: right
+
+  .ui-datepicker-title
+    padding: 3px 0px
+    width: 147px
+    text-align: center
+
+
+  .ui-datepicker-prev
+    background-position: 0px -192px
+
+  .ui-datepicker-prev:hover
+    background-position: -16px -192px
+
+  .ui-datepicker-next
+    background-position: 0px -224px
+
+  .ui-datepicker-next:hover
+    background-position: -16px -224px
+
+  .ui-state-default.ui-state-active
+  .ui-state-default:not(.ui-state-disabled):hover
+    background-color: $btnPrimaryBackground
+    color: $white
+
+  .ui-state-default
+    background-color: $white
+    color: $gray-lightishish
+    border: none
+    background-image: none
+    font-size: 11px
+
+    &.ui-state-disabled
+    &.ui-state-secondary
+      color: $gray-lighter
+
+  th > span
+    color: $gray
+
+  th
+    padding-bottom: 2px
+
+  td
+  th
+    text-align: center
+    color: #aaa
+    text-align: right
+    padding: 1px 0px
+    font-weight: normal
+    font-size: 11px
+
+  a,
+  td > span
+    padding: 4px 6px
+    color: #333
+
+  td > button,
+  th > span
+    padding: 0px 4px
+
+  .ui-state-disabled
+  .ui-state-disabled .ui-state-default
+    color: $gray-lighter
+    cursor: not-allowed
+
+    &:hover
+      color: $gray-lighter
+      background-color: $white
+
+  .ui-datepicker-title
+    width: 126px
+
+  a.ui-state-active
+    color: $white
+    background-color: $media-dark-blue
+
+  a:hover
+    text-decoration: none
+    background-color: $media-dark-blue
+    cursor: pointer
+    color: $white
+
+.datepicker
+  input
+    margin-bottom: 0
+
+  .icon
+    margin-left: -23px
+

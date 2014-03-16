@@ -1,0 +1,570 @@
+//- General
+
+.icon
+.icon-big
+.icon-xlarge
+  display: inline-block
+  vertical-align: middle
+  background-image: url(/common/images/icons/icons-16px-20140203.png)
+  height: 16px
+  width: 16px
+  background-color: transparent
+  background-position: 0px 0px
+  border: none
+
+.btn .icon
+  vertical-align: text-top
+
+.icon-inside-tab
+  margin-right: 2px
+  vertical-align: top
+
+// reset icon- stemming class in bootstrap
+[class^="icon-"]
+[class*=" icon-"]
+  display: inline-block
+  background-repeat: no-repeat
+  line-height: 16px
+  height: 16px
+  width: 16px
+
+//- Large icon set
+
+[class^="icon-big"]
+[class*=" icon-big"]
+  height: 30px
+  width: 30px
+  line-height: 30px
+
+[class^="icon-xlarge"]
+[class*=" icon-xlarge"]
+  height: 100px
+  width: 100px
+  line-height: 100px
+
+.icon-xlarge
+  background-image: url(/common/images/icons/icons-100px-20140205.png)
+  margin-top: 0px
+
+  &.icon-upload
+    background-position: -100px 0
+
+  &.icon-create
+    background-position: -100px -100px
+
+  &.icon-adtag
+    background-position: -100px -200px
+
+  &.icon-optimise
+    background-position: -100px -500px
+
+  &.icon-plans
+    background-position: -100px -600px
+
+  &.icon-comscore
+    background-position: -100px -700px
+
+  &.icon-people
+    background-position: -100px -800px
+
+  &.icon-calendar
+    background-position: -100px -900px
+
+  &.icon-star
+    background-position: -100px -1000px
+
+.icon-big
+  background-image: url(/common/images/icons/icons-30px-20131120.png)
+  margin-top: 0px
+
+  &.icon-collapse
+    background-position: 0 0
+
+    &:hover
+      background-position: -30px 0
+
+  &.icon-expand
+    background-position: 0 -30px
+
+    &:hover
+      background-position: -30px -30px
+
+  &.icon-audience
+    background-position: 0 -60px
+
+    &:hover
+      background-position: -30px -60px
+
+    &.active
+      background-position: -30px -90px
+
+  &.icon-demographics
+    background-position: 0 -120px
+
+    &:hover
+      background-position: -30px -120px
+
+    &.active
+      background-position: -30px -150px
+
+  &.icon-save
+    background-position: 0 -210px
+
+    &:hover
+      background-position: -30px -210px
+
+  &.icon-duplicate
+    background-position: 0 -240px
+
+    &:hover
+      background-position: -30px -240px
+
+  &.icon-search-white
+    background-position: 0 -270px
+
+    &:hover
+      background-position: -30px -270px
+
+  &.icon-preview
+    background-position: 0 -300px
+
+    &:hover
+    a:hover
+      background-position: -30px -300px
+
+  &.icon-keyword
+    background-position: 0 -330px
+
+    &:hover
+    a:hover
+      background-position: -30px -330px
+
+  &.icon-geo
+    background-position: 0 -360px
+
+    &:hover
+    a:hover
+      background-position: -30px -360px
+
+  &.icon-pdf
+    background-position: 0 -390px
+
+    &:hover
+    a:hover
+      background-position: -30px -390px
+
+  &.icon-cart
+  &.icon-cart:hover
+    background-position: -30px -420px
+
+  &.icon-back
+    background-position: 0 -540px
+
+  &.icon-advertiser
+    background-position: 0 -480px
+
+  &.icon-publisher
+    background-position: 0 -510px
+
+  //TODO: These icons need to be placed in the 30px sprite map.
+  &.icon-media-marketplace
+    background-image: url('/common/images/icons/demand-sources/Media-Marketplace-Logo.png') !important
+    background-position: 0px 0px
+
+  &.icon-media-mediapage
+    background-image: url('/common/images/icons/demand-sources/Media-MediaPage-Logo.png') !important
+    background-position: 0px 0px
+
+  &.icon-media-salesrole
+    background-image: url('/common/images/icons/demand-sources/Pub-SalesUser-Logo.png') !important
+    background-position: 0px 0px
+
+
+//- Small icon set
+
+.icon-login
+  background-position: 0px 0px
+
+.icon-login:hover
+  background-position: -16px 0px
+
+.icon-caret
+  background-position: 0px -16px
+
+.icon-caret:hover
+  background-position: -16px -16px
+
+.icon-caret-dark
+  background-position: -16px -16px
+
+.icon-caret-dark:hover
+  background-position: 0px -16px
+
+.icon-help
+  background-position: 0px -32px
+  margin-top: 0
+
+.icon-help:hover
+  background-position: -16px -32px
+
+.icon-error-close
+  background-position: 0px -80px
+
+.icon-error-close:hover
+  background-position: -16px -80px
+
+.icon-warning-close
+  background-position: 0px -96px
+
+.icon-warning-close:hover
+  background-position: -16px -96px
+
+.icon-info-close
+  background-position: 0px -112px
+
+.icon-info-close:hover
+  background-position: -16px -112px
+
+// error icon
+.icon-error-close
+  background-position: 0px -80px
+
+.icon-error-close:hover
+  background-position: -16px -80px
+
+// warning icon
+.icon-warning-close
+  background-position: 0px -96px
+
+.icon-warning-close:hover
+  background-position: -16px -96px
+
+//success icon
+.icon-success-close
+  background-position: 0px -64px
+
+.icon-success-close:hover
+  background-position: -16px -64px
+
+//success icon
+.icon-confirmation-close
+  background-position: 0px -64px
+
+.icon-confirmation-close:hover
+  background-position: -16px -64px
+
+.icon-close
+  background-position: 0px -128px
+
+.icon-close:hover
+  background-position: -16px -128px
+
+.icon-caret-white
+  background-position: 0px -144px
+
+.icon-caret-white:hover
+  background-position: 0px -144px
+
+.icon-caret-white-up
+  background-position: 0px -176px
+
+.icon-caret-white-up:hover
+  background-position: 0px -176px
+
+.icon-prev
+  background-position: 0px -192px
+
+.icon-prev:hover
+  background-position: -16px -192px
+
+.icon-calendar-small
+  background-position: 0px -208px
+
+.icon-calendar-small:hover
+  background-position: -16px -208px
+
+.icon-next
+  background-position: 0px -224px
+
+.icon-next:hover
+  background-position: -16px -224px
+
+.icon-calendar-dark
+  background-position: 0px -240px
+
+.icon-calendar-dark:hover
+  background-position: -16px -240px
+
+.icon-save
+.icon-save-inverse:hover
+.button.active .icon-save-inverse
+.button.active .icon-save-inverse:hover
+  background-position: 0px -256px
+
+.icon-save-inverse
+.icon-save:hover
+.button .icon-save-inverse:hover
+  background-position: -16px -256px
+
+.icon-share
+.icon-share-inverse:hover
+.button.active .icon-share-inverse
+.button.active .icon-share-inverse:hover
+  background-position: 0px -272px
+
+.icon-share-inverse
+.icon-share:hover
+.button .icon-share-inverse:hover
+  background-position: -16px -272px
+
+.icon-plus
+.icon-plus-inverse:hover
+.button.active .icon-plus-inverse
+.button.active .icon-plus-inverse:hover
+  background-position: 0px -288px
+
+.icon-plus-inverse
+.icon-plus:hover
+.button .icon-plus-inverse:hover
+  background-position: -16px -288px
+
+.icon-cart
+  background-position: 0px -304px
+
+.icon-cart:hover
+  background-position: 0px -304px
+
+.icon-cart-dark
+  background-position: -16px -304px
+
+.icon-green-duplicate-inverse:hover
+.icon-green-duplicate
+  background-position: 0px -320px
+
+.icon-green-duplicate-inverse
+.icon-green-duplicate:hover
+  background-position: -16px -320px
+
+.icon-reset
+  background-position: 0px -336px
+
+.icon-reset:hover
+  background-position: -16px -336px
+
+.icon-unlocked
+  background-position: 0px -352px
+
+.icon-unlocked:hover
+.icon-unlocked-dark
+  background-position: -16px -352px
+
+.icon-locked
+  background-position: 0px -368px
+
+.icon-locked:hover
+.icon-locked-dark
+  background-position: -16px -368px
+
+.icon-people-inverse
+  background-position: -16px -384px
+
+.icon-people-amber
+  background-position: -16px -1056px
+
+.icon-people-green
+  background-position: -16px -1072px
+
+.icon-people-red
+  background-position: -16px -1088px
+
+.icon-people-red
+  background-position: -16px -1088px
+
+.icon-advertiser
+  background-position: -16px -1120px
+
+.icon-publisher
+  background-position: -16px -1136px
+
+.icon-keyword
+  background-position: 0px -384px
+
+.icon-keyword:hover
+  background-position: -16px -384px
+
+.icon-add-white
+  background-position: 0px -400px
+
+.icon-add-white:hover
+  background-position: 0px -400px
+
+.icon-search
+.icon-search-dark:hover
+  background-position: 0px -416px
+
+.icon-search-dark
+.icon-search:hover
+  background-position: -16px -416px
+
+.icon-people
+.icon-people-dark:hover
+  background-position: 0px -432px
+
+.icon-people-dark
+.icon-people:hover
+  background-position: -16px -432px
+
+.icon-search-white
+  background-position: 0px -464px
+
+.icon-search-white:hover
+  background-position: -16px -464px
+
+.icon-demographics-dark
+  background-position: -16px -496px
+
+.icon-demographics-bg
+.icon-demographics-bg-inverse:hover
+.button.active.icon-demographics-bg-inverse
+.button.active.icon-demographics-bg-inverse:hover
+  background-position: 0px -496px
+
+.icon-demographics-bg:hover
+.icon-demographics-bg-inverse
+  background-position: -16px -496px
+
+.icon-audience-bg
+.icon-audience-bg-inverse:hover
+.button.active.icon-audience-bg-inverse
+.button.active.icon-audience-bg-inverse:hover
+  background-position: 0px -512px
+
+.icon-audience-bg:hover
+.icon-audience-bg-inverse
+  background-position: -16px -512px
+
+.icon-geo
+  background-position: 0px -528px
+
+.icon-geo:hover
+  background-position: -16px -528px
+
+.icon-geo-inverse
+  background-position: -16px -528px
+
+.icon-flash
+  background-position: 0 -784px
+
+.icon-image
+  background-position: 0 -800px
+
+.icon-document
+  background-position: 0 -880px
+
+.icon-document:hover
+  background-position: -16px -880px
+
+.icon-remove
+  background-position: 0px -896px
+
+.icon-remove:hover
+  background-position: -16px -896px
+
+.icon-editable
+  background-position: -16px -912px
+
+.icon-export-csv
+  background-position: 0px -928px
+
+.icon-export-csv:hover
+  background-position: -16px -928px
+
+.icon-right-arrow
+  background-position: -16px -944px
+
+.icon-collapse
+  background-position: 0px -976px
+
+.icon-collapse:hover
+  background-position: -16px -976px
+
+.icon-expand
+  background-position: 0px -992px
+
+.icon-nolock
+  background-position: 0px -1008px
+
+.icon-nolock:hover
+.icon-nolock-dark
+  background-position: -16px -1008px
+
+.icon-expand:hover
+  background-position: -16px -992px
+
+.icon-download
+  background-position: 0px -1168px
+
+.icon-download-dark
+  background-position: -16px -1168px
+
+//- Social media
+
+.social-bar
+  line-height: 78px
+  text-align: center
+  position: relative
+  border-bottom: 1px #666 solid
+
+  .icon
+    height: 28px
+    width: 28px
+    background-image: url(/common/images/social.png)
+    background-size: cover
+    display: inline-block
+    margin: 0 8px
+    vertical-align: middle
+
+  .twitter
+    background-position: 0px 0px
+
+  .facebook
+    background-position: -28px 0px
+
+  .linkedin
+    background-position: -56px 0px
+
+  .youtube
+    background-position: -84px 0px
+
+.gender-icon-large
+  height: 83px
+  line-height: 83px
+  width: 42px
+  margin: 0
+  background-image: url(/common/images/icons/icons-male-female-large-20131022.png)
+  background-repeat: no-repeat
+
+  &.inactive
+      background-image: url(/common/images/icons/icons-male-female-large-inactive-20131022.png)
+
+  &.male
+    background-position: 0 0
+
+  &.female
+    background-position: -41px 0px
+
+//- Icons in forms
+
+.search-input
+
+  input
+    border-radius(0)
+
+  .icon
+    margin-left: -20px
+    margin-bottom: 10px
+
+// Removes IE10 default icons that exist in input controls
+::-ms-clear
+  display: none
+

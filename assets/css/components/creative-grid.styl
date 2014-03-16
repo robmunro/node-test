@@ -1,0 +1,353 @@
+@import "../variable.styl"
+
+$grid-cell-width-cell-status-creative = 155px
+
+.creative-grid-preview
+  border-bottom: 1px solid $btnBorder
+
+  .preview-well
+    display: inline-block
+    width: 300px
+    background-color: $line-item-hover-color
+
+    // Refactor this greedy selector out of Sites in the future so we don't need to override it here.
+    > div
+      margin: 0
+
+    .creative-details-container
+      padding: 20px
+      border-right: 1px solid $gray-lighterer
+      margin-right: -1px
+      height: 445px
+
+      .creative-details
+        text-align: left
+        color: #ababab
+
+        a
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          width: 190px
+          display: inline-block
+          vertical-align: top
+
+    .creative-details-container.center
+      text-align: center
+
+      .nav-tabs
+        margin-bottom: 20px
+        display: inline-block
+
+        li
+          margin-right: 2px
+
+          a
+            border: none
+            background-color: $white
+
+          a:hover, a.active
+            background-color: $btnBackground
+
+          a.success
+            color: btn-success-color
+
+          a.success:hover, a.active.success
+            background-color: btn-success-color
+
+          a.warning
+            color: btn-warning-color
+
+          a.warning:hover, a.active.warning
+            background-color: btn-warning-color
+
+          a.scheduled
+            color: $status-scheduled
+
+          a.scheduled:hover, a.active.scheduled
+            background-color: $status-scheduled
+
+          a.danger
+            color: btn-danger-color
+
+          a.danger:hover, a.active.danger
+            background-color: btn-danger-color
+
+          a:hover, a.active
+            color: $white
+
+  .status-highlight
+    color: $errorText
+
+  .creative-label
+    font-size: 14px
+    font-weight: 200
+    -webkit-font-smoothing: subpixel-antialiased
+    margin-bottom: 20px
+
+    .icon
+      position: relative
+      z-index: 20
+
+  .creative-preview-container
+    display: inline-block
+    width: 260px
+    text-align: center
+    margin-bottom: 20px
+    margin-top: 60px
+
+  .creative-preview
+    display: inline-block
+    background-color: $white
+    position: relative
+    transform-origin(0% 0%)
+    border: 3px solid $color-gray
+
+    &.danger
+      border: 3px solid btn-danger-color
+
+    &.warning
+      border: 3px solid btn-warning-color
+
+    &.scheduled
+      border: 3px solid $status-scheduled
+
+    &.success
+      border: 3px solid btn-success-color
+
+    &.default
+      border: 3px solid $btnBackground
+
+    a
+    img
+    .img
+    .swf
+    .swf object
+    .creative-preview-ad-tag
+      position: absolute
+      display: inline-block
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+
+    img
+      max-width: none
+
+    .creative-preview-ad-tag
+      background-color: #66cdaa
+
+    .icon-big
+      position: absolute
+      top: 50%
+      margin-top: -15px
+      left: 50%
+      margin-left: -15px
+
+  .grid-outer-container
+    width: 638px
+    padding-top: 10px
+
+  .grid
+    overflow-y: auto
+    overflow-x: hidden
+    height: 371px
+
+    &::-webkit-scrollbar
+      width: 8px
+      height: 8px
+
+    &::-webkit-scrollbar-thumb
+      background-color: $color-grayLight
+      border-radius: 0.25em
+
+    &::-webkit-scrollbar-track
+      background-color: $color-grayLightest
+
+    .grid-row-container
+      border-bottom: 1px solid $gray-lighterer
+      width: 640px
+
+  .grid-row
+    border-top: 1px solid $gray-lighterer
+    border-left: 1px solid $gray-lighterer
+    border-bottom: none
+
+    &.selected
+      border-left-color: transparent
+      border-left-color: transparent
+
+  .grid-row:first-child
+    border-top: none
+
+  .cell
+    &.cell-products
+      width: 282px
+
+    &.cell-status
+      width: 126px
+      text-align: right
+
+    &.cell-status-wide
+      .btn
+        width 116px
+
+    &.cell-status-creative
+      width: $grid-cell-width-cell-status-creative
+      text-align: right
+      padding-right: 10px
+
+      .btn
+        width: 130px
+
+    &.cell-count
+    &.cell-dates
+      width: 120px
+
+    &.cell-scroll-padding
+      width: 0
+
+  .creative-action-container
+    margin-bottom: 0
+
+    .creative-status
+      .creative-status-triangle
+        margin-top: -10px
+        height: 10px
+        text-align: right
+
+        .triangle-top
+          margin-right: 60px
+          display: inline-block
+          line-height: 10px
+
+      .creative-status-header
+        color: $white
+        padding: 5px 15px
+        background-color: $gray
+
+        &.danger
+          background-color: btn-danger-color
+
+        &.warning
+          background-color: btn-warning-color
+
+        &.success
+          background-color: btn-success-color
+
+      .creative-status-message
+        background-color: #e8e8e8
+        padding: 4px 15px 3px 15px
+        color: #ababab
+
+    .btn-group
+      width: 600px
+      margin-left: 20px
+
+      .btn
+        border-radius: 0
+        background-image: none
+        background-color: $color-grayLightest
+        border: 1px solid $gray-lightish
+        border-left: none
+        color: $color-grayDark
+        line-height: 10px
+        height: 15px
+        width: 33.08%
+        margin: 0
+        padding-left: 0
+        padding-right: 0
+
+        &.active
+          background-color: $white
+
+
+      &:hover
+        box-shadow-none()
+
+      > .btn:first-child
+        border-left: 1px solid $gray-lightish
+
+  .creative-action-buttons
+    padding-right: 20px
+    padding-bottom: 8px
+
+  .creative-action
+    padding: 35px 20px 10px
+
+    .left-panel
+      display: inline-block
+      margin-right: 60px
+      margin-left: 35px
+
+    .right-panel
+      vertical-align: top
+      display: inline-block
+      width: 320px
+
+      .creative-action-description
+        text-align: left
+        margin-bottom: 15px
+        color: $gray-light
+
+      button
+        display: block
+
+      textarea
+        height: 45px
+        width: 360px
+
+  .creative-asset
+    padding: 10px 20px
+    border-bottom: 1px solid $gray-lightish
+    text-align: left
+
+    .creative-asset-label
+      display: inline-block
+      line-height: 30px
+      margin-right: 15px
+
+      &.low
+        line-height: 16px
+        vertical-align: top
+
+      &.fixed
+        width: 60px
+        color: #ababab
+
+      .danger
+        color: btn-danger-color
+
+      input
+        width: 395px
+
+      a
+        width: 180px
+        display: inline-block
+        overflow: hidden
+        vertical-align: bottom
+        text-overflow: ellipsis
+
+    .creative-asset-label:last-child
+      margin-right: 0
+
+    form, .error-message
+      margin: 0
+
+  .creative-asset.danger
+    background-color: #ffe4e4
+
+  .creative-asset:last-child
+    border-bottom: none
+
+  .grid-adslot-booking-creative-edit-row
+    min-height: 205px
+    background-color: $line-item-hover-color
+    padding: 0
+
+    .btn-group
+      .btn:hover, .btn:active, .btn:focus
+        box-shadow-none()
+
+  .component-file-upload
+    margin-top: 2px

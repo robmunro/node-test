@@ -1,0 +1,125 @@
+@import "../variable.styl"
+@import "../mixin.styl"
+
+.component-percentage-chart
+.component-small-bar-chart
+.component-small-pie-chart
+  .row-fluid > div
+    min-height: 20px
+
+  div
+    margin-bottom: 0
+    vertical-align: middle
+
+.component-percentage-chart
+  .percentage-label
+  .percentage-value
+    font-size: 16px
+    height: 23px
+    text-overflow()
+
+  .percentage-value
+    text-align: right
+    color: #4FC7E7
+
+.component-small-bar-chart
+  .bar-value
+    text-align: right
+    color: #ccc
+
+  .progress
+    margin-top: 6px
+    height: 8px
+    border-radius(0)
+    box-shadow-none()
+
+.component-small-pie-chart
+  .pie-value
+    text-align: right
+    color: #ccc
+
+  .chart-container
+    height: 60px
+    margin-top: -8px
+
+    .chart
+      height: 100%
+
+.component-pie-chart,
+.component-bar-chart,
+.component-scatter-chart,
+.component-spline-chart
+  .chart
+    height: 100%
+
+
+  .legend-name
+  .legend-value
+    display: inline-block
+    color: #808080
+
+  .legend-name
+    width: 77px
+    text-overflow()
+
+  .legend-value
+    width: 22px
+    text-align: right
+
+.gender-chart
+  line-height: 105px
+  font-weight: 200
+
+  &.gender-chart-small
+    line-height: 60px
+
+  .gender-icon-large
+  .stats-large-value
+    display: inline-block
+    vertical-align: middle
+
+    &.inactive
+      color: $grayLight
+
+  .gender-icon-large
+    margin-right: 5px
+
+  .stats-large-value
+    color: $gray
+    margin-right: 20px
+
+  .stats-large-value
+    font-size: 25px
+
+
+.chart-range-container
+  text-align: right
+  border-top: 1px solid $grayLighter
+  border-bottom: 1px solid $grayLighter
+ 
+  .btn-group
+    box-shadow-none()
+    
+    .btn
+      border-radius: 0
+      background-image: none
+      background-color: $white
+      border-right: 1px solid $grayLighter
+      color: $grayLight
+      line-height: 10px
+      height: 10px
+      width: 100px
+      margin: 0
+      padding-left: 10px
+      text-align: left
+      box-shadow-none()
+
+      &.active
+        background-color: $grayLight
+        color: $white
+    
+    &:hover, &:focus
+      box-shadow-none()
+ 
+    > .btn:first-child
+      border-left: 1px solid $grayLighter

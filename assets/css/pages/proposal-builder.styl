@@ -1,0 +1,533 @@
+@import "../variable.styl"
+@import "../mixin.styl"
+
+.campaign-proposal-planner
+  .steps-container
+    margin-top: -10px //HACK: until we fix up content-wrapper and content-wrapper-nav
+
+  .page-loading
+    .spinner
+      top: 30%
+      left: 50%
+      width: 100px
+      height: 100px
+      background-color: transparent
+
+  .content-block
+    padding: 0
+    margin: 10px 0 0
+    background: $white
+    border: 1px solid #d2d3d3
+
+    .heading
+      border-bottom: 1px solid $gray-lighter
+      color: #ababab
+      height: 55px
+
+    h4
+      font-size: 16px
+      color: $gray
+      padding: 10px 0 10px 20px
+      margin: 0
+      line-height: 35px
+      display: inline-block
+      width: 160px
+      font-weight: normal
+
+    .bar-content
+      padding: 10px 0
+
+      h4
+        width: auto
+        padding-left: 0
+
+  .cell
+    vertical-align: middle
+
+    &.site-url
+      font-size: 16px
+      height: 37px
+      line-height: 37px
+
+    &.actions
+      width: 50px
+
+    &.adslot-details
+      width: 169px
+
+    &.targeting
+      width: 82px
+      padding-bottom: 0
+
+    &.dates
+      width: 171px
+
+    &.quantity
+      width: 130px
+
+    &.cost-rate
+      width: 91px
+      font-size: 11px
+      line-height: 13px
+      color: #808080
+
+      .discount
+        color: #f05d5d
+
+    &.cost
+      width: 87px
+      text-align: right
+
+  .booking-error
+    .targeting
+    .dates
+    .quantity
+    .cost-rate
+    .cost
+      vertical-align: top
+
+  .proposal-logo
+    padding: 20px
+    border-top: 1px solid $gray-lighter
+
+    .expires
+      font-size: 17px
+      float: right
+
+  .proposal-form
+    padding: 20px
+
+    label
+      color: #a6a8ab
+
+    form
+      padding-bottom: 0
+      margin-bottom: 0
+
+    .control-group
+      margin-bottom: 15px
+
+      &:last-child
+        margin-bottom: 0
+
+      label
+        text-align: left
+
+    .left-panel
+      .control-label
+        width: 120px
+
+      .controls
+        margin-left: 120px
+
+      .expiry-date-picker
+        margin-top: 15px
+
+    .right-panel
+      .control-label
+        width: 80px
+
+      .controls
+        margin-left: 80px
+
+        textarea
+          height: 115px
+
+    .btn
+    .datepicker
+      display: inline-block
+
+  .proposal-details
+    border-top: 1px solid $gray-lighter
+
+    .metric-label
+      color: $color-gray
+
+    .metric-value
+      margin-bottom: 10px
+
+    .key-details
+      width: 260px
+
+      h5
+        margin-top: 0
+        margin-bottom: 10px
+
+    .secondary-details
+      width: 570px
+      border-left: 1px solid $gray-lighter
+
+    .key-details
+    .secondary-details
+      display: inline-block
+      min-height: 140px
+      vertical-align: top
+      padding: 20px
+
+  //TODO: DUPLICATED FROM planner.styl - refactor
+  .checkbox
+    margin-bottom: 0
+    min-height: 0
+    padding-left: 18px
+    display: inline-block
+
+    input
+      line-height: 16px
+      height: 16px
+      margin-top: 0
+
+  //TODO: QUICK AND NASTY - refactor
+  .cell
+    .btn
+    .btn-mini
+      padding-right: 5px
+
+  .step-action-bar
+    padding: 0 20px
+    border-bottom: none
+
+  .planner-summary
+    z-index: 100
+    text-align: right
+    vertical-align: middle
+    height: 73px
+    padding: 15px 20px 0 20px
+    background-color: $white
+
+    &.fixed
+      position: fixed
+      width: 900px
+      z-index: 1040
+      top: 21px
+
+    .metrics-container
+      text-align: left
+
+    .metric-detail:first-child
+      margin-left: 0
+
+    .metric-detail
+      padding: 0
+      margin-left: 25px
+      min-width: 87px
+
+      &.dates
+        width: 464px
+
+        .metric-value
+          line-height: 18px
+
+      &.impressions
+        width: 86px
+
+      &.total
+        text-align: right
+        width: 162px
+
+      .metric-label
+        font-size: 12px
+        height: 18px
+
+      .metric-value
+        font-size: 25px
+        color: #333
+        height: 27px
+        vertical-align: bottom
+        line-height: 27px
+
+  .dropdown
+    border: 1px solid #eee
+    font-weight: normal
+
+   ul
+  .nav-tabs
+    li.source-name
+      float: right
+      width: 300px
+      border-left: none
+      text-align: right
+      height: 27px
+      line-height: 25px
+      color: #d2d3d3
+
+      .select2-container
+        border: none
+        border-left: 1px solid $btnBorder
+        margin-left: 6px
+        font-size: 12px
+        vertical-align: top
+        min-width: 100px
+
+        .select2-choice
+          height: 25px
+          line-height: 25px
+
+
+  .component-single-text-stat
+  .chart-inactive-text
+    width: 200px
+    font-weight: 200
+    display: inline-block
+    margin-bottom: 23px
+    margin-left: 32px
+    vertical-align: middle
+
+  .chart-inactive-text
+    color: $grayLight
+    font-size: 16px
+    line-height: 22px
+
+  .component-single-text-stat
+    color: $grayLight
+    line-height: 32px
+    font-size: 30px
+    width: 280px
+    text-overflow()
+
+    &.price
+      font-size: 50px
+      line-height: 50px
+      text-align: center
+
+  .cost
+    input
+      text-align: right
+      height: 14px
+      border: 1px solid #eee
+
+  .input-append
+  .input-prepend
+    margin-bottom: 9px
+
+    .add-on
+      border: none
+      background-color: transparent
+      padding-top: 3px
+      padding-left: 0
+
+
+  .booking-details
+    margin-top: 10px
+
+  .grid-outer-container
+    min-height: 196px
+
+  .grid-header
+  .grid-row
+    padding-left: 9px
+    padding-right: 9px
+
+  .excluded-booking
+    opacity: 0.3
+
+    .dropdown
+      background: $white
+
+    .dropdown-toggle
+      cursor: default
+
+    .dropdown-menu
+    .popover
+      opacity: 0
+
+  .discount
+    color: $errorText
+
+  .slashed-prices
+    text-decoration: line-through
+
+  .site-summary-row
+  .total-summary-row
+    padding: 13px 9px
+    border-bottom: 1px solid #d2d3d3
+
+    .item:first-child
+      color: #ababab
+
+    .cell
+      vertical-align: top
+
+      &.cost-rate
+        font-size: 12px
+        line-height: 18px
+        color: #5a5a5a
+
+  .site-summary-row
+    background-color: #f1f1f1
+
+  .planner-total
+    background-color: $white
+    color: $gray
+    border: 1px solid $gray-lighter
+
+    .btn-bar
+      padding: 15px 10px 11px 10px
+
+    .campaign-name
+      display: inline-block
+      padding-right: 10px
+      width: 376px
+      text-align: left
+
+    .cart
+      width: 126px
+      padding-top: 20px
+
+    .metric-value
+      font-size: 16px
+
+    .total
+      padding-left: 0
+      margin-left: 0
+      width: 110px
+
+      .metric-value
+        font-size: 19px
+
+.proposal-creatives
+  background-color: $white
+  border-top: 1px solid
+
+.proposal-review
+  .creatives-carousel
+    padding: 10px
+
+  .carousel
+    .item
+      text-align: center
+
+    .carousel-indicators
+      display: none
+
+    .carousel-inner
+      margin: 10px 60px
+      width: auto
+
+    .img-container
+      padding: 5px
+      display: inline-block
+      margin: auto
+      width: 216px
+      height: 110px
+      position: relative
+
+      span
+        display: inline-block
+
+      .img
+        display: inline-block
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
+        vertical-align: top
+        height: 100%
+        width: 100%
+
+      .size
+        background: none repeat scroll 0 0 $grayLighter
+        top: 5px
+        position: absolute
+        padding: 0
+        right: 5px
+        left: auto
+        bottom: auto
+        width: 140px
+        display: inline-block
+        height: 30px
+        font-size: 16px
+        line-height: 30px
+        text-align: center
+        opacity: 0.75
+
+      .img.none
+        display: inline-block
+        background-color: #eee
+        transparent: 0.75
+        line-height: 100%
+
+        .message-container
+          display: inline-block
+          top: 40%
+          position: relative
+          width: 80%
+
+          i
+          .message
+            vertical-align: middle
+
+          .message
+            width: 150px
+
+    .carousel-control
+      background-color: rgb(209, 211, 212)
+      background-image: url("/common/images/icons/icons-30px-20131120.png")
+      background-position: -5px -573px
+      border: medium none
+      border-radius: 0 0 0 0
+      color: rgb(90, 90, 90)
+      cursor: pointer
+      font-size: 0
+      height: 25px
+      width: 21px
+
+
+      &.left
+        background-position: -5px -573px
+      &.right
+        background-position: -5px -603px
+
+
+.proposal-sent-confirm
+  .content-block
+    padding: 30px
+
+  h2
+    font-weight: normal
+    margin-top: 0
+
+  dl
+    dt
+      width: 35%
+      text-align: center
+      vertical-align: middle
+      height: 100px
+
+    dd
+      width: 65%
+      margin-left: 35%
+      vertical-align: middle
+      height: 80px
+      padding-top: 20px
+
+  .info-box
+    padding: 15px
+    width: 300px
+    float: right
+    background-color: $grayLighter
+
+    h4
+      padding-left: 0
+
+    .proposal-id
+      font-size: 14px
+
+    .control-label
+      text-align: left
+      color: $grayLight
+      font-size: 14px
+      padding-top: 0
+
+    .controls
+      text-align: right
+      color: $grayLight
+      font-size: 14px
+
+    .send-again
+      background-color: $media-light-blue
+
+.adslot-selector
+  &.fixed
+    position: fixed
+    width: 920px
+    z-index: 1040
+

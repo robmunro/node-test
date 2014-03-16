@@ -1,0 +1,153 @@
+@import "../variable.styl"
+
+.content-block
+  font-size: 12px
+  background-color: site-background-color
+  padding: 20px
+  margin-bottom: 20px
+  color: $gray
+
+  select#report-type
+    margin-bottom: 0
+    visibility: hidden
+
+  .line-separator
+    height: 1px
+    background-color: $grayDark
+    margin: 20px 0
+
+  .list-header
+    padding: 10px 0 0
+    border-bottom: 1px solid $grayDark
+    margin-top: 15px
+
+  .list-body
+    padding: 10px 0
+    margin-bottom: 50px
+
+  .list-item
+    border-bottom: 1px solid $dropdownBorder
+    padding: 10px 0
+
+    &:last-child
+      border-bottom: 1px solid $grayDark
+
+  .list-group-header
+    border-bottom: 1px solid $dropdownBorder
+    padding: 10px 0
+
+    .transaction-period
+      margin: 20 0
+      font-weight: bold
+
+  .control-group.actions
+    padding-top: 10px
+
+  .toolbar
+    padding: 15px 0
+    .select2-choice
+      text-align: left
+
+  h4
+    margin-bottom: 20px
+
+//- Cashout
+#cashout-details-form.form-horizontal
+  .controls
+    margin-left: 180px
+    width: 220px
+
+  .control-label
+    width: 160px
+
+//- Account Balance
+
+.balance-stats-box
+  color: #666
+  padding: 10px
+  list-style: none
+  border: 1px solid $dropdownBorder
+  margin: 10px 0
+
+  .balance-stats-amount
+    &.total-earning
+      color: #00aeef
+
+    &.pending-funds
+      color: #fa9500
+
+    &.available-cash
+      color: $checkout-green-color
+
+    .preferred-currency
+      font-size: 13px
+      margin-left: 5px
+      font-weight: normal
+
+.balance-stats-amount
+  font-size: 20px
+  margin-top: 20px
+
+.balance-stats-heading
+  font-size: 20px
+  display: inline-block
+
+.payment-status-available
+  color: $checkout-green-color
+
+.payment-status-pending
+  color: #fa9500
+
+.payment-status-dispute
+  color: #ff0000
+
+.payment-status-cancelled
+  color: #000
+
+.payment-status-withdrawn
+  color: #00aeef
+
+#credit-card-form label
+  margin-bottom: 2px
+
+#credit-card-form
+  input
+  select
+    margin-bottom: 5px
+
+.in-place-detail
+  padding: 6px 0 4px
+
+//- Account Sidebar
+.account-sidebar
+  background-color: site-background-color
+  font-size: 13px
+  padding-top: 20px
+
+  ul.nav-pills
+    margin: 0 10px
+    li 
+      margin-bottom: 14px
+
+      a
+       padding: 10px 
+       color: $gray
+       border-radius(0)
+       font-weight: normal
+
+      a:hover
+        color: $gray
+        background-color: #f0f0f0
+
+    .active a
+      color: $gray
+      background-color: #f0f0f0
+
+.account-transaction-item-view
+  .adSlotName
+    white-space: nowrap
+    overflow: visible
+  .second-row
+    margin-top: 18px
+  .third-row
+    margin-top: 36px

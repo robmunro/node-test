@@ -1,0 +1,431 @@
+@import variable
+@import mixin
+//- Buttons
+
+.btn-large
+.btn
+.btn-small
+.btn-mini
+  border-radius: 0
+  box-shadow(none)
+  border: none
+  background-image: none
+  margin-right: 5px
+  color: #ffffff
+  white-space: nowrap
+  font-weight: normal
+
+  &.disabled
+  &.disabled:hover
+  &[disabled]
+  &[disabled]:hover
+    background-color: #e6e6e6
+    background-image: none
+    color: #333
+
+  &:hover
+  &:active
+  &:focus
+    box-shadow(2px 2px 0 $btnBorder)
+    outline: 0 none
+    color: #fff
+    background-position: 0% 0%
+
+.btn
+  font-size: 13px
+  line-height: 20px
+  padding: 5px 20px
+  color: #ffffff
+  min-width: 25px
+  background-color: #808285
+  text-shadow: none
+  box-sizing(content-box) //- Ensures anchor buttons min size is 75px
+
+  &:last-child
+    margin-right: 0
+
+  &:hover
+    color: #ffffff
+    background-color: #707070
+    text-shadow: none
+
+  &.btn-block
+    box-sizing(border-box)
+
+  input[type="file"]:enabled
+    cursor: pointer
+
+// Hack to overcomes bug where buttons in chrome were not picking up global antialiasing
+div .btn
+  -webkit-font-smoothing: antialiased
+
+//- Button Sizes
+
+.btn-mini
+  padding: 3px 10px
+
+  &.btn-inverse
+    padding: 2px 9px
+
+.btn-small
+  padding: 4px 15px
+
+  &.btn-inverse
+    padding: 3px 14px
+
+.btn-large
+  padding: 9px 30px
+  font-size: 18px
+
+  &.btn-inverse
+    padding: 8px 29px
+
+.btn-link
+  border: none
+  color: $blue
+  text-decoration: underline
+  background-color: transparent
+
+  &:hover
+  &:active
+  &:focus
+  &.active
+    color: $blueDark
+    box-shadow-none()
+    background-color: transparent
+
+//- Button Colors
+
+.btn-primary
+.btn-primary:hover
+  background-color: #006dcc
+
+.btn-success
+.btn-success:hover
+  background-color: btn-success-color
+
+.btn-danger
+.btn-danger:hover
+  background-color: btn-danger-color
+
+.btn-warning
+.btn-warning:hover
+  background-color: btn-warning-color
+  
+.btn-inverse
+.btn-inverse:hover
+  background-color: $white
+  color: $btnBackground
+  border: 1px solid $gray-lighter
+  box-sizing(border-box)
+
+.dropdown-menu li > a:hover
+.dropdown-menu li:hover > a
+.dropdown-menu .active > a
+.dropdown-menu .active > a:hover
+  background-image: none
+
+.dropdown-menu
+  text-align: left
+  padding: 0
+  margin: 2px 0 0 0
+  border-radius(0)
+
+  a
+    padding: 5px 15px
+
+  li > a:hover
+  li:hover > a
+  .active > a
+  .active > a:hover
+    background-color: #f7f7f7
+    color: #000000
+
+.btn-tray
+  line-height: $header-height
+  height: $header-height
+  text-align: center
+  vertical-align: middle
+
+.button-label
+  display: inline-block
+  vertical-align: middle
+
+.pull-right
+  > ul
+  > .icon
+    float: left
+
+//- Form button container
+
+//- Used for grouping buttons next to each other
+.btn-bar
+  vertical-align: middle
+  position: relative
+  line-height: 30px
+  display: inline-block
+
+  .btn
+    margin-left: 0
+    margin-right: 20px
+    display: inline-block
+    vertical-align: top //- so that fileupload progress bars work and push down across the bar
+
+  > .btn
+  > .fileupload
+  > ang-fileupload .fileupload
+    &:last-child
+      margin-right: 0 //- no right margin on last button
+
+    &:first-child
+      margin-left: 0 //- no left margin on first button
+
+  &.input-append
+    .btn
+      margin-left: 0
+
+  &.input-prepend
+    margin-left: 0
+    margin-right: 0
+
+    .btn
+      margin-right: 0
+
+  .divider-vertical
+    display: inline-block !important
+    vertical-align: middle
+    height: 30px
+    border-right: 1px #58595B solid
+    margin-right: 20px
+    overflow: hidden
+    line-height: 32px
+    float: none
+
+  input
+    margin-bottom: 3px
+
+  .dropdown
+    margin-right: 20px
+
+  .dropdown-toggle
+    border-radius(0)
+
+  .dropdown-toggle
+  .dropdown-menu
+    box-shadow-none()
+
+  &.open .dropdown-menu
+    display: block
+
+//- For navigation buttons at the buttom of the page
+
+.nav-buttons
+  float: right
+  margin-bottom: 20px
+  margin-right: 20px
+  clear: both
+
+  .btn
+    margin-left: 20px
+    margin-right: 0
+
+.btn-group
+  vertical-align: middle
+  line-height: 20px
+
+  &.open
+    .dropdown-toggle
+      box-shadow(none)
+
+  .dropdown-toggle
+    padding-left: 8px
+    padding-right: 8px
+
+  > .btn
+    margin-right: 0
+    padding-left: 6px
+
+    &:hover
+      box-shadow(none)
+
+  &.btn-tabs
+
+    &:hover, &:focus
+      box-shadow-none()
+
+    > .btn:first-child
+      border-left: 1px solid $grayLighter
+
+    > .btn + .btn
+      margin-left: 0
+
+    .btn
+      background-color: $color-grayLightest
+      color: $gray-lightishish
+      text-align: left //Overrides btn
+      height: 16px
+      width: 109px
+      border-right: $color-grayLighter 1px solid
+      border-radius(0)
+      padding-left: 10px
+
+      &:hover
+        background-color: $grayLighter
+
+      &:active
+        box-shadow(none)
+
+      &.active
+        background-color: $white
+        color: $gray-light
+        box-shadow(none)
+        border-bottom: 1px solid $white
+        margin-bottom: -1px
+        cursor: default
+
+  .btn-mini
+    font-size: 12px
+
+  .btn
+  .btn:first-child
+  .dropdown-toggle
+    border-radius(0)
+
+  > .btn + .dropdown-toggle
+    box-shadow(unquote('inset 1px 0 0 rgba(255, 255, 255, 0.625), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)'))
+
+  > .btn-mini + .dropdown-toggle
+    padding-left: 0px
+    padding-right: 2px
+
+  .icon + .btn-label
+    margin-left: 5px
+
+  .btn-label
+    display: inline-block
+
+  .dropdown-menu
+    font-size: 12px
+
+.btn-group:hover
+  box-shadow(2px 2px 0 $btnBorder)
+
+  .icon-login
+    background-position: 0 0
+
+  .icon-caret
+    background-position: 0 -16px
+
+  .icon-caret-dark
+    background-position: -16px -16px
+
+  .btn
+    &:hover
+    &:active
+    &:focus
+      box-shadow(none)
+
+
+
+//- Advertise with us buttons
+
+//-TODO: RM - sprite these buttons
+
+.advertise-btn
+  display: inline-block
+  zoom: 1
+  *display: inline
+  vertical-align: middle
+  background-position: 0 0
+
+.advertise-btn-small
+  width: 93px
+  height: 26px
+  background-image: url(/images/buttons/advertise-black-small.png) //- black is default
+
+  &.white
+    background-image: url(/images/buttons/advertise-white-small.png)
+
+  &.green
+    background-image: url(/images/buttons/advertise-green-small.png)
+
+  &.blue
+    background-image: url(/images/buttons/advertise-blue-small.png)
+
+  &.light-green
+    background-image: url(/images/buttons/advertise-light-green-small.png)
+
+  &.light-blue
+    background-image: url(/images/buttons/advertise-light-blue-small.png)
+
+  &:hover
+    background-position: 0 -26px
+
+.advertise-btn-medium
+  width: 102px
+  height: 28px
+  background-image: url(/images/buttons/advertise-black-medium.png) //- black is default
+
+  &.white
+    background-image: url(/images/buttons/advertise-white-medium.png)
+
+  &.green
+    background-image: url(/images/buttons/advertise-green-medium.png)
+
+  &.blue
+    background-image: url(/images/buttons/advertise-blue-medium.png)
+
+  &.light-green
+    background-image: url(/images/buttons/advertise-light-green-medium.png)
+
+  &.light-blue
+    background-image: url(/images/buttons/advertise-light-blue-medium.png)
+
+  &:hover
+    background-position: 0 -28px
+
+.advertise-btn-large
+  width: 112px
+  height: 32px
+  background-image: url(/images/buttons/advertise-black-large.png) //- black is default
+
+  &.white
+    background-image: url(/images/buttons/advertise-white-large.png)
+
+  &.green
+    background-image: url(/images/buttons/advertise-green-large.png)
+
+  &.blue
+    background-image: url(/images/buttons/advertise-blue-large.png)
+
+  &.light-green
+    background-image: url(/images/buttons/advertise-light-green-large.png)
+
+  &.light-blue
+    background-image: url(/images/buttons/advertise-light-blue-large.png)
+
+  &:hover
+    background-position: 0 -32px
+
+.advertise-btn-xlarge
+  width: 182px
+  height: 52px
+  background-image: url(/images/buttons/advertise-black-xlarge.png) //- black is default
+
+  &.white
+    background-image: url(/images/buttons/advertise-white-xlarge.png)
+
+  &.green
+    background-image: url(/images/buttons/advertise-green-xlarge.png)
+
+  &.blue
+    background-image: url(/images/buttons/advertise-blue-xlarge.png)
+
+  &.light-green
+    background-image: url(/images/buttons/advertise-light-green-xlarge.png)
+
+  &.light-blue
+    background-image: url(/images/buttons/advertise-light-blue-xlarge.png)
+
+  &:hover
+    background-position: 0 -52px

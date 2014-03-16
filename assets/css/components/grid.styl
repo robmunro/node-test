@@ -1,0 +1,428 @@
+@import "../variable.styl"
+@import "../mixin.styl"
+
+.grid-outer-container
+  display: inline-block
+  vertical-align: top
+  width: 100%
+
+.grid-container
+  display: inline-block
+  vertical-align: top
+  width: 100%
+
+.grid
+  width: 100%
+  display: inline-block
+  font-size: 12px
+
+.grid-header
+  line-height: 33px
+  padding: 0 10px
+  border-bottom: 1px $gray-lighterer solid
+  font-size: 13px
+
+  .cell
+    display: inline-block
+    color: $gray-lightishish
+
+  .item
+    display: block
+
+  .icon
+    margin-bottom: 3px
+    margin-left: 3px
+
+    &:hover
+      cursor: pointer
+
+  .popover
+    line-height: 20px
+
+.section-hover:hover
+  background-color: $line-item-hover-color
+  cursor: pointer
+
+.grid-row
+  padding: 8px 10px
+  border-bottom: 1px $gray-lighterer solid
+
+  &.selected
+    background-color: $line-item-hover-color
+
+  &.section-row
+    border-top: solid 1px #828282
+
+    .row-content
+      line-height: 38px
+
+  &:hover
+    background-color: $line-item-hover-color
+
+  &.clickable-row
+    cursor: pointer
+
+  &.keyword-targeting
+  &.geo-targeting
+    padding: 10px
+
+// Grid cell widths
+$grid-cell-width-default = 100px
+$grid-cell-width-targeting = 60px
+$grid-cell-width-discount = 47px
+$grid-cell-width-buy-type = 83px
+$grid-cell-width-add-to-cart = 52px
+$grid-cell-width-button = 80px
+$grid-cell-width-user = 140px
+$grid-cell-width-dates = 130px
+$grid-cell-width-text = 70px
+$grid-cell-width-cell-date = 60px
+$grid-cell-width-cell-email = 225px
+$grid-cell-width-cell-progress = 120px
+$grid-cell-width-cell-status = 50px
+$grid-cell-width-cell-status-proposal = 104px
+$grid-cell-width-cell-selector = 22px
+$grid-cell-width-cell-inline-action-icon = 16px
+$grid-cell-width-cell-cost = 70px
+$grid-cell-width-cell-delivered = 110px
+$grid-cell-width-cell-targeting-label = 200px
+$grid-cell-width-cell-targeting-value = 500px
+$grid-cell-width-cell-expander = 70px
+$grid-cell-width-targeting = 150px
+$grid-cell-width-cell-id = 70px
+
+$marketplace-grid-width = 444px
+$store-front-grid-width = 640px
+$filterable-list-grid-width = 690px
+$transaction-history-grid-width = 680px
+$dashboard-grid-width = 450px
+
+.site
+  .fill-column
+    width: calculateFillWidth(
+      $marketplace-grid-width,
+      $grid-cell-width-discount - 15px,
+      $grid-cell-width-buy-type,
+      $grid-cell-width-add-to-cart)
+
+.store-front
+  .fill-column
+    width: calculateFillWidth(
+      $store-front-grid-width,
+      $grid-cell-width-discount - 15px,
+      $grid-cell-width-buy-type,
+      $grid-cell-width-add-to-cart)
+
+.media-dashboard
+  .fill-column.title
+    width: calculateFillWidth(
+        $dashboard-grid-width,
+        $grid-cell-width-button)
+
+.media-dashboard-activity
+  .fill-column
+    width: calculateFillWidth(
+      $dashboard-grid-width,
+      $grid-cell-width-cell-date,
+      $grid-cell-width-cell-inline-action-icon)
+
+.media-dashboard-campaign
+  .fill-column
+    width: calculateFillWidth(
+        $dashboard-grid-width,
+        $grid-cell-width-cell-inline-action-icon)
+
+.media-dashboard-plans
+  .fill-column
+    width: calculateFillWidth(
+        $dashboard-grid-width,
+        $grid-cell-width-cell-date,
+        $grid-cell-width-cell-cost,
+        $grid-cell-width-cell-inline-action-icon)
+
+.media-transaction-history
+  .fill-column
+    width: calculateFillWidth(
+      $transaction-history-grid-width,
+      $grid-cell-width-cell-id,
+      $grid-cell-width-cell-date,
+      $grid-cell-width-cell-cost,
+      $grid-cell-width-cell-status,
+      $grid-cell-width-default)
+
+.filterable-list
+  .fill-column
+    width: calculateFillWidth(
+      $filterable-list-grid-width,
+      $grid-cell-width-dates,
+      $grid-cell-width-cell-progress,
+      $grid-cell-width-cell-status)
+
+.cell
+  display: inline-block
+  padding: 0 10px
+  vertical-align: top
+  width: $grid-cell-width-default
+
+  .expander-actions
+    display: none
+
+  .emphasis
+    font-weight: bold
+
+  .item-title
+    color: #006dcc
+    font-size: 12px
+
+  .item-detail
+    color: #006dcc
+
+  &.targeting
+    padding-bottom: 3px
+    width: $grid-cell-width-targeting
+
+  &.fill-column
+    .item
+      text-overflow()
+
+  &.discount
+    color: #f05d5d
+    width: $grid-cell-width-discount
+    font-size: 12px
+    font-weight: bold
+    vertical-align: top
+    padding: 0 5px 0 0
+
+  &.buy-type
+    width: $grid-cell-width-buy-type
+    text-align: right
+
+  &.add-to-cart
+    padding-bottom: 6px
+    vertical-align: middle
+    width: $grid-cell-width-add-to-cart
+
+  &.button
+    vertical-align: middle
+    width: $grid-cell-width-button
+    padding-bottom: 3px
+
+  &.user
+    width: $grid-cell-width-user
+
+  &.dates
+    width: $grid-cell-width-dates
+
+  &.cell-date
+    width: $grid-cell-width-cell-date
+
+  &.cell-icon
+    width: $grid-cell-width-cell-inline-action-icon
+
+  &.campaign-name
+    width: 490px
+
+  &.cell-status-proposal
+    width: $grid-cell-width-cell-status-proposal
+    text-align: right
+
+  &.booking-reference
+    width: 120px
+    text-align: right
+
+  &.cell-adslot-details
+    height: 36px
+
+    .adslot-size
+      display: inline-block
+      margin-right: 5px
+
+    .icon
+      margin-top: 0
+      vertical-align: top
+
+  &.cell-email
+    width: $grid-cell-width-cell-email
+
+    .item
+      text-overflow: ellipsis
+      overflow: hidden
+
+  &.cell-progress
+    width: $grid-cell-width-cell-progress
+
+  &.group
+    width: 100%
+
+  &.cell-status
+    width: $grid-cell-width-cell-status
+    text-align: right
+
+
+  &.cell-id
+    width: $grid-cell-width-cell-id
+
+  &.cell-paidstatus
+    width: $grid-cell-width-cell-status
+
+  &.cell-selector
+    width: $grid-cell-width-cell-selector
+
+  &.cell-inline-action-icon
+    width: $grid-cell-width-cell-inline-action-icon
+    padding: 0
+
+  &.cell-cost
+    width: $grid-cell-width-cell-cost
+    text-align: right
+
+  &.text
+    width: $grid-cell-width-text
+
+  &.cell-delivered
+    width: $grid-cell-width-cell-delivered
+
+    .delivered-percent
+      color: $status-live
+
+  &.cell-targeting
+    width: $grid-cell-width-targeting
+
+    span
+      display: inline-block
+
+    .item .icon
+      margin-right: 5px
+      vertical-align: top
+
+    .text
+      height: 16px
+      width: 85px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    .expanded .text
+      white-space: normal
+      overflow: visible
+      width: 120px
+      height: auto
+
+    .expander-actions
+      display: block
+
+      .expander
+        margin-top: -20px
+
+
+  &.cell-targeting-label
+    width: $grid-cell-width-cell-targeting-label
+    vertical-align: top
+    text-align: right
+    font-size: 13px
+
+  &.cell-targeting-value
+    width: $grid-cell-width-cell-targeting-value
+
+    .item
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+  &.cell-expander
+    width: $grid-cell-width-cell-expander
+
+  .geo
+  .keyword
+    display: inline-block
+
+  .btn
+  .btn-mini
+    margin-right: 0
+    .icon
+      display: inline-block
+
+  .btn-mini
+    padding: 3px 6px
+
+    .icon
+      margin: 1px 3px 2px 3px
+
+    .icon:first-child
+      margin-left: 0
+
+    .icon:last-child
+      margin-right: 0
+
+  .price
+    font-size: 14px
+    font-weight: bold
+
+    .from
+      font-size: 11px
+      font-weight: normal
+      display: inline-block
+
+  .unit
+    font-size: 13px
+    color: #bcbcbc
+
+  .progress-container
+    margin-bottom: 3px
+
+  .progress-bar
+    background-color: #d2d2d2
+    width: 100%
+    height: 12px
+    margin-top: 3px
+
+    .progress-percent
+      background-color: $status-live
+      height: 12px
+
+      &.status-ended
+      &.status-cancelled
+        background-color: #828282
+
+    .progress-target-percent
+      background-color: red
+      height: 12px
+      width: 2px
+      position: relative
+      top: -12px
+
+  .cell-radio
+    border: 1px solid $inputBorder
+    padding: 5px
+    background-color: $white
+
+    ul
+      padding: 5px
+
+    input[type=radio]
+      height: 0
+
+
+.no-rows
+  margin: 10px 20px
+
+  div
+    width: 280px
+    border: 1px solid $grayLight
+    padding: 10px
+    font-size: 16px
+    margin-left: 300px
+    margin-top: 53px
+    text-align: center
+
+.pagination
+  margin: 20px 20px 0 0
+  text-align: right
+
+  li
+    cursor: pointer !important
+
+  // Overide Bootstrap weirdness
+  li.active
+    display: inline
+

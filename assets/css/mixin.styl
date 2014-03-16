@@ -1,0 +1,184 @@
+
+// fix opacity mixin to be more
+opacity(opacity)
+  opacity: opacity
+
+/* -------------- Mixins ------------------ */
+
+box-shadow-none()
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+
+border-top-rounded()
+  margin-top:10px
+  padding-top:10px
+  border: 0
+  background-color: #fff
+  border-top-radius(10px)
+
+border-top-left-rounded()
+  margin-top:10px
+  padding-top:10px
+  border: 0
+  background-color: #fff
+  border-top-left-radius(10px)
+
+border-top-right-rounded()
+  margin-top:10px
+  padding-top:10px
+  border: 0
+  background-color: #fff
+  border-top-right-radius(10px)
+
+border-bottom-rounded()
+  margin-bottom:10px
+  padding-bottom:10px
+  border: 0
+  background-color: #fff
+  border-bottom-radius(10spx)
+
+transform-origin(n)
+  -webkit-transform-origin: n
+  -moz-transform-origin: n
+  -ms-transform-origin: n
+  -o-transform-origin: n
+  transform-origin: n
+
+transform-scale(n)
+  scale(n, n)
+
+transform(n)
+  -webkit-transform: n
+  -moz-transform: n
+  -ms-transform: n
+  -o-transform: n
+  transform: n
+
+transition(n)
+  -webkit-transition: n
+  -moz-transition: n
+  -o-transition: n
+  transition: n
+
+transition-linear(delay)
+  -webkit-transition: delay linear all
+  -moz-transition: delay linear all
+  -ms-transition: delay linear all
+  -o-transition: delay linear all
+  transition: delay linear all
+
+transition-ease(delay)
+  -webkit-transition: delay ease all
+  -moz-transition: delay ease all
+  -ms-transition: delay ease all
+  -o-transition: delay ease all
+  transition: delay ease all
+
+background-linear-gradient-top(startColor, endColor)
+  background-image: -moz-linear-gradient(top, startColor, endColor)
+  background-image: -ms-linear-gradient(top, startColor, endColor)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(startColor), to(endColor))
+  background-image: -webkit-linear-gradient(top, startColor, endColor)
+  background-image: -o-linear-gradient(top, startColor, endColor)
+  background-image: linear-gradient(top, startColor, endColor)
+  filter: unquote('progid:DXImageTransform.Microsoft.Gradient(startColorStr=' + startColor + ' endColorStr=' + endColor + ', GradientType=0)')
+  filter: unquote('progid:dximagetransform.microsoft.gradient(enabled=false)')
+
+background-clip(clipValue)
+  -moz-background-clip: clipValue
+  -webkit-background-clip: clipValue
+  background-clip: clipValue
+
+gradient-horizontal(valueA, valueB)
+  background: -moz-linear-gradient(left, valueA 0%, valueB 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,valueA), color-stop(100%,valueB)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, valueA 0%,valueB 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, valueA 0%,valueB 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, valueA 0%,valueB 100%) /* IE10+ */
+  background: linear-gradient(to right, valueA 0%,valueB 100%) /* W3C */
+
+animation(n)
+  -webkit-animation: n
+  -moz-animation: n
+  animation: n
+
+// Exclude MS vendor as IE10 has dropped support for @-ms-keyframes.
+vendors = moz webkit o official
+
+@keyframes loadFadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+load-fade-in(fadeTime)
+  opacity: 0
+  -webkit-animation: loadFadeIn ease-in 1
+  -moz-animation: loadFadeIn ease-in 1
+  animation: loadFadeIn ease-in 1
+
+  -webkit-animation-fill-mode: forwards
+  -moz-animation-fill-mode: forwards
+  animation-fill-mode: forwards
+
+  -webkit-animation-duration: fadeTime
+  -moz-animation-duration: fadeTime
+  animation-duration: fadeTime
+
+load-delay(n)
+  -webkit-animation-delay: n
+  -moz-animation-delay: n
+  animation-delay: n
+
+// Cross-browser word wrapping handling long strings.
+wrap-word()
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
+
+// Grid related mixins
+
+calculateFillWidth(gridWidth, cellWidths...)
+  paddingWidth = 10px
+  totalPixels = 0
+  cellPadding = 2 * unit(paddingWidth, px)
+  rowPadding = cellPadding
+
+  for cellWidth in cellWidths
+    totalPixels += unit(cellWidth, px) + cellPadding
+
+  return gridWidth - rowPadding - totalPixels - cellPadding
+
+// Step menu mixin
+
+arrow-step-menu(n)
+  width: 100%
+
+  .arrow-step
+    width: (100% / n)
+
+
+arrow-step-menu-color($color, $color-hover)
+  .active
+    .step-number
+      color: $color
+
+  .active:hover
+    .step-number
+      color: $color-hover
+
+  .active
+    background-color: $color
+
+    a:after
+      border-left-color: $color
+
+  .active:hover
+    background-color: $color-hover
+
+    a:after
+      border-left-color: $color-hover
+

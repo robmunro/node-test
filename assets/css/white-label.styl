@@ -1,0 +1,15 @@
+//- variables are injected by whitelabel middleware
+@import "white-label-shared.styl"
+
+.{$namespace}
+  .nav-bar-wrapper
+    .nav
+      li
+        .item
+          background-color: $navBgColor !important
+          border-color: $navBgColor !important
+
+          &:hover
+          &.selected
+            background-color: $navBgHoverColor !important
+

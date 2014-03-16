@@ -1,0 +1,365 @@
+$gray-light = #838383
+$gray-lightest = #e8e7e8
+$gray-dark = #5a5a5a
+
+$blue-light = #177fc3
+
+$text-margin = 30px
+$content-margin = 15px
+$total-margin = $text-margin + $content-margin
+
+set-font-family()
+  font-family: 'Neue Helvetica W01', Helvetica, sans-serif
+  -webkit-font-smoothing: antialiased
+  font-smooth: always
+
+a
+  set-font-family()
+  text-decoration: none
+  color: #177fc2
+
+strong
+  font-size: 15px
+
+h3
+  set-font-family()
+  font-size: 20px
+  margin-bottom: 30px
+  font-weight: bold
+
+b
+  color: $gray-dark
+  font-size: 12px
+
+hr
+  background-color: $gray-dark
+
+
+td, b, p, div
+  set-font-family()
+  font-size: 12px
+  color: #585858
+  word-wrap: break-word
+
+.padding
+  height: 20px
+  padding: 0
+
+  &.large
+    height: 30px
+
+  &.small
+    height: 8px
+
+.content
+  set-font-family()
+  font-size: 12px
+  line-height: 18px
+
+  background-color: #fff
+  border: 30px solid #eee
+  color: #585858
+
+  .header
+    line-height: 60px
+    padding: 10px $total-margin
+    background-color: #fff
+    font-size: 50px
+    height: 60px
+
+    img
+      vertical-align: middle
+      display: block
+      margin: 0
+      padding: 0
+      border: 0
+
+  .footer
+    padding: 30px $total-margin 35px
+
+    .contact-info
+      color: $gray-light
+
+  .banner
+    line-height: 110px
+    padding: 35px $total-margin
+    background-color: #eee
+
+    &.alert
+      background-color: #da4f49
+
+    &.publisher
+      background-color: #7c4
+
+    &.media
+      background-color: #007bc3
+
+    &.partner
+      background-color: #f90
+
+    &.single-line
+      padding 45px
+
+      .line
+        height: 60px
+        line-height:60px
+
+    div
+      white-space: pre
+      color: #fff
+      font-size: 38px
+      line-height: 42px
+      vertical-align: middle
+      font-weight: normal
+
+      span
+        background-color: inherit
+
+  .message
+    padding: 30px $total-margin 0
+    line-height: 20px
+
+  .well
+    background-color: #eee
+
+    &.comment
+      background-color: $gray-lightest
+      padding: 10px
+      color: $gray-dark
+
+    .delimeter
+      height: 1px
+      line-height: 0
+      border-bottom: 1px solid $gray-dark
+
+      &.major-white
+        border-bottom: 1px solid #ababab
+
+    h3
+      margin-top: 0
+
+    .extra-header-info
+      font-size: 12px
+      text-align: right
+      vertical-align: top
+
+  .adslot-info
+    line-height: 20px
+
+  .attachment
+    padding: 30px $content-margin 0
+    font-size: 12px
+
+    .header-section
+      padding: 30px $text-margin 0
+
+    .detail-section
+    .section
+      padding: 0 $text-margin
+
+    .summary-section
+      background-color: $gray-dark
+      padding: 20px $text-margin 25px
+      margin-bottom: 20px
+      color: #fff
+
+      td
+      b
+        color: #fff
+
+      table.summary
+        line-height: 18px
+        td
+          padding: 0
+
+        td:first-child
+          width: 270px
+
+        td.summary-label
+          width: 200px
+          color: #fff
+
+        td.summary-value
+          color: #fff
+          text-align: right
+
+        td
+          font-size: 12px
+          padding-top: 5px
+
+        b
+          font-size: 12px
+
+        .total-value
+          font-size: 20px
+          color: #fff
+          line-height: 24px
+
+        td.value
+          text-align: right
+
+  table.inline-list
+    td
+      font-size: 12px
+      vertical-align: top
+      padding: 2px 0
+
+    td.label
+      width: 160px
+      color: $gray-dark
+      font-weight: bold
+
+
+  table
+    td.delimeter
+      padding-top: 10px
+
+    tbody.list-header
+      td
+        color: $gray-light
+        padding: 3px 0
+        border: none
+
+    tr.products-list-header
+      td
+        font-size: 12px
+        color: $gray-light
+        line-height: 15px
+        vertical-align: bottom
+
+    tr.site-url-row
+      td
+        padding-top: 25px
+
+    tr.line-item
+      td
+        border-bottom: 1px solid $gray-lightest
+        padding: 10px 0
+
+      &:last-of-type
+        td
+          border-bottom: 1px solid $gray-dark
+
+    tr.site-total
+      td
+        border-bottom: 1px solid $gray-dark
+        padding: 15px 0
+
+
+    tbody:last-child
+      tr.site-total
+        td
+          border-bottom: none
+
+    &.message-content
+      line-height: 15px
+
+      td.greeting
+        font-weight: bold
+        font-size: 12px
+        padding-bottom: 5px
+
+      & > tr td
+        padding: 5px 0
+
+        &.alert
+          color: #da4f49
+
+      & > tr:last-child
+        td
+          padding: 5px 0 0
+
+      td.b
+        font-weight: bold
+        padding: 15px 0 3px
+
+      td.btn-primary
+        padding: 6px 15px
+        background-color: $blue-light
+        text-align: center
+
+        a
+          text-decoration: none
+          color: #fff
+
+    &.transactions
+    &.products-list
+      margin-top: 20px
+
+      td
+        vertical-align: bottom
+
+      tr.products-list-header
+        td
+          padding: 2px 0
+          line-height: 16px
+
+      td
+        padding: 5px 0
+        line-height: 18px
+
+      td.dates
+        width: 115px
+        vertical-align: bottom
+
+      td.qty
+        width: 95px
+        vertical-align: bottom
+
+      td.cost
+        text-align: right
+        width: 70px
+        vertical-align: bottom
+
+      td.site-url
+        text-align: left
+
+      td:last-child
+        text-align: right
+
+      tr.site-url-row
+        td
+          padding: 25px 0 5px
+
+    &.tutorial
+      td.step
+        width: 70%
+
+      td.graph
+        width: 30%
+        text-align: middle
+
+      .step-title
+        font-size: 12px
+        font-weight: bold
+
+      tr
+        td.delimeter
+          padding: 0px
+
+    &.image-cell
+      tr
+        td
+          border: none
+          vertical-align: bottom
+          text-align: left
+          padding: 0
+
+  img.logo
+    vertical-align: middle
+
+  img.changed-icon
+    width: 16px
+    height: 16px
+    vertical-align: middle
+
+  .change-request-text
+    color: #f90
+    display: inline-block
+    margin-left: 8px
+    vertical-align: middle
+    font-size: 11px
+
+.receipt
+  .attachment
+    padding-bottom: 35px

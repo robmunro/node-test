@@ -1,0 +1,111 @@
+@import "../variable.styl"
+
+.adslot-booking-change-request-container
+  background-color: #f2f2f2
+
+  .change-request-row
+    padding: 5px 0
+    
+    &.triangle-row
+      padding: 0
+      text-align: right
+      height: 10px
+      margin-top: -10px
+      background-color: $white
+      
+      .triangle-top
+        display: inline-block
+        margin-right: 60px
+    
+    &.title-row
+      border-bottom: none
+      color: $white
+      line-height: 20px
+      padding: 3px 20px 2px 20px
+
+      &.attention
+        background-color: btn-danger-color
+
+    &.header-row
+      color: #aaa
+      border-bottom: 1px $gray-lightish solid
+
+    &.action-row
+      border-bottom: none
+      text-align: right
+      padding: 10px 20px 20px 20px
+
+    &.has-sibling
+      border-bottom: none
+
+    &.keyword-targeting
+    &.geo-targeting
+      padding: 10px
+
+    &.details-edit-row
+      .requested-by
+        width: 310px
+        
+      .date-picker
+        margin-top: 3px
+
+      .edit-comment
+        margin-left: 320px
+        color: #aaa
+
+      .change-request-edit-comment-container
+        margin-left: 330px
+        margin-top: 5px
+
+        textarea
+          width: 516px
+          height: 100px
+          
+    &.details-row .requested-by
+      vertical-align: middle
+      line-height: 36px
+
+    .requested-by
+      padding-left: 20px
+
+  .change-request-cell
+    display: inline-block
+    width: 110px
+    padding: 0 10px
+    vertical-align: top
+
+    &.title
+      color: #666
+      width: 165px
+      text-align: center
+      font-size: 14px
+      line-height: 30px
+      margin: 10px
+
+    &.comment-label
+      vertical-align: top
+      width: 80px
+      color: #aaa
+      padding-left: 20px
+
+    &.comment
+      background-color: #e8e8e8
+      padding: 10px
+      width: 790px
+      min-height: 45px
+      
+    &.comment-edit textarea
+      width: 790px
+      height: 45px
+
+    &.requested-by
+      width: 310px
+
+    &.dates
+      width: 70px
+      
+    &.delivery-remaining
+      width: 200px
+      
+      
+
