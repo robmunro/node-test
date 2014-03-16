@@ -4,8 +4,9 @@
 // Set up asset-rack - DONE
 // Set up connect-assets - DONE
 // Set up stylus(connect assets and asset-rack) - DONE
-// Set up browserify(browserify-middleware)
-// Set up coffeescript
+// Set up browserify(browserify-middleware and asset-rack) - DONE
+// Set up and test npm start - scripts in package.json
+// Set up coffeescript -
 // Set up snockets(asset-rack etc)
 // Set up styl
 // Set up rework
