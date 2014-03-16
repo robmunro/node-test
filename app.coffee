@@ -5,7 +5,7 @@
 # Set up connect-assets - DONE
 # Set up stylus(connect assets and asset-rack) - DONE
 # Set up browserify(browserify-middleware and asset-rack) - DONE
-# Set up and test npm start - scripts in package.json
+# Set up and test npm start - scripts in package.json - DONE
 # Set up coffeescript -
 # Set up snockets(asset-rack etc)
 # Set up styl
@@ -16,6 +16,7 @@
 # Set up broccoli
 # Set up brunch
 # Set up gulp
+# Checkout Mimosa
 # Set up rebuilding (brocolli/supervisor/livereload etc)
 # Set up lodash/underscore
 # Set up nconf
@@ -23,6 +24,7 @@
 # Set up sample jadified/html templates bundle for caching
 express = require('express')
 fs = require('fs')
+coffeeScript = require('coffee-script')
 connectAssets = require('connect-assets')
 rack = require('asset-rack')
 browserify = require('browserify-middleware')
@@ -55,23 +57,22 @@ assets = new rack.Rack([
 #)
 #
 ##connectAssets.cssCompilers.styl.compress = nconf.get 'connectAssets:compressStylus'
-#app.use '/assets', connectAssets(
-#  build: true
-#  detectChanges: false
-#  compressStylus: true
-#  servePath: '/assets'
-#)
+app.use '/assets', connectAssets(
+  build: true
+  detectChanges: true
+  compressStylus: true
+  servePath: '/assets'
+)
 app.get '/test', (req, res, next) ->
   res.render 'index'
 
 
-#app.use require('connect-assets')()
-app.use assets
-app.use new rack.DynamicAssets(
-  type: rack.BrowserifyAsset
-  urlPrefix: '/js'
-  dirname: __dirname + '/public/javascripts'
-)
+#app.use assets
+#app.use new rack.DynamicAssets(
+#  type: rack.BrowserifyAsset
+#  urlPrefix: '/js'
+#  dirname: __dirname + '/public/javascripts'
+#)
 #app.use styleAsset
 #app.use app.router
 #app.get '/', (req, res) ->

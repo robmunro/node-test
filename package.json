@@ -12,6 +12,7 @@
     "asset-rack": "~2.2.2",
     "connect-assets": "~2.4.3",
     "browserify": "~3.32.1",
-    "browserify-middleware": "~2.4.0"
+    "browserify-middleware": "~2.4.0",
+    "coffee-script": "~1.7.1"
   }
 }
