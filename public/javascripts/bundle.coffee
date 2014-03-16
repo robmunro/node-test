@@ -1,4 +1,4 @@
-Dog = require './include.js'
+Dog = require './include.coffee'
 
 myDog = new Dog()
 myDog.setName 'Ruffy'

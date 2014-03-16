@@ -6,7 +6,7 @@
 # Set up stylus(connect assets and asset-rack) - DONE
 # Set up browserify(browserify-middleware and asset-rack) - DONE
 # Set up and test npm start - scripts in package.json - DONE
-# Set up coffeescript -
+# Set up coffeescript (connect-assets and asset-rack) - DONE
 # Set up snockets(asset-rack etc)
 # Set up styl
 # Set up rework
@@ -68,11 +68,12 @@ app.get '/test', (req, res, next) ->
 
 
 #app.use assets
-#app.use new rack.DynamicAssets(
-#  type: rack.BrowserifyAsset
-#  urlPrefix: '/js'
-#  dirname: __dirname + '/public/javascripts'
-#)
+app.use new rack.DynamicAssets(
+  type: rack.BrowserifyAsset
+  urlPrefix: '/js'
+  dirname: __dirname + '/public/javascripts'
+  filter: 'coffee'
+)
 #app.use styleAsset
 #app.use app.router
 #app.get '/', (req, res) ->
