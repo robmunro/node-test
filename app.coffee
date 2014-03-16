@@ -7,8 +7,8 @@
 # Set up browserify(browserify-middleware and asset-rack) - DONE
 # Set up and test npm start - scripts in package.json - DONE
 # Set up coffeescript (connect-assets and asset-rack) - DONE
-# Set up snockets(asset-rack etc)
-# Set up styl
+# Set up snockets(asset-rack etc) - Just a javascript/Coffescript concat tool
+# Set up styl -
 # Set up rework
 # Set up libsass
 # Set up Dynamo
@@ -20,6 +20,7 @@
 # Set up rebuilding (brocolli/supervisor/livereload etc)
 # Set up lodash/underscore
 # Set up nconf
+# Set up debugging scrips of app in chrome
 
 # Set up sample jadified/html templates bundle for caching
 express = require('express')
@@ -28,9 +29,22 @@ coffeeScript = require('coffee-script')
 connectAssets = require('connect-assets')
 rack = require('asset-rack')
 browserify = require('browserify-middleware')
+
+styl = require('styl')
+
+fs.readFile __dirname + '/assets/css/style.styl', (err, data) ->
+  console.log "dog", data.toString()
+  testCss = styl(data.toString(), { whitespace: true }).toString()
+
+  fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
+    if(err) then console.log(err) else console.log("The file was saved!")
+
 app = express()
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'jade'
+
+
+
 assets = new rack.Rack([
   new rack.Asset(
     url: '/hello.txt'
