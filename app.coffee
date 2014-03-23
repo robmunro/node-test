@@ -36,6 +36,7 @@ reworkInline = require 'rework-inline'
 rework = require 'rework'
 reworkNpm = require 'rework-npm'
 reworkImporter = require 'rework-importer'
+reworkVariables = require 'rework-variant'
 styl = require 'styl'
 
 
@@ -49,6 +50,7 @@ fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
       base: __dirname + '/assets/css/'
       whitespace: true
     )
+    .use(reworkVariables())
     .toString()
 
   fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
