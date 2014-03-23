@@ -7,34 +7,47 @@
 # Set up browserify(browserify-middleware and asset-rack) - DONE
 # Set up and test npm start - scripts in package.json - DONE
 # Set up coffeescript (connect-assets and asset-rack) - DONE
-# Set up snockets(asset-rack etc) - Just a javascript/Coffescript concat tool
+# Set up snockets(asset-rack etc) - Just a javascript/Coffescript concat tool, ie no need if using browserify
 # Set up styl -
-# Set up rework
-# Set up libsass
+# Set up rework -
+# Set up libsass -
 # Set up Dynamo
 # Set up Redis??
 # Set up broccoli
 # Set up brunch
 # Set up gulp
+# Checkout Harp
 # Checkout Mimosa
 # Set up rebuilding (brocolli/supervisor/livereload etc)
 # Set up lodash/underscore
 # Set up nconf
 # Set up debugging scrips of app in chrome
+# Set up source maps for stylus and then be able to save back files in chrome
 
 # Set up sample jadified/html templates bundle for caching
-express = require('express')
-fs = require('fs')
-coffeeScript = require('coffee-script')
-connectAssets = require('connect-assets')
-rack = require('asset-rack')
-browserify = require('browserify-middleware')
+express = require 'express'
+fs = require 'fs'
+coffeeScript = require 'coffee-script'
+connectAssets = require 'connect-assets'
+rack = require 'asset-rack'
+browserify = require 'browserify-middleware'
 
-styl = require('styl')
+reworkInline = require 'rework-inline'
+rework = require 'rework'
+reworkNpm = require 'rework-npm'
+reworkImporter = require 'rework-importer'
+styl = require 'styl'
 
-fs.readFile __dirname + '/assets/css/style.styl', (err, data) ->
-  console.log "dog", data.toString()
-  testCss = styl(data.toString(), { whitespace: true }).toString()
+
+fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
+  testCss =
+    rework(data.toString())
+    .use(reworkImporter
+      path: 'test.styl'
+      base: __dirname + '/assets/css/'
+      whitespace: true
+    )
+    .toString()
 
   fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
     if(err) then console.log(err) else console.log("The file was saved!")
