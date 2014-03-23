@@ -11,6 +11,7 @@
 # Set up styl - DONE
 # Set up rework - DONE
 # Set up libsass - DONE
+# Set up nconf DONE
 # Set up Dynamo
 # Set up Redis??
 # Set up broccoli
@@ -20,11 +21,11 @@
 # Checkout Mimosa
 # Set up rebuilding (brocolli/supervisor/livereload etc)
 # Set up lodash/underscore
-# Set up nconf
 # Set up debugging scrips of app in chrome
 # Set up source maps for stylus and then be able to save back files in chrome
 
 # Set up sample jadified/html templates bundle for caching
+nconf = require 'nconf'
 express = require 'express'
 fs = require 'fs'
 coffeeScript = require 'coffee-script'
@@ -39,6 +40,7 @@ reworkImporter = require 'rework-importer'
 reworkVariables = require 'rework-variant'
 styl = require 'styl'
 sass = require 'node-sass'
+dynamoTable = require 'dynamo-table'
 
 # Rework/Styl testing
 #fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
@@ -57,10 +59,14 @@ sass = require 'node-sass'
 #  fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
 #    if(err) then console.log(err) else console.log("The file was saved!")
 
+# Setting and testing nconf
+nconf.file __dirname + '/config.json'
+console.log nconf.get 'test'
+
+
 app = express()
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'jade'
-
 # Serves all SCSS files from /assets/css/ to /public/css/ when they are requested
 app.use(
   sass.middleware(
