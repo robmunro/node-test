@@ -42,27 +42,23 @@ styl = require 'styl'
 sass = require 'node-sass'
 dynamoTable = require 'dynamo-table'
 
-# Rework/Styl testing
-#fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
-#  testCss =
-#    styl(data.toString(),
-#      whitespace: true
-#    )
-#    .use(reworkImporter
-#      path: 'test.styl'
-#      base: __dirname + '/assets/css/'
-#      whitespace: true
-#    )
-#    .use(reworkVariables())
-#    .toString()
-#
-#  fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
-#    if(err) then console.log(err) else console.log("The file was saved!")
-
 # Setting and testing nconf
 nconf.file __dirname + '/config.json'
-console.log nconf.get 'test'
 
+# Setting up dynamo table using dynamo-table module
+test = dynamoTable 'test',
+  region: nconf.get 'dynamodb'
+  key: 'id'
+
+# Scan table for all its data
+test.scan (err, data) ->
+  if err then return console.log err
+  for item of data then console.log "Wazzup #{data[item].name}"
+
+# Get row from test table with id == 1
+test.get 1, ['name'], (err, data) ->
+  if err then return console.log err
+  console.log "Hello #{data.name}"
 
 app = express()
 app.set 'views', __dirname + '/views'
@@ -79,76 +75,8 @@ app.use(
 # This step is required to serve static files from a particular dir, with express
 app.use('/css', express.static(__dirname + '/public/css'))
 
-#assets = new rack.Rack([
-#  new rack.Asset(
-#    url: '/hello.txt'
-#    contents: 'hello world'
-#  ),
-#  new rack.StylusAsset(
-#    url: '/style.css'
-#    filename: __dirname + '/assets/css/style.styl'
-#  )
-##  new rack.DyanmicAssets(
-##    type: LessAsset
-##    urlPrefix: '/style'
-##    dirname: './style'
-##  )
-#])
-#app.use '/js', browserify('./public/javascripts')
-#styleAsset = new rack.StylusAsset(
-#  url: '/style.css'
-#  filename: __dirname + '/assets/css/style.styl'
-#)
-#imageAsset = new rack.ImageAsset(
-#  url: '/logo.png'
-#  filename: __dirname + '/public/images/logo02.png'
-#)
-#
-##connectAssets.cssCompilers.styl.compress = nconf.get 'connectAssets:compressStylus'
-#app.use '/assets', connectAssets(
-#  build: true
-#  detectChanges: true
-#  compressStylus: true
-#  servePath: '/assets'
-#)
 app.get '/test', (req, res, next) ->
   res.render 'index'
 
-
-#app.use assets
-#app.use new rack.DynamicAssets(
-#  type: rack.BrowserifyAsset
-#  urlPrefix: '/js'
-#  dirname: __dirname + '/public/javascripts'
-#  filter: 'coffee'
-#)
-#app.use styleAsset
-#app.use app.router
-#app.get '/', (req, res) ->
-#  res.send 'You are a stupid head'
-#  return
-#
-#app.get '/dog/cat/:id1/:id2', (req, res) ->
-#  res.send 'You are a stupid head' + req.params.id1 + ' and you ' + req.params.id2
-#  return
-#
-#middleware = (req, res, next) ->
-#  fs.readFile __dirname + '/test.txt', (err, data) ->
-#    req.name = data
-#    next()
-#    return
-#
-#  return
-#
-#app.get '/cat', middleware, (req, res) ->
-#  res.send 'I dont say Hello to you you stinking poophead ' + req.name + ', if that is your real name!!!!'
-#  return
-#
-#app.use (req, res) ->
-#  res.writeHead 200,
-#    'Content-Type': 'text/html'
-#
-#  res.end '<h1>Hello, middleware</h1>'
-#  return
 
 app.listen '3005'

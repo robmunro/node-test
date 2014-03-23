@@ -1,0 +1,13 @@
+{
+  "dynamodb": {
+    "host": null,
+    "port": null,
+    "region": "us-west-2",
+    "credentials": {
+      "accessKeyId": "AKIAJCUEBQDHWOHKHSIC",
+      "secretAccessKey": "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"
+    }
+  },
+
+  "testing": "A+"
+}
