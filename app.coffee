@@ -41,7 +41,9 @@ styl = require 'styl'
 
 fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
   testCss =
-    rework(data.toString())
+    styl(data.toString(),
+      whitespace: true
+    )
     .use(reworkImporter
       path: 'test.styl'
       base: __dirname + '/assets/css/'
