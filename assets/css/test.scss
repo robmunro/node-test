@@ -1,0 +1,15 @@
+@import 'include.scss';
+
+$test-color: green;
+
+.test-one {
+  background-color: $test-color;
+}
+
+.test-two {
+  background-color: red;
+}
+
+.test-four {
+  background-color: red;
+}

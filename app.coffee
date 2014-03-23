@@ -8,9 +8,9 @@
 # Set up and test npm start - scripts in package.json - DONE
 # Set up coffeescript (connect-assets and asset-rack) - DONE
 # Set up snockets(asset-rack etc) - Just a javascript/Coffescript concat tool, ie no need if using browserify
-# Set up styl -
-# Set up rework -
-# Set up libsass -
+# Set up styl - DONE
+# Set up rework - DONE
+# Set up libsass - DONE
 # Set up Dynamo
 # Set up Redis??
 # Set up broccoli
@@ -38,45 +38,56 @@ reworkNpm = require 'rework-npm'
 reworkImporter = require 'rework-importer'
 reworkVariables = require 'rework-variant'
 styl = require 'styl'
+sass = require 'node-sass'
 
-
-fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
-  testCss =
-    styl(data.toString(),
-      whitespace: true
-    )
-    .use(reworkImporter
-      path: 'test.styl'
-      base: __dirname + '/assets/css/'
-      whitespace: true
-    )
-    .use(reworkVariables())
-    .toString()
-
-  fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
-    if(err) then console.log(err) else console.log("The file was saved!")
+# Rework/Styl testing
+#fs.readFile __dirname + '/assets/css/test.styl', (err, data) ->
+#  testCss =
+#    styl(data.toString(),
+#      whitespace: true
+#    )
+#    .use(reworkImporter
+#      path: 'test.styl'
+#      base: __dirname + '/assets/css/'
+#      whitespace: true
+#    )
+#    .use(reworkVariables())
+#    .toString()
+#
+#  fs.writeFile __dirname + '/public/stylesheets/styl.css', testCss, (err) ->
+#    if(err) then console.log(err) else console.log("The file was saved!")
 
 app = express()
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'jade'
 
-
-
-assets = new rack.Rack([
-  new rack.Asset(
-    url: '/hello.txt'
-    contents: 'hello world'
-  ),
-  new rack.StylusAsset(
-    url: '/style.css'
-    filename: __dirname + '/assets/css/style.styl'
+# Serves all SCSS files from /assets/css/ to /public/css/ when they are requested
+app.use(
+  sass.middleware(
+    src: __dirname + '/assets'
+    dest: __dirname + '/public'
+    debug: true
+    outputStyle: 'compressed'
   )
-#  new rack.DyanmicAssets(
-#    type: LessAsset
-#    urlPrefix: '/style'
-#    dirname: './style'
+)
+# This step is required to serve static files from a particular dir, with express
+app.use('/css', express.static(__dirname + '/public/css'))
+
+#assets = new rack.Rack([
+#  new rack.Asset(
+#    url: '/hello.txt'
+#    contents: 'hello world'
+#  ),
+#  new rack.StylusAsset(
+#    url: '/style.css'
+#    filename: __dirname + '/assets/css/style.styl'
 #  )
-])
+##  new rack.DyanmicAssets(
+##    type: LessAsset
+##    urlPrefix: '/style'
+##    dirname: './style'
+##  )
+#])
 #app.use '/js', browserify('./public/javascripts')
 #styleAsset = new rack.StylusAsset(
 #  url: '/style.css'
@@ -88,23 +99,23 @@ assets = new rack.Rack([
 #)
 #
 ##connectAssets.cssCompilers.styl.compress = nconf.get 'connectAssets:compressStylus'
-app.use '/assets', connectAssets(
-  build: true
-  detectChanges: true
-  compressStylus: true
-  servePath: '/assets'
-)
+#app.use '/assets', connectAssets(
+#  build: true
+#  detectChanges: true
+#  compressStylus: true
+#  servePath: '/assets'
+#)
 app.get '/test', (req, res, next) ->
   res.render 'index'
 
 
 #app.use assets
-app.use new rack.DynamicAssets(
-  type: rack.BrowserifyAsset
-  urlPrefix: '/js'
-  dirname: __dirname + '/public/javascripts'
-  filter: 'coffee'
-)
+#app.use new rack.DynamicAssets(
+#  type: rack.BrowserifyAsset
+#  urlPrefix: '/js'
+#  dirname: __dirname + '/public/javascripts'
+#  filter: 'coffee'
+#)
 #app.use styleAsset
 #app.use app.router
 #app.get '/', (req, res) ->

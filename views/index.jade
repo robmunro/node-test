@@ -2,6 +2,8 @@ extends layout
 
 block content
   //!=assets.tag('/style.css')
-  !=js('/js/test')
+  link(rel='stylesheet', href='/css/test.css')
+
   h1= title
-  p Welcome to #{title}
+  p.test-one Welcome to #{title}
+  p.test-three Yip Yip!

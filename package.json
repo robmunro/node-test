@@ -19,7 +19,8 @@
     "rework-npm": "~0.6.1",
     "rework": "~0.20.2",
     "rework-importer": "~0.3.0",
-    "rework-variant": "~0.2.2"
+    "rework-variant": "~0.2.2",
+    "node-sass": "~0.8.3"
   },
   "devDependencies": {
     "bunyan": "~0.22.1"
