@@ -3,18 +3,23 @@
 # Set up express - DONE
 # Set up asset-rack - DONE
 # Set up connect-assets - DONE
-# Set up stylus(connect assets and asset-rack) - DONE
-# Set up browserify(browserify-middleware and asset-rack) - DONE
+# Set up stylus (connect assets and asset-rack) - DONE
+# Set up browserify (browserify-middleware and asset-rack) - DONE
 # Set up and test npm start - scripts in package.json - DONE
 # Set up coffeescript (connect-assets and asset-rack) - DONE
-# Set up snockets(asset-rack etc) - Just a javascript/Coffescript concat tool, ie no need if using browserify
+# Set up snockets (asset-rack etc) - Just a javascript/Coffescript concat tool, ie no need if using browserify
 # Set up styl - DONE
 # Set up rework - DONE
 # Set up libsass - DONE
-# Set up nconf DONE
-# Set up Dynamo
-# Set up Redis??
-# Set up broccoli
+# Set up nconf - DONE
+# Set up Dynamo - DONE
+# Set up Redis?? - Cache Cluster (ElasticCache) set up on AWS -
+# Set up broccoli - working with style files and coffee script (imports on both) - DONE
+# Set up browserify with beefy live reload (can we setup in direct for testing)
+# Set up watchify for fast reloading of browserified assets (can we setup in direct for testing)
+# Set up debowerify to include bower modules with browserify (work out what modules we can handle with this)
+# Set up decomponentify to include component modules with browserify (work out what modules we can handle with this)
+# Set up paginated example with Redis and dynamo
 # Set up brunch
 # Set up gulp
 # Checkout Harp
@@ -44,21 +49,6 @@ dynamoTable = require 'dynamo-table'
 
 # Setting and testing nconf
 nconf.file __dirname + '/config.json'
-
-# Setting up dynamo table using dynamo-table module
-test = dynamoTable 'test',
-  region: nconf.get 'dynamodb'
-  key: 'id'
-
-# Scan table for all its data
-test.scan (err, data) ->
-  if err then return console.log err
-  for item of data then console.log "Wazzup #{data[item].name}"
-
-# Get row from test table with id == 1
-test.get 1, ['name'], (err, data) ->
-  if err then return console.log err
-  console.log "Hello #{data.name}"
 
 app = express()
 app.set 'views', __dirname + '/views'
