@@ -9,7 +9,6 @@
     "express": "3.5.0",
     "jade": "*",
     "stylus": "*",
-    "asset-rack": "~2.2.2",
     "connect-assets": "~2.4.3",
     "browserify": "~3.32.1",
     "browserify-middleware": "~2.4.0",
@@ -22,17 +21,18 @@
     "rework-variant": "~0.2.2",
     "node-sass": "~0.8.3",
     "nconf": "~0.6.9",
-    "broccoli": "~0.5.0",
     "dynamodb": "~0.3.6",
     "lodash": "~2.4.1",
     "gulp": "~3.5.6",
-    "dynamo-table": "~0.8.2",
+    "broccoli": "~0.5.0",
+    "broccoli-static-compiler": "~0.1.2",
+    "broccoli-env": "0.0.1",
+    "broccoli-browserify": "0.0.1",
     "broccoli-sass": "~0.1.2",
-    "broccoli-coffee": "~0.1.0"
+    "broccoli-coffee": "~0.1.0",
+    "dynamo-table": "~0.8.2"
   },
   "devDependencies": {
-    "bunyan": "~0.22.1",
-    "broccoli-static-compiler": "~0.1.2",
-    "broccoli-env": "0.0.1"
+    "bunyan": "~0.22.1"
   }
 }
