@@ -15,6 +15,7 @@
 # Set up Dynamo - DONE
 # Set up Redis?? - Cache Cluster (ElasticCache) set up on AWS -
 # Set up broccoli - working with style files and coffee script (imports on both) - DONE
+#                 - get liveReload working and integrate in node backend - DONE
 # Set up browserify with beefy live reload (can we setup in direct for testing)
 # Set up watchify for fast reloading of browserified assets (can we setup in direct for testing)
 # Set up debowerify to include bower modules with browserify (work out what modules we can handle with this)
@@ -35,7 +36,6 @@ express = require 'express'
 fs = require 'fs'
 coffeeScript = require 'coffee-script'
 connectAssets = require 'connect-assets'
-rack = require 'asset-rack'
 browserify = require 'browserify-middleware'
 
 reworkInline = require 'rework-inline'
@@ -47,26 +47,25 @@ styl = require 'styl'
 sass = require 'node-sass'
 dynamoTable = require 'dynamo-table'
 
+exec = require('child_process').exec
+
+# run broccoli cli in child process
+broccoli = exec 'broccoli serve', []
+
+# show stdout of brocolli in process stdout
+broccoli.stdout.pipe(process.stdout)
+
+broccoli.on 'exit', (code) ->
+  console.log 'Exit code: ' + code
+
 # Setting and testing nconf
 nconf.file __dirname + '/config.json'
 
 app = express()
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'jade'
-# Serves all SCSS files from /assets/css/ to /public/css/ when they are requested
-app.use(
-  sass.middleware(
-    src: __dirname + '/assets'
-    dest: __dirname + '/public'
-    debug: true
-    outputStyle: 'compressed'
-  )
-)
-# This step is required to serve static files from a particular dir, with express
-app.use('/css', express.static(__dirname + '/public/css'))
 
 app.get '/test', (req, res, next) ->
   res.render 'index'
-
 
 app.listen '3005'

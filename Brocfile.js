@@ -1,3 +1,10 @@
+// Things to test with Broccoli
+// See if i can get project running from here Express etc
+// Get Broccoli restarting node if it fails
+// Get performance testing on how long rebuild takes with
+//   - Stylus
+//   - Browserify
+
 module.exports = function (broccoli) {
   var filterCoffeeScript = require('broccoli-coffee');
   var compileSass = require('broccoli-sass');

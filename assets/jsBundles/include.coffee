@@ -1,13 +1,11 @@
-Class Dog
-
+class Dog
   constructor: (name) ->
     @name = name
 
-  @setName = (newName) ->
+  setName: (newName) ->
       this.name = newName
 
-
-  @getName = ->
+  getName: ->
       return this.name
 
 module.exports = Dog
